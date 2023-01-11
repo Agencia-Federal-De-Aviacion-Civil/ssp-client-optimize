@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <!-- Scripts -->
+    @wireUiScripts  
     <script src="{{ mix('js/app.js') }}" defer></script>
     @livewireStyles
 </head>
@@ -27,12 +28,3 @@
 </body>
 
 </html>
-
-
-echo "# ssp-client-optimize" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M master
-git remote add origin https://github.com/Agencia-Federal-De-Aviacion-Civil/ssp-client-optimize.git
-git push -u origin master

@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('title', 'SSP')
 @section('content')
+   {{-- @livewire('dashboard.modal.privacity') --}}
     <section class="mt-16 bg-gray-50">
+        @livewire('dashboard.register.create')
         {{-- <div x-data="app()" x-cloak>
             <div class="bg-white max-w-4xl mx-auto px-4 py-10">
                 <div class="border-b-2 py-4">
