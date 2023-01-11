@@ -2,29 +2,52 @@
 
 namespace App\Http\Livewire\Dashboard\Register;
 
-use App\Models\User\GenerarlUser;
+use App\Models\Catalogue\KindPeople;
+use App\Models\User\GeneralUser;
 use Livewire\Component;
 
 class Create extends Component
 {
+    public $name, $apPaterno, $apMaterno, $email, $telephone, $extention, $enterprise, $typePeople, $id_user, $id_generalUser;
     protected $rules = [
         'name' => 'required',
         'apPaterno' => 'required',
         'apMaterno' => 'required',
         'email' => 'required',
         'telephone' => 'required',
+        'enterprise' => 'required',
         'typePeople' => 'required'
     ];
-    public $name, $apPaterno, $apMaterno, $email, $telephone, $extention, $enterprise, $typePeople, $id_user, $id_generalUser;
+    public function mount()
+    {
+        $this->peoples = KindPeople::all();
+    }
     public function render()
     {
         return view('livewire.dashboard.register.create');
     }
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+    public function clean()
+    {
+        $this->reset([
+            'name',
+            'apPaterno',
+            'apMaterno',
+            'email',
+            'telephone',
+            'extention',
+            'enterprise',
+            'typePeople'
+        ]);
+    }
     public function save()
     {
         $this->validate();
-        $this->id_user = GenerarlUser::updateOrCreate(
-            ['id' => $this->id_userReporter],
+        $this->id_user = GeneralUser::updateOrCreate(
+            ['id' => $this->id_generalUser],
             [
                 'name' => $this->name,
                 'apPaterno' => $this->apPaterno,
@@ -37,5 +60,6 @@ class Create extends Component
 
             ],
         );
+        $this->clean();
     }
 }

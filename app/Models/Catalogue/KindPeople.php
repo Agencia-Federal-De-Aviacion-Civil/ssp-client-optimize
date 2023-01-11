@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\User;
+namespace App\Models\Catalogue;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class GeneralUser extends Model
+class KindPeople extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];

@@ -13,16 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('general_users', function (Blueprint $table) {
+        Schema::create('kind_people', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('apPaterno');
-            $table->string('apMaterno');
-            $table->string('email');
-            $table->string('telephone');
-            $table->string('extention')->nullable();
-            $table->string('enterprise');
-            $table->string('typePeople');
             $table->timestamps();
         });
     }
@@ -34,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('general_users');
+        Schema::dropIfExists('kind_people');
     }
 };
