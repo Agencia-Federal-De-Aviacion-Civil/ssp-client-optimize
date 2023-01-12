@@ -127,7 +127,7 @@
                     <div>
                         <label for="number_serie" class="block text-lg mb-2 dark:text-white">Origen</label>
                         <x-select class="w-full" placeholder="Selecciona"
-                            wire:model.defer="place_destination_origin_id">
+                            wire:model.defer="place_origen_id">
                             @foreach ($placesDestinations as $placesDestination)
                                 <x-select.option label="{{ $placesDestination->name }}"
                                     value="{{ $placesDestination->id }}" />
@@ -137,7 +137,7 @@
                     <div>
                         <label for="number_serie" class="block text-lg mb-2 dark:text-white">Destino</label>
                         <x-select class="w-full" placeholder="Selecciona"
-                            wire:model.defer="place_destination_destiny_id">
+                            wire:model.defer="place_destination_id">
                             @foreach ($placesDestinations as $placesDestination)
                                 <x-select.option label="{{ $placesDestination->name }}"
                                     value="{{ $placesDestination->id }}" />

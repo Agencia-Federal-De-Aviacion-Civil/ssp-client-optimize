@@ -20,4 +20,4 @@ Route::get('/', function () {
     return view('dashboard');
 });
 Route::get('create/{slug}/{id}', [HomeController::class, 'index'])->name('ifReportView');
-Route::get('create/{slug}/afac001/{id}', Create::class)->name('afac001');
+Route::get('create/{slug}/afac001/{idReporter}', Create::class)->name('afac001');
