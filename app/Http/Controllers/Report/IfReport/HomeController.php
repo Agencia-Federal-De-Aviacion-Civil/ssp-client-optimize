@@ -11,6 +11,7 @@ class HomeController extends Controller
     public function index($slug, $id)
     {
         $users = GeneralUser::where('id', $id)->get();
-        return view('report.ifView.dashboard', compact('users'));
+        $id = $users[0]->id;
+        return view('report.ifView.dashboard', compact('slug','id','users'));
     }
 }
