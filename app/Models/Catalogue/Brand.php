@@ -13,4 +13,8 @@ class Brand extends Model
     {
         return $this->belongsTo(Type::class, 'type_id');
     }
+    public function brandAmodel()
+    {
+        return $this->hasMany(aModel::class);
+    }
 }
