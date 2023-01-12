@@ -3,26 +3,21 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use Jenssegers\Date\Date;
 
 class banner extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         //
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
+
     public function render()
     {
-        return view('components.banner');
+        Date::setlocale('es');
+        $current = Date::now()->format('l j F Y');
+        return view('components.banner', compact('current'));
     }
 }
