@@ -6,11 +6,12 @@ use App\Models\Catalogue\KindPeople;
 use App\Models\User\GeneralUser;
 use Livewire\Component;
 use WireUi\Traits\Actions;
+use Illuminate\Support\Str;
 
 class Create extends Component
 {
     use Actions;
-    public $modalAtention = true, $peoples, $name, $apPaterno, $apMaterno, $email, $telephone, $extention, $enterprise, $typePeople, $id_user, $id_generalUser;
+    public $modalAtention = true, $peoples, $name, $apPaterno, $apMaterno, $email, $telephone, $extention, $enterprise, $slug, $typePeople, $id_user, $id_generalUser;
     protected $rules = [
         'name' => 'required',
         'apPaterno' => 'required',
@@ -58,6 +59,7 @@ class Create extends Component
                 'telephone' => $this->telephone,
                 'extention' => $this->extention,
                 'enterprise' => $this->enterprise,
+                'slug' => Str::slug($this->enterprise, '-'),
                 'typePeople' => $this->typePeople,
 
             ],
@@ -80,6 +82,8 @@ class Create extends Component
     }
     public function goToIf()
     {
-        return redirect()->route('ifReportView');
+        $slug = $this->id_user;
+        $id = $this->id_user->id;
+        return redirect()->route('ifReportView', compact('slug','id'));
     }
 }

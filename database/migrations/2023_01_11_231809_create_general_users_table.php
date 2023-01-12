@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('telephone');
             $table->string('extention')->nullable();
             $table->string('enterprise');
+            $table->string('slug');
             $table->string('typePeople');
             $table->timestamps();
         });

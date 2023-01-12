@@ -15,14 +15,15 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
     <!-- Scripts -->
-    @wireUiScripts  
+    @wireUiScripts
     <script src="{{ mix('js/app.js') }}" defer></script>
     @livewireStyles
 </head>
 
 <body class="font-sans antialiased">
-    <x-banner></x-banner>
+    @include('layouts.partials.navbar')
     <div class="h-screen">
+        <x-banner></x-banner>
         @yield('content')
     </div>
     @livewireScripts

@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard');
 });
-Route::get('create', [HomeController::class, 'index'])->name('ifReportView');
+Route::get('create/{slug}/{id}', [HomeController::class, 'index'])->name('ifReportView');
