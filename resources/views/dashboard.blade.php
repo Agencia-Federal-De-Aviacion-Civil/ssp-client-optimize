@@ -2,8 +2,15 @@
 @section('title', 'SSP')
 @section('content')
    {{-- @livewire('dashboard.modal.privacity') --}}
-    <section class="mt-16 bg-gray-50">
-        @livewire('dashboard.register.create')
+    {{-- <section class="mt-16 bg-gray-50"> --}}
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                    @livewire('dashboard.register.create')
+                </div>
+            </div>
+        </div>
+      
         {{-- <div x-data="app()" x-cloak>
             <div class="bg-white max-w-4xl mx-auto px-4 py-10">
                 <div class="border-b-2 py-4">
@@ -27,5 +34,5 @@
                 </div>
             </div>
         </div> --}}
-    </section>
+    {{-- </section> --}}
 @endsection

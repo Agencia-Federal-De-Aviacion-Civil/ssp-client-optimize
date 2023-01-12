@@ -13,14 +13,15 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
     <!-- Scripts -->
     @wireUiScripts  
     <script src="{{ mix('js/app.js') }}" defer></script>
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased bg-gray-50">
+<body class="font-sans antialiased">
+    <x-banner></x-banner>
     <div class="h-screen">
         @yield('content')
     </div>

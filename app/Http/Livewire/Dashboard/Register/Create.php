@@ -5,10 +5,12 @@ namespace App\Http\Livewire\Dashboard\Register;
 use App\Models\Catalogue\KindPeople;
 use App\Models\User\GeneralUser;
 use Livewire\Component;
+use WireUi\Traits\Actions;
 
 class Create extends Component
 {
-    public $name, $apPaterno, $apMaterno, $email, $telephone, $extention, $enterprise, $typePeople, $id_user, $id_generalUser;
+    use Actions;
+    public $modalAtention = true, $peoples, $name, $apPaterno, $apMaterno, $email, $telephone, $extention, $enterprise, $typePeople, $id_user, $id_generalUser;
     protected $rules = [
         'name' => 'required',
         'apPaterno' => 'required',
@@ -61,5 +63,23 @@ class Create extends Component
             ],
         );
         $this->clean();
+        $this->dialog()->confirm([
+            'title'       => 'Solicitud generada éxitosamente',
+            'description' => '¿Ya sabes que reportar?',
+            'icon'        => 'success',
+            'accept'      => [
+                'label'  => 'Sí',
+                'method' => 'goToIf',
+
+            ],
+            'reject' => [
+                'label'  => 'No',
+                'method' => 'returnUserNo',
+            ],
+        ]);
+    }
+    public function goToIf()
+    {
+        return redirect()->route('ifReportView');
     }
 }
