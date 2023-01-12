@@ -25,6 +25,7 @@
     <div class="h-screen">
         <x-banner></x-banner>
         @yield('content')
+      
     </div>
     @livewireScripts
 </body>
