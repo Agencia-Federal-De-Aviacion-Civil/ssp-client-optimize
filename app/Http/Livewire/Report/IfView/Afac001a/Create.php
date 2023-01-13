@@ -1,23 +1,20 @@
 <?php
 
-namespace App\Http\Livewire\Report\IfView\Afac001;
+namespace App\Http\Livewire\Report\IfView\Afac001a;
 
 use App\Models\Catalogue\aModel;
 use App\Models\Catalogue\BaseOperation;
 use App\Models\Catalogue\Brand;
 use App\Models\Catalogue\Nacionality;
 use App\Models\Catalogue\Place;
-use App\Models\Report\Afac001;
-use App\Models\User\GeneralUser;
-use Illuminate\Support\Facades\Redirect;
+use App\Models\Report\Afac001a;
 use Livewire\Component;
-use PDF;
 use WireUi\Traits\Actions;
-
+use PDF;
 class Create extends Component
 {
     use Actions;
-    public $afac001id, $idReporter, $id_reporter, $brands, $operationsBase, $nacionalities, $placesDestinations, $models;
+    public $afac001aid, $idReporter, $id_reporter, $brands, $operationsBase, $nacionalities, $placesDestinations, $models;
     public $dateEvent, $hourEvent, $brand_id, $amodel_id, $serialNumber, $licensePlate, $maximumWeight, $airworthinessCertificate, $validity, $owner, $place, $latitude, $longitude,
         $elevation, $crashSite, $aircraftDamage, $place_origen_id, $place_destination_id, $serviceOfDestiny, $dangerousGoods, $type, $base_operation_id, $peopleOnBoard,
         $fatalInjuries, $seriousInjuries, $otherFatalInjuries, $nationality_passengers_id, $commanderName, $nationality_commander_id, $licenseNumber, $category, $validityLicense,
@@ -83,9 +80,8 @@ class Create extends Component
     }
     public function render()
     {
-        return view('livewire.report.if-view.afac001.create')
+        return view('livewire.report.if-view.afac001a.create')
             ->extends('layouts.app')
-            // ->section('title','')
             ->section('content');
     }
     public function updatedBrandId($brand_id)
@@ -105,7 +101,7 @@ class Create extends Component
     public function save()
     {
         $this->validate();
-        $this->afac001id = Afac001::updateOrCreate(
+        $this->afac001aid = Afac001a::updateOrCreate(
             ['id' => $this->id_reporter],
             [
                 'general_user_id' => $this->idReporter,
@@ -176,20 +172,20 @@ class Create extends Component
     }
     public function print()
     {
-        $id = $this->afac001id->id;
-        return redirect()->route('afac001-pdf', compact('id'));
+        $id = $this->afac001aid->id;
+        return redirect()->route('afac001a-pdf', compact('id'));
     }
-    public function PdfAfac001()
+    public function PdfAfac001a()
     {
 
-        $afac001Report = Afac001::with([
-            'afac001GeneralUser', 'afac001Brand', 'afac001Model', 'afac001PlaceOrigen', 'afac001PlaceDestination',
-            'afac001BaseOperation', 'afac001NationalityPassengers', 'afac001NationalityCommander', 'afac001NationalityOficial'
+        $afac001aReport = Afac001a::with([
+            'afac001aGeneralUser', 'afac001aBrand', 'afac001aModel', 'afac001aPlaceOrigen', 'afac001aPlaceDestination',
+            'afac001aBaseOperation', 'afac001aNationalityPassengers', 'afac001aNationalityCommander', 'afac001aNationalityOficial'
         ])->where('id', $_GET['id'])->get();
         // $afac001Report = Afac001::where('id', $_GET['id'])->get();
         // $date = Carbon::parse($afac001Report[0]->dateEvent);
-        $pdf = PDF::loadView('report.ifView.afac001.pdf.afac001-pdf', compact('afac001Report'));
-        return $pdf->download('reporte_No_' . $afac001Report[0]->id . '.pdf');
+        $pdf = PDF::loadView('report.ifView.afac001a.pdf.afac001a-pdf', compact('afac001aReport'));
+        return $pdf->download('reporte_No_' . $afac001aReport[0]->id . '.pdf');
     }
     public function messages()
     {
