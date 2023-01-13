@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index($slug, $id)
+    public function index($slug, $idReporter)
     {
-        $users = GeneralUser::where('id', $id)->get();
+        $users = GeneralUser::where('id', $idReporter)->get();
         $id = $users[0]->id;
-        return view('report.ifView.dashboard', compact('slug','id','users'));
+        return view('report.ifView.dashboard', compact('slug','idReporter','users'));
     }
 }
