@@ -14,7 +14,7 @@ class GeneralUser extends Model
     {
         return 'slug';
     }
-    public function  generalUserAfac001()
+    public function generalUserAfac001()
     {
         return $this->hasMany(Afac001::class);
     }

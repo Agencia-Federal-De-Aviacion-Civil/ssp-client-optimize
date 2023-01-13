@@ -182,9 +182,11 @@ class Create extends Component
     public function downloadPDF()
     {
 
-        // $afac001Report = Afac001::with(['afac1_brand','afac1_amodel','afac1_forigen','afac1_fdestination','afac1_baseo','afac1_nationalpassenger','afac1_nationalcommander','afac1_nationaloficial'])
-        // ->where('id', $_GET['id'])->get();
-        $afac001Report = Afac001::where('id', $_GET['id'])->get();
+        $afac001Report = Afac001::with([
+            'afac001GeneralUser', 'afac001Brand', 'afac001Model', 'afac001PlaceOrigen', 'afac001PlaceDestination',
+            'afac001BaseOperation', 'afac001NationalityPassengers', 'afac001NationalityCommander', 'afac001NationalityOficial'
+        ])->where('id', $_GET['id'])->get();
+        // $afac001Report = Afac001::where('id', $_GET['id'])->get();
         // $date = Carbon::parse($afac001Report[0]->dateEvent);
         $pdf = PDF::loadView('report.ifView.afac001.pdf.afac001-pdf', compact('afac001Report'));
         return $pdf->download('reporte_No_' . $afac001Report[0]->id . '.pdf');

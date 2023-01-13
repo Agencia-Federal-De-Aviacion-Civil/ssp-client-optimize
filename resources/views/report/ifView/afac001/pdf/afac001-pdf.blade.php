@@ -1,1 +1,1 @@
-{{$afac001Report[0]->serialNumber}}
+{{ $afac001Report }}
