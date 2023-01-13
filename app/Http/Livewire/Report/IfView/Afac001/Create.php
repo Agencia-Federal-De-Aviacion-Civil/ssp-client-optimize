@@ -8,11 +8,16 @@ use App\Models\Catalogue\Brand;
 use App\Models\Catalogue\Nacionality;
 use App\Models\Catalogue\Place;
 use App\Models\Report\Afac001;
+use App\Models\User\GeneralUser;
+use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
+use PDF;
+use WireUi\Traits\Actions;
 
 class Create extends Component
 {
-    public $idReporter, $id_reporter, $brands, $operationsBase, $nacionalities, $placesDestinations, $models;
+    use Actions;
+    public $afac001id, $idReporter, $id_reporter, $brands, $operationsBase, $nacionalities, $placesDestinations, $models;
     public $dateEvent, $hourEvent, $brand_id, $amodel_id, $serialNumber, $licensePlate, $maximumWeight, $airworthinessCertificate, $validity, $owner, $place, $latitude, $longitude,
         $elevation, $crashSite, $aircraftDamage, $place_origen_id, $place_destination_id, $serviceOfDestiny, $dangerousGoods, $type, $base_operation_id, $peopleOnBoard,
         $fatalInjuries, $seriousInjuries, $otherFatalInjuries, $nationality_passengers_id, $commanderName, $nationality_commander_id, $licenseNumber, $category, $validityLicense,
@@ -100,7 +105,7 @@ class Create extends Component
     public function save()
     {
         $this->validate();
-        $createAfac001 = Afac001::updateOrCreate(
+        $this->afac001id = Afac001::updateOrCreate(
             ['id' => $this->id_reporter],
             [
                 'general_user_id' => $this->idReporter,
@@ -151,6 +156,38 @@ class Create extends Component
             ]
         );
         $this->clean();
+        $this->takeClass();
+    }
+    public function takeClass()
+    {
+        $this->dialog()->confirm([
+            'title'       => 'REPORTE GENERADO',
+            'description' => '¿DESEAS IMPRIMIR REPORTE?',
+            'icon'        => 'success',
+            'accept'      => [
+                'label'  => 'IMPRIMIR',
+                'method' => 'print',
+            ],
+            'reject' => [
+                'label'  => 'SALIR',
+                'method' => 'cleanInput',
+            ],
+        ]);
+    }
+    public function print()
+    {
+        $id = $this->afac001id->id;
+        return redirect()->route('afac001-pdf', compact('id'));
+    }
+    public function downloadPDF()
+    {
+
+        // $afac001Report = Afac001::with(['afac1_brand','afac1_amodel','afac1_forigen','afac1_fdestination','afac1_baseo','afac1_nationalpassenger','afac1_nationalcommander','afac1_nationaloficial'])
+        // ->where('id', $_GET['id'])->get();
+        $afac001Report = Afac001::where('id', $_GET['id'])->get();
+        // $date = Carbon::parse($afac001Report[0]->dateEvent);
+        $pdf = PDF::loadView('report.ifView.afac001.pdf.afac001-pdf', compact('afac001Report'));
+        return $pdf->download('reporte_No_' . $afac001Report[0]->id . '.pdf');
     }
     public function messages()
     {

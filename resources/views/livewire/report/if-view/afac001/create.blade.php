@@ -1,5 +1,6 @@
 <div>
     <x-notifications position="top-center" />
+    <x-dialog z-index="z-50" blur="md" align="center" />
     <section class="bg-gray-50 dark:bg-gray-900 py-20 sm:py-11">
         <div class="container px-6 py-20 mx-auto content-center">
             <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">AP.1
@@ -126,8 +127,7 @@
                 <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                     <div>
                         <label for="number_serie" class="block text-lg mb-2 dark:text-white">Origen</label>
-                        <x-select class="w-full" placeholder="Selecciona"
-                            wire:model.defer="place_origen_id">
+                        <x-select class="w-full" placeholder="Selecciona" wire:model.defer="place_origen_id">
                             @foreach ($placesDestinations as $placesDestination)
                                 <x-select.option label="{{ $placesDestination->name }}"
                                     value="{{ $placesDestination->id }}" />
@@ -136,8 +136,7 @@
                     </div>
                     <div>
                         <label for="number_serie" class="block text-lg mb-2 dark:text-white">Destino</label>
-                        <x-select class="w-full" placeholder="Selecciona"
-                            wire:model.defer="place_destination_id">
+                        <x-select class="w-full" placeholder="Selecciona" wire:model.defer="place_destination_id">
                             @foreach ($placesDestinations as $placesDestination)
                                 <x-select.option label="{{ $placesDestination->name }}"
                                     value="{{ $placesDestination->id }}" />
