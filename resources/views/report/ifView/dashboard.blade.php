@@ -13,7 +13,7 @@
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
             </div> --}}
                 <div class="py-12 flex flex-wrap">
-                    <a href="{{ route('afac001', ['slug' => $slug, 'id' => $id]) }}" class="">
+                    <a href="{{ route('afac001', ['slug' => $slug, 'idReporter' => $idReporter]) }}" class="">
                         <div
                             class="hover:bg-gray-100 group hover:cursor-pointer hover:scale-110 xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
                             <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">AFAC-001</h2>

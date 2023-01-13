@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\pdfController;
 use App\Http\Controllers\Report\ifReport\afac001Controller;
 use App\Http\Controllers\Report\IfReport\HomeController;
 use App\Http\Livewire\Report\IfView\Afac001\Create;
@@ -21,3 +22,4 @@ Route::get('/', function () {
 });
 Route::get('create/{slug}/{id}', [HomeController::class, 'index'])->name('ifReportView');
 Route::get('create/{slug}/afac001/{idReporter}', Create::class)->name('afac001');
+Route::get('downloadPDF', [Create::class, 'downloadPDF'])->name('afac001-pdf');
