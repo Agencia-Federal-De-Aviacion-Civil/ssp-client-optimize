@@ -14,7 +14,8 @@
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
         "wireui/wireui": "^1.17",
-        "fakerphp/faker": "^1.9.1"
+        "fakerphp/faker": "^1.9.1",
+        "ext-gd": "*"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
