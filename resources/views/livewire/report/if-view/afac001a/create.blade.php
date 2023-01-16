@@ -373,7 +373,7 @@
                 </div>
         </section>
     </section>
-    <footer class="flex flex-col items-center justify-between p-6 bg-white dark:bg-gray-900 sm:flex-row">
+    <footer class="flex flex-col items-center justify-between p-6 bg-gray-100 dark:bg-gray-900 sm:flex-row">
         <a href="#"
             class="text-xl font-bold text-gray-600 transition-colors duration-300 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">Revisión:</a>
         <p class="text-sm text-gray-600 dark:text-gray-300">9ª Edición / Manual del Inspector de Aeronavegabilidad </p>
