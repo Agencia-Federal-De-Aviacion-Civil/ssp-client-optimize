@@ -8,37 +8,33 @@
     <title>AP.1 NOTIFICACIÓN AFAC-001</title>
 </head>
 <style>
-
-    @page {
-        margin: 0cm 0cm;
-    }
-    .bgsize{
-        background-color: transparent;
-        background-image: url("{{public_path('images/Imagen3.jpg')}}");
-        background-position: center;
-        background-repeat: no-repeat; 
-        background-size: 80%;
-    }
-    .namelinea{
-        border-top: 1px solid black;
-        max-width: 60px;
-        margin-left: 8%;
-        margin-top:-1.5%;
-    }
-
-    body{
-        margin-top: 0.3cm;
-        margin-left: 1cm;
-        margin-right: 1cm;
-        margin-bottom: 0.7cm;
-        font-family: 'Montserrat-Light';
-    }
-    table{
+@page {
+    margin: 0cm 0cm;
+}
+.bgsize{
+    background-color: transparent;
+    background-image: url("{{public_path('images/Imagen3.jpg')}}");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: 80%;
+}
+.namelinea{
+    border-top: 1px solid black;
+    max-width: 60px;
+    margin-left: 8%;
+    margin-top:-1.5%;
+}
+body{
+    margin-top: 0.3cm;
+    margin-left: 1cm;
+    margin-right: 1cm;
+    margin-bottom: 0.7cm;
+    font-family: 'Montserrat-Light';
+}
+table{
     table-layout: fixed;
     width: 100%;
-    }
-    
-
+}
 th, td {
     width: 100px;
     word-wrap: break-word;
@@ -90,7 +86,7 @@ th, td {
         </tr>
         <tr>
             <td>marca</td>
-            <td class="ingresar" colspan="3">Pruebas</td>
+            <td class="ingresar" colspan="3">pruebas</td>
             <td>modelo</td>
             <td class="ingresar" colspan="2">Pruebas</td>
             <td  colspan="2">núm. de serie</td>
