@@ -41,7 +41,7 @@
                             </a>
                         </div>
                     </a>
-                    <a href="" class="">
+                    <a href="{{ route('daaia001', ['slug' => $slug, 'idReporter' => $idReporter]) }}" class="">
                         <div
                             class="hover:bg-gray-100 group hover:cursor-pointer hover:scale-110 xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
                             <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">DAAIA-001</h2>
