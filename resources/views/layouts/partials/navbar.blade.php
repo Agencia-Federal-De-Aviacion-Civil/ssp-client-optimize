@@ -20,7 +20,7 @@
                                             aria-describedby="hs-dropdown-item-radio-delete-description" checked>
                                     </div>
                                     <label for="hs-dropdown-item-radio-spanish" class="ml-3.5">
-                              <span class="block text-sm font-semibold text-gray-800 dark:text-gray-300">EspaÃ±ol</span>
+                              <span class="block text-sm font-semibold text-gray-800 dark:text-gray-300">Español</span>
                               {{-- <span id="hs-dropdown-item-radio-delete-description" class="block text-sm text-gray-600 dark:text-gray-500">Notify me when this action happens.</span> --}}
                             </label>
                                 </div>
