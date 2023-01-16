@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AP.1 NOTIFICACIÓN AFAC-001</title>
+    <title>AP.1 NOTIFICACIÓN AFAC-001A</title>
 </head>
 <style>
 @page {
@@ -68,7 +68,7 @@ th, td {
         <h3 style="font-size:17px;text-align:center;">AGENCIA FEDERAL DE AVIACION CIVIL</h3>
     </div>
     <div>
-        <h3 style="font-size:16px;text-align:center;">AP.1 NOTIFICACIÓN AFAC-001</h3>
+        <h3 style="font-size:16px;text-align:center;">AP.1 NOTIFICACIÓN AFAC-001A</h3>
         <h3 style="font-size:16px;text-align:center;">PRIMERA NOTICIA DE ACCIDENTE</h3>
     </div>
     <div style="margin-left:2%;">

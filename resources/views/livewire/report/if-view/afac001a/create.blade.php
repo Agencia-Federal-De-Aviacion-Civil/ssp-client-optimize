@@ -1,8 +1,8 @@
 <div>
     <x-notifications position="top-center" />
     <x-dialog z-index="z-50" blur="md" align="center" />
-    <section class="bg-gray-50 dark:bg-gray-900 py-20 sm:py-11">
-        <div class="container px-6 py-20 mx-auto content-center">
+    <section class="bg-gray-50 dark:bg-gray-900 py-12 sm:py-11">
+        <div class="container px-6 py-6 mx-auto content-center">
             <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">AP.1
                 NOTIFICACIÓN AFAC-001A</h1>
             <div class="flex justify-center mx-auto mt-6">
@@ -357,11 +357,11 @@
                     </div>
                 </div>
                 <div class="mb-20 py-4 text-right">
-                    <x-button wire:click.prevent="save" icon="document-download" positive label="GENERAR REPORTE" />
+                    <x-button wire:click.prevent="save" icon="document-download" blue label="GENERAR REPORTE" />
                     <div wire:loading.delay wire:target="save">
                         <div
-                            class="flex justify-center bg-emerald-900 z-40 h-full w-full fixed top-0 left-0 items-center opacity-75">
-                            <div style="color: #008897" class="la-ball-circus la-2x">
+                        class="flex justify-center bg-gray-500 z-40 h-full w-full fixed top-0 left-0 items-center opacity-75">
+                            <div style="color: #150495" class="la-ball-circus la-2x">
                                 <div></div>
                                 <div></div>
                                 <div></div>
