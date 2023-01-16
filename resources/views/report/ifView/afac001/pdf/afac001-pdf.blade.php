@@ -253,5 +253,3 @@ th, td {
     </table>
 </body>
 </html>
-
-
