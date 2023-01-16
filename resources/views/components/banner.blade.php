@@ -14,7 +14,7 @@
                             <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/background_with_sub_text-svg3.svg"
                                 alt="date">
                         </div>
-                        <span tabindex="0" class="uppercase focus:outline-none">{{$current}}</span>
+                        {{-- <span tabindex="0" class="uppercase focus:outline-none">{{$current}}</span> --}}
                     </li>
                 </ul>
             </div>
