@@ -31,13 +31,13 @@
         margin-left: 1cm;
         margin-right: 1cm;
         margin-bottom: 0.7cm;
-        font-family: 'Montserrat, sans-serif';
+        font-family: 'Montserrat-Light';
     }
     table{
     table-layout: fixed;
-       width: 100%;
-
-}
+    width: 100%;
+    }
+    
 
 th, td {
     width: 100px;
@@ -51,6 +51,17 @@ th, td {
     border-bottom: 1px solid;
     text-align: left;
 }
+.textcenter{
+    text-align: center;
+}
+.bajo{
+    font-size:12px;
+    padding-left:10%;
+    padding-top:-1%;
+    color:gray;
+    margin: 1 0 0 30;
+    padding: 1 0 0 30;
+}
     
 </style>
 <body class="bgsize">
@@ -58,12 +69,13 @@ th, td {
         <img src="{{public_path('images/headerOrigen.jpg')}}" align="center" style="padding-top:5%" width="670" height="65" alt="">
     </div>
     <div>
-        <h3 style="font-size:18px;text-align:center;font-family: Montserrat-Light">AGENCIA FEDERAL DE AVIACION CIVIL</h3>
+        <h3 style="font-size:17px;text-align:center;">AGENCIA FEDERAL DE AVIACION CIVIL</h3>
     </div>
     <div>
-        <h3 style="font-size:18px;text-align:center;font-family: Montserrat-Light">AP.1 NOTIFICACIÓN AFAC-001</h3>
-        <h3 style="font-size:18px;text-align:center;font-family: Montserrat-Light">PRIMERA NOTICIA DE ACCIDENTE</h3>
+        <h3 style="font-size:16px;text-align:center;">AP.1 NOTIFICACIÓN AFAC-001</h3>
+        <h3 style="font-size:16px;text-align:center;">PRIMERA NOTICIA DE ACCIDENTE</h3>
     </div>
+    <div style="margin-left:2%;">
     <table align="center" width="100%"  style="font-size:13px">
         <tr>
             <td>El día</td>
@@ -120,11 +132,123 @@ th, td {
         </tr>
         <tr>
             <td colspan="3">Daños a la aeronave</td>
-            <td class="" colspan="9">Pruebas</td>
+            <td class="ingresarleft" colspan="9">Pruebas</td>
         </tr>
         <tr>
-            <td colspan="3">Daños a la aeronave</td>
-            <td class="" colspan="9">Pruebas</td>
+            <td colspan="3">Origen y destino del vuelo</td>
+            <td class="ingresarleft" colspan="9">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="4">Servicio al que está destinada</td>
+            <td class="ingresarleft" colspan="8">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="4">Mercancías peligrosas a bordo y tipo</td>
+            <td class="ingresarleft" colspan="8">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="4">Base de operación de la aeronave</td>
+            <td class="ingresarleft" colspan="8">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="4">Núm. personas a bordo (PAB)</td>
+            <td class="ingresar" colspan="2">Pruebas</td>
+            <td colspan="4">Núm. de PAB lesiones fatales</td>
+            <td class="ingresar" colspan="2">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="4">Núm. de PAB con lesiones graves</td>
+            <td class="ingresar" colspan="2">Pruebas</td>
+            <td colspan="4">Otras lesiones fatales o graves</td>
+            <td class="ingresar" colspan="2">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="3">Nacionalidad de pasajeros (s)</td>
+            <td class="ingresarleft" colspan="9">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="3">Nombre del comandante</td>
+            <td class="ingresarleft" colspan="5">Pruebas</td>
+            <td colspan="2">nacionalidad</td>
+            <td class="ingresar" colspan="2">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="2">Licencia No.</td>
+            <td class="ingresar" colspan="2">Pruebas</td>
+            <td>categoría</td>
+            <td class="ingresar" colspan="4">Pruebas</td>
+            <td>vigencia</td>
+           <td class="ingresar" colspan="2">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="3">Nombre del primer oficial</td>
+            <td class="ingresarleft" colspan="5">Pruebas</td>
+            <td colspan="2">nacionalidad</td>
+            <td class="ingresar" colspan="2">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="2">Licencia No.</td>
+            <td class="ingresar" colspan="2">Pruebas</td>
+            <td>categoría</td>
+            <td class="ingresar" colspan="4">Pruebas</td>
+            <td>vigencia</td>
+           <td class="ingresar" colspan="2">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="5">Lesiones comandante/copiloto</td>
+            <td class="ingresarleft" colspan="7">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="5">Se activo el Equipo localizador de emergencia</td>
+            <td>SI</td>
+            <td class="ingresarleft" colspan="3">Pruebas</td>
+            <td>NO</td>
+            <td class="ingresarleft" colspan="3">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="5">Se realizaron labores de búsqueda y salvamento</td>
+            <td>SI</td>
+            <td class="ingresarleft" colspan="3">Pruebas</td>
+            <td>NO</td>
+            <td class="ingresarleft" colspan="3">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="5">Descripción de los hechos</td>
+        </tr>
+        <tr>
+            <td class="ingresarleft" colspan="12">Pruebas</td>
+        </tr>
+        <tr>
+            <td colspan="4">Investigador a cargo</td>
+            <td class="ingresarleft" colspan="8">Pruebas</td>
+        </tr>
+        <tr>
+            <td>Teléfono:</td>
+            <td class="ingresar" colspan="5">Pruebas</td>
+            <td>correo:</td>
+            <td class="ingresar" colspan="5">Pruebas</td>
+        </tr>     
+    </table>
+</div>
+    <div style="margin-left:5%;"></div>
+        <p class="" style="font-size:14px;padding-left:2%;padding-top:1%"><b>Atentamente</b></p>
+        <p class="" style="font-size:14px;padding-left:2%;padding-top:0%"><b>El Investigador a cargo</b</p>
+        <p class="" style="font-size:14px;padding-left:2%;padding-top:-2%">Fecha y firma</p>
+        <p class="" class="bajo">Dirección Ejecutiva de Seguridad Aérea</p>
+        <p class="" class="bajo">Dirección Ejecutiva de Aviación</p>
+        <p class="" class="bajo">Dirección Ejecutiva de Transporte y Control Aeronáutico</p>
+        <p class="" class="bajo">Dirección de Análisis de Accidentes e Incidentes de Aviación</p>
+        <p class="" class="bajo">Subdirección de Investigación de Accidentes y Exámenes Médicos en Operación. DGPMPT</p>
+    </div>
+    <table align="center" width="100%"  style="font-size:12px;padding-top:2%">
+        <tr>
+            <td><b>Revisión</b></td>
+            <td><b>9ª Edición</b></td>
+            <td colspan="3"><b>Manual del Inspector de Aeronavegabilidad</b></td>
+            <td><b>Página: 82de 149</b></td>
+        </tr>
+        <tr>
+            <td class="textcenter" colspan="7"><b>14 de julio de 2022</b></td>
         </tr>
     </table>
 </body>
