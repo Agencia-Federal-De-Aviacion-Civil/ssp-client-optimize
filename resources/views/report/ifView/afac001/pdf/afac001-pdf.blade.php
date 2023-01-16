@@ -111,7 +111,7 @@ th, td {
             <td class="ingresar" colspan="2">Pruebas</td>
             <td>Longitud</td>
             <td class="ingresar" colspan="2">Pruebas</td>
-            <td style="font-size:20px">Elevación</td>
+            <td style="font-size:11px">Elevación</td>
             <td class="ingresar" colspan="2">Pruebas</td>
         </tr>
         <tr>
