@@ -63,13 +63,13 @@
                 <x-button label="GUARDAR" blue right-icon="arrow-circle-right" wire:click.prevent="save()" />
                 <div wire:loading.delay wire:target="save">
                     <div
-                        class="flex justify-center bg-emerald-900 z-40 h-full w-full fixed top-0 left-0 items-center opacity-75">
-                        <div style="color: #008897" class="la-ball-circus la-2x">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                        class="flex justify-center bg-gray-500 z-40 h-full w-full fixed top-0 left-0 items-center opacity-75">
+                        <div style="color: #150495" class="la-ball-circus la-2x">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                         </div>
                     </div>
                 </div>
