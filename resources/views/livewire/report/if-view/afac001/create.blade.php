@@ -34,7 +34,7 @@
             <div class="py-2 px-4 grid grid-cols-1 gap-4 mt-0 sm:grid-cols-3">
                 <div>
                     <label for="input-label" class="block text-lg mb-2 dark:text-white">Marca</label>
-                    <x-select class="w-full" placeholder="Selecciona" wire:model.defer="brand_id">
+                    <x-select class="w-full" placeholder="Selecciona" wire:model="brand_id">
                         @foreach ($brands as $brand)
                             <x-select.option label="{{ $brand->name }}" value="{{ $brand->id }}" />
                         @endforeach
