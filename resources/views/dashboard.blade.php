@@ -3,7 +3,7 @@
 @section('content')
    {{-- @livewire('dashboard.modal.privacity') --}}
     {{-- <section class="mt-16 bg-gray-50"> --}}
-        <div class="py-12">
+        <div class="py-12 bg-gray-50">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     @livewire('dashboard.register.create')
