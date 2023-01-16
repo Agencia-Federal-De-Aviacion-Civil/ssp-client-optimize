@@ -1,8 +1,8 @@
 <div>
     <x-notifications position="top-center" />
     <x-dialog z-index="z-50" blur="md" align="center" />
-    <section class="bg-gray-50 dark:bg-gray-900 py-20 sm:py-11">
-        <div class="container px-6 py-20 mx-auto content-center">
+    <section class="bg-gray-50 dark:bg-gray-900 py-12 sm:py-11">
+        <div class="container px-6 py-6 mx-auto content-center">
             <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">AP.1
                 NOTIFICACIÓN AFAC-001</h1>
             <div class="flex justify-center mx-auto mt-6">
@@ -34,7 +34,7 @@
             <div class="py-2 px-4 grid grid-cols-1 gap-4 mt-0 sm:grid-cols-3">
                 <div>
                     <label for="input-label" class="block text-lg mb-2 dark:text-white">Marca</label>
-                    <x-select class="w-full" placeholder="Selecciona" wire:model="brand_id">
+                    <x-select class="w-full" placeholder="Selecciona" wire:model.defer="brand_id">
                         @foreach ($brands as $brand)
                             <x-select.option label="{{ $brand->name }}" value="{{ $brand->id }}" />
                         @endforeach
@@ -43,7 +43,7 @@
                 @if (!is_null($models))
                     <div>
                         <label for="input-label" class="block text-lg mb-2 dark:text-white">Modelo</label>
-                        <x-native-select class="w-full" placeholder="Selecciona" wire:model="amodel_id">
+                        <x-native-select class="w-full" placeholder="Selecciona" wire:model.defer="amodel_id">
                             <option value="">SELECCIONE...</option>
                             @foreach ($models as $model)
                                 <option value="{{ $model->id }}">{{ $model->name }}</option>
@@ -108,7 +108,7 @@
                         <x-input class="mt-1 py-2 w-full" wire:model.defer="elevation" placeholder="INGRESE..." />
                     </div>
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                     <div>
                         <label for="number_serie" class="block text-lg mb-2 dark:text-white">Características físicas
                             del
@@ -116,7 +116,7 @@
                         <x-input class="mt-1 py-2 w-full" wire:model.defer="crashSite" placeholder="INGRESE..." />
                     </div>
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                     <div>
                         <label for="number_serie" class="block text-lg mb-2 dark:text-white">Daños a la
                             aeronave:</label>
@@ -124,7 +124,7 @@
                             placeholder="INGRESE..." />
                     </div>
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                     <div>
                         <label for="number_serie" class="block text-lg mb-2 dark:text-white">Origen</label>
                         <x-select class="w-full" placeholder="Selecciona" wire:model.defer="place_origen_id">
@@ -144,7 +144,7 @@
                         </x-select>
                     </div>
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                     <div>
                         <label for="number_serie" class="block text-lg mb-2 dark:text-white">Servicio al que está
                             destinada</label>
@@ -152,7 +152,7 @@
                             placeholder="INGRESE..." />
                     </div>
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                     <div>
                         <label for="number_serie" class="block text-lg mb-2 dark:text-white">Mercancías
                             peligrosas</label>
@@ -164,7 +164,7 @@
                         <x-input class="mt-1 py-2 w-full" wire:model.defer="type" placeholder="INGRESE..." />
                     </div>
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                     <div>
                         <label for="base_operation_id" class="block text-lg mb-2 dark:text-white">Base de
                             operaciónes</label>
@@ -178,7 +178,7 @@
                 </div>
                 <div class="h-1 bg-gray-200 rounded overflow-hidden">
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                     <div>
                         <label for="peopleOnBoard" class="block text-lg mb-2 dark:text-white">Núm. personas a bordo
                             (PAB)</label>
@@ -192,7 +192,7 @@
                             placeholder="INGRESE..." />
                     </div>
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                     <div>
                         <label for="seriousInjuries" class="block text-lg mb-2 dark:text-white">Núm. de PAB con
                             lesiones
@@ -208,7 +208,7 @@
                             placeholder="INGRESE..." />
                     </div>
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                     <div>
                         <label for="nationality_passengers_id" class="block text-lg mb-2 dark:text-white">Nacionalidad
                             de
@@ -223,7 +223,7 @@
                 </div>
                 <div class="h-1 bg-gray-200 rounded overflow-hidden">
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                     <div>
                         <label for="commanderName" class="block text-lg mb-2 dark:text-white">Nombre del
                             comandante</label>
@@ -241,7 +241,7 @@
                         </x-select>
                     </div>
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
                     <div>
                         <label for="commanderName" class="block text-lg mb-2 dark:text-white">Licencia No:</label>
                         <x-input class="mt-1 py-2 w-full" wire:model.defer="licenseNumber"
@@ -260,7 +260,7 @@
                 </div>
                 <div class="h-1 bg-gray-200 rounded overflow-hidden">
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                     <div>
                         <label for="commanderName" class="block text-lg mb-2 dark:text-white">Nombre del primer
                             oficial</label>
@@ -276,7 +276,7 @@
                         </x-select>
                     </div>
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
                     <div>
                         <label for="commanderName" class="block text-lg mb-2 dark:text-white">Licencia No:</label>
                         <x-input class="mt-1 py-2 w-full" wire:model.defer="licenseNumberOficial"
@@ -295,7 +295,7 @@
                 </div>
                 <div class="h-1 bg-gray-200 rounded overflow-hidden">
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                     <div>
                         <label for="copilotInjuries" class="block text-lg mb-2 dark:text-white">Lesiones
                             comandante/copiloto:</label>
@@ -303,7 +303,7 @@
                             placeholder="INGRESE..." />
                     </div>
                 </div>
-                <div class="px-4 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-6">
+                <div class="px-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-6">
                     <div class="md:flex col-span-3">
                         <p class="text-lg py-2 whitespace-no-wrap">Se activo el Equipo localizador de emergencia:</p>
                     </div>
@@ -316,7 +316,7 @@
                             value="NO" wire:model.defer="emergencyTeam" />
                     </div>
                 </div>
-                <div class="px-4 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-6">
+                <div class="px-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-6">
                     <div class="md:flex col-span-3">
                         <p class="text-lg py-2 whitespace-no-wrap">Se realizaron labores de búsqueda y salvamento:</p>
                     </div>
@@ -329,7 +329,7 @@
                             wire:model.defer="searchWork" />
                     </div>
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                     <div>
                         <label for="descriptionFacts" class="block text-lg mb-2 dark:text-white">Descripción de los
                             hechos</label>
@@ -337,7 +337,7 @@
                             placeholder="INGRESA LA DESCRIPCIÓN" />
                     </div>
                 </div>
-                <div class="px-4 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
+                <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                     <div>
                         <label for="investigatorCharge" class="block text-lg mb-2 dark:text-white">Investigador a
                             cargo:</label>
@@ -345,7 +345,7 @@
                             placeholder="Ingresar..." />
                     </div>
                 </div>
-                <div class="px-4 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
+                <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                     <div>
                         <label for="telephone" class="block text-lg mb-2 dark:text-white">Teléfono</label>
                         <x-inputs.maskable wire:model.defer="telephone" class="mt-1 w-full"
@@ -353,15 +353,15 @@
                     </div>
                     <div>
                         <label for="telephone" class="block text-lg mb-2 dark:text-white">Correo</label>
-                        <x-input class="mt-1 py-2 w-full" wire:model="email" placeholder="correo" />
+                        <x-input class="mt-1 py-2 w-full" wire:model.defer="email" placeholder="correo" />
                     </div>
                 </div>
                 <div class="mb-20 py-4 text-right">
-                    <x-button wire:click.prevent="save" icon="document-download" positive label="GENERAR REPORTE" />
+                    <x-button wire:click.prevent="save" icon="document-download" blue label="GENERAR REPORTE" />
                     <div wire:loading.delay wire:target="save">
                         <div
-                            class="flex justify-center bg-emerald-900 z-40 h-full w-full fixed top-0 left-0 items-center opacity-75">
-                            <div style="color: #008897" class="la-ball-circus la-2x">
+                            class="flex justify-center bg-gray-500 z-40 h-full w-full fixed top-0 left-0 items-center opacity-75">
+                            <div style="color: #150495" class="la-ball-circus la-2x">
                                 <div></div>
                                 <div></div>
                                 <div></div>
@@ -373,7 +373,7 @@
                 </div>
         </section>
     </section>
-    <footer class="flex flex-col items-center justify-between p-6 bg-white dark:bg-gray-900 sm:flex-row">
+    <footer class="flex flex-col items-center justify-between p-4 bg-gray-100 dark:bg-gray-900 sm:flex-row">
         <a href="#"
             class="text-xl font-bold text-gray-600 transition-colors duration-300 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">Revisión:</a>
         <p class="text-sm text-gray-600 dark:text-gray-300">9ª Edición / Manual del Inspector de Aeronavegabilidad </p>
