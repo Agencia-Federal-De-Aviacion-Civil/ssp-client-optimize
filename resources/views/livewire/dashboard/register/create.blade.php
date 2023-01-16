@@ -20,7 +20,7 @@
             </x-modal>
         </div>
     </div>
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <div class="bg-white relative overflow-x-auto shadow-md sm:rounded-lg">
         <div class="p-4">
             <div class="mt-10 grid xl:grid-cols-3 xl:gap-6">
                 <div class="mt-1 relative z-0 w-full group">
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="mt-12 mb-12 text-right">
-                <x-button label="GUARDAR" primary right-icon="arrow-circle-right" wire:click.prevent="save()" />
+                <x-button label="GUARDAR" blue right-icon="arrow-circle-right" wire:click.prevent="save()" />
                 <div wire:loading.delay wire:target="save">
                     <div
                         class="flex justify-center bg-emerald-900 z-40 h-full w-full fixed top-0 left-0 items-center opacity-75">
