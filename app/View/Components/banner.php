@@ -17,7 +17,8 @@ class banner extends Component
     public function render()
     {
         Date::setlocale('es');
-        $current = Date::now()->format('l j F Y');
-        return view('components.banner', compact('current'));
+        // $current = Date::now()->format('l j F Y');
+        $current = 'HOLA MUNDO';
+        return view('components.banner', $current);
     }
 }
