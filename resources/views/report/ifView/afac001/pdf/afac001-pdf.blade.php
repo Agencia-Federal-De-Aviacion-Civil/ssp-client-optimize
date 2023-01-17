@@ -75,16 +75,10 @@ th, td {
     <div style="margin-left:2%;">
     <table align="center" width="100%"  style="font-size:13px">
         <tr>
-
-
-            
-            
-            
-
             <td>El día</td>
             <td class="ingresar">{{ $date->format('d') }}</td>
             <td>de</td>
-            <td class="ingresar">{{ $date->format('l') }}</td>
+            <td class="ingresar">{{ $mes }}</td>
             <td>de</td>
             <td class="ingresar">{{ $date->format('Y') }}</td>
             <td>a las</td>

@@ -188,8 +188,14 @@ class Create extends Component
             'afac001BaseOperation', 'afac001NationalityPassengers', 'afac001NationalityCommander', 'afac001NationalityOficial'
         ])->where('id', $_GET['id'])->get();
         // $afac001Report = Afac001::where('id', $_GET['id'])->get();
+        
+ 
+
+        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
         $date = Carbon::parse($afac001Report[0]->dateEvent);
-        $pdf = PDF::loadView('report.ifView.afac001.pdf.afac001-pdf', compact('afac001Report','date'));
+        $mes = $meses[($date->format('n')) - 1];
+        $pdf = PDF::loadView('report.ifView.afac001.pdf.afac001-pdf', compact('afac001Report','date','mes'));
+ 
         return $pdf->download('reporte_No_' . $afac001Report[0]->id . '.pdf');
     }
     public function messages()
