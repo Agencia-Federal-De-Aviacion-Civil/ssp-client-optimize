@@ -9,6 +9,7 @@ use App\Models\Catalogue\Nacionality;
 use App\Models\Catalogue\Place;
 use App\Models\Report\Afac001;
 use App\Models\User\GeneralUser;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 use PDF;
@@ -155,7 +156,7 @@ class Create extends Component
                 'email' => $this->email
             ]
         );
-        $this->clean();
+        // $this->clean();
         $this->takeClass();
     }
     public function takeClass()
@@ -187,8 +188,8 @@ class Create extends Component
             'afac001BaseOperation', 'afac001NationalityPassengers', 'afac001NationalityCommander', 'afac001NationalityOficial'
         ])->where('id', $_GET['id'])->get();
         // $afac001Report = Afac001::where('id', $_GET['id'])->get();
-        // $date = Carbon::parse($afac001Report[0]->dateEvent);
-        $pdf = PDF::loadView('report.ifView.afac001.pdf.afac001-pdf', compact('afac001Report'));
+        $date = Carbon::parse($afac001Report[0]->dateEvent);
+        $pdf = PDF::loadView('report.ifView.afac001.pdf.afac001-pdf', compact('afac001Report','date'));
         return $pdf->download('reporte_No_' . $afac001Report[0]->id . '.pdf');
     }
     public function messages()

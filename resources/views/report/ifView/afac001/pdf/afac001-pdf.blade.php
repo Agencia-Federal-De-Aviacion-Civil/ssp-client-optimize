@@ -75,155 +75,175 @@ th, td {
     <div style="margin-left:2%;">
     <table align="center" width="100%"  style="font-size:13px">
         <tr>
+
+
+            
+            
+            
+
             <td>El día</td>
-            <td class="ingresar">16</td>
+            <td class="ingresar">{{ $date->format('d') }}</td>
             <td>de</td>
-            <td class="ingresar">Enero</td>
+            <td class="ingresar">{{ $date->format('l') }}</td>
             <td>de</td>
-            <td class="ingresar">2022</td>
+            <td class="ingresar">{{ $date->format('Y') }}</td>
             <td>a las</td>
-            <td class="ingresar">12:44</td>
+            <td class="ingresar">{{ $afac001Report[0]->hourEvent }}</td>
             <td colspan="4">hrs lcl, se accidentó la aeronave</td>
         </tr>
         <tr>
             <td>marca</td>
-            <td class="ingresar" colspan="3">pruebas</td>
+            <td class="ingresar" colspan="3">{{$afac001Report[0]->afac001Brand->name}}</td>
             <td>modelo</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{$afac001Report[0]->afac001Model->name}}</td>
             <td  colspan="2">núm. de serie</td>
-           <td class="ingresar" colspan="3">Pruebas</td>
+           <td class="ingresar" colspan="3">{{$afac001Report[0]->serialNumber}}</td>
         </tr>
         <tr>
             <td colspan="1">Matricula</td>
-            <td class="ingresar" colspan="4">Pruebas</td>
+            <td class="ingresar" colspan="4">{{$afac001Report[0]->licensePlate}}</td>
             <td colspan="3">peso maximo de despegue</td>
-            <td class="ingresar" colspan="3">Pruebas</td>
+            <td class="ingresar" colspan="3">{{$afac001Report[0]->maximumWeight}}</td>
             <td>Kgs</td>
         </tr>
         <tr>
             <td colspan="5">certificado de aeronavegabilidad núm.</td>
-            <td class="ingresar" colspan="3">Pruebas</td>
+            <td class="ingresar" colspan="3">{{$afac001Report[0]->airworthinessCertificate}}</td>
             <td colspan="2">Vigente al:</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{$afac001Report[0]->validity}}</td>
         </tr>
         <tr>
             <td colspan="2">Propietario:</td>
-            <td class="ingresarleft" colspan="10">Pruebas</td>
+            <td class="ingresarleft" colspan="10">{{$afac001Report[0]->owner}}</td>
         </tr>
         <tr>
             <td colspan="2">En el lugar:</td>
-            <td class="ingresarleft" colspan="10">Pruebas</td>
+            <td class="ingresarleft" colspan="10">{{$afac001Report[0]->place}}</td>
         </tr>
         <tr>
             <td colspan="3">Coordenadas geográficas:</td>
             <td>Latitud</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{$afac001Report[0]->latitude}}</td>
             <td>Longitud</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{$afac001Report[0]->longitude}}</td>
             <td style="font-size:11px">Elevación</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{$afac001Report[0]->elevation}}</td>
         </tr>
         <tr>
             <td colspan="5">Características físicas del sitio del accidente:</td>
-            <td class="ingresarleft" colspan="7">Pruebas</td>
+            <td class="ingresarleft" colspan="7">{{$afac001Report[0]->crashSite}}</td>
         </tr>
         <tr>
             <td colspan="3">Daños a la aeronave</td>
-            <td class="ingresarleft" colspan="9">Pruebas</td>
+            <td class="ingresarleft" colspan="9">{{$afac001Report[0]->aircraftDamage}}</td>
         </tr>
         <tr>
             <td colspan="3">Origen y destino del vuelo</td>
-            <td class="ingresarleft" colspan="9">Pruebas</td>
+            <td class="ingresarleft" colspan="9">{{$afac001Report[0]->afac001PlaceOrigen->name}} y {{$afac001Report[0]->afac001PlaceDestination->name}}</td>
         </tr>
         <tr>
             <td colspan="4">Servicio al que está destinada</td>
-            <td class="ingresarleft" colspan="8">Pruebas</td>
+            <td class="ingresarleft" colspan="8">{{$afac001Report[0]->serviceOfDestiny}}</td>
         </tr>
         <tr>
             <td colspan="4">Mercancías peligrosas a bordo y tipo</td>
-            <td class="ingresarleft" colspan="8">Pruebas</td>
+            <td class="ingresarleft" colspan="8">{{$afac001Report[0]->dangerousGoods}}</td>
         </tr>
         <tr>
             <td colspan="4">Base de operación de la aeronave</td>
-            <td class="ingresarleft" colspan="8">Pruebas</td>
+            <td class="ingresarleft" colspan="8">{{$afac001Report[0]->afac001BaseOperation->name}}</td>
         </tr>
         <tr>
             <td colspan="4">Núm. personas a bordo (PAB)</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{ $afac001Report[0]->peopleOnBoard}}</td>
             <td colspan="4">Núm. de PAB lesiones fatales</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{$afac001Report[0]->fatalInjuries}}</td>
         </tr>
         <tr>
             <td colspan="4">Núm. de PAB con lesiones graves</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{$afac001Report[0]->seriousInjuries}}</td>
             <td colspan="4">Otras lesiones fatales o graves</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{$afac001Report[0]->otherFatalInjuries}}</td>
         </tr>
         <tr>
             <td colspan="3">Nacionalidad de pasajeros (s)</td>
-            <td class="ingresarleft" colspan="9">Pruebas</td>
+            <td class="ingresarleft" colspan="9">{{$afac001Report[0]->afac001NationalityPassengers->name}}</td>
         </tr>
         <tr>
             <td colspan="3">Nombre del comandante</td>
-            <td class="ingresarleft" colspan="5">Pruebas</td>
+            <td class="ingresarleft" colspan="5">{{$afac001Report[0]->commanderName}}</td>
             <td colspan="2">nacionalidad</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{$afac001Report[0]->afac001NationalityCommander->name}}</td>
         </tr>
         <tr>
             <td colspan="2">Licencia No.</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{$afac001Report[0]->licenseNumber}}</td>
             <td>categoría</td>
-            <td class="ingresar" colspan="4">Pruebas</td>
+            <td class="ingresar" colspan="4">{{$afac001Report[0]->category}}</td>
             <td>vigencia</td>
-           <td class="ingresar" colspan="2">Pruebas</td>
+           <td class="ingresar" colspan="2">{{$afac001Report[0]->validityLicense}}</td>
         </tr>
         <tr>
             <td colspan="3">Nombre del primer oficial</td>
-            <td class="ingresarleft" colspan="5">Pruebas</td>
+            <td class="ingresarleft" colspan="5">{{$afac001Report[0]->oficialName}}</td>
             <td colspan="2">nacionalidad</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{$afac001Report[0]->afac001NationalityOficial->name}}</td>
         </tr>
         <tr>
             <td colspan="2">Licencia No.</td>
-            <td class="ingresar" colspan="2">Pruebas</td>
+            <td class="ingresar" colspan="2">{{$afac001Report[0]->licenseNumberOficial}}</td>
             <td>categoría</td>
-            <td class="ingresar" colspan="4">Pruebas</td>
+            <td class="ingresar" colspan="4">{{$afac001Report[0]->categoryOficial}}</td>
             <td>vigencia</td>
-           <td class="ingresar" colspan="2">Pruebas</td>
+           <td class="ingresar" colspan="2">{{$afac001Report[0]->validityLicenseOficial}}</td>
         </tr>
         <tr>
             <td colspan="5">Lesiones comandante/copiloto</td>
-            <td class="ingresarleft" colspan="7">Pruebas</td>
+            <td class="ingresarleft" colspan="7">{{$afac001Report[0]->copilotInjuries}}</td>
         </tr>
         <tr>
             <td colspan="5">Se activo el Equipo localizador de emergencia</td>
+            @if($afac001Report[0]->emergencyTeam=='SI')
             <td>SI</td>
-            <td class="ingresarleft" colspan="3">Pruebas</td>
+            <td class="ingresarleft" colspan="3">X</td>
             <td>NO</td>
-            <td class="ingresarleft" colspan="3">Pruebas</td>
+            <td class="ingresarleft" colspan="3"></td>
+            @else
+            <td>SI</td>
+            <td class="ingresarleft" colspan="3"></td>
+            <td>NO</td>
+            <td class="ingresarleft" colspan="3">X</td>
+            @endif
         </tr>
         <tr>
             <td colspan="5">Se realizaron labores de búsqueda y salvamento</td>
+            @if($afac001Report[0]->searchWork=='SI')
             <td>SI</td>
-            <td class="ingresarleft" colspan="3">Pruebas</td>
+            <td class="ingresarleft" colspan="3">X</td>
             <td>NO</td>
-            <td class="ingresarleft" colspan="3">Pruebas</td>
+            <td class="ingresarleft" colspan="3"></td>            
+            @else
+            <td>SI</td>
+            <td class="ingresarleft" colspan="3"></td>
+            <td>NO</td>
+            <td class="ingresarleft" colspan="3">X</td>
+            @endif
         </tr>
         <tr>
-            <td colspan="5">Descripción de los hechos</td>
+            <td colspan="5">Descripción de los hechos:</td>
         </tr>
         <tr>
-            <td class="ingresarleft" colspan="12">Pruebas</td>
+            <td class="ingresarleft" colspan="12">{{$afac001Report[0]->descriptionFacts}}</td>
         </tr>
         <tr>
-            <td colspan="4">Investigador a cargo</td>
-            <td class="ingresarleft" colspan="8">Pruebas</td>
+            <td colspan="4">Investigador a cargo:</td>
+            <td class="ingresarleft" colspan="8">{{$afac001Report[0]->investigatorCharge}}</td>
         </tr>
         <tr>
             <td>Teléfono:</td>
-            <td class="ingresar" colspan="5">Pruebas</td>
+            <td class="ingresar" colspan="5">{{$afac001Report[0]->telephone}}</td>
             <td>correo:</td>
-            <td class="ingresar" colspan="5">Pruebas</td>
+            <td class="ingresar" colspan="5">{{$afac001Report[0]->email}}</td>
         </tr>     
     </table>
 </div>
