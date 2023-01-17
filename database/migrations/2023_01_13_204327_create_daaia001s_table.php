@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('daaia001s', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('report')->nullable();
+            // $table->unsignedBigInteger('report')->nullable();
+            $table->unsignedBigInteger('general_user_id')->nullable();
+            $table->foreign('general_user_id')->references('id')->on('general_users')->onDelete('set null');
             $table->string('exactPlace');
             $table->unsignedBigInteger('state_id')->nullable();
             $table->foreign('state_id')->references('id')->on('states')->onDelete('set null');
@@ -68,7 +70,36 @@ return new class extends Migration
             $table->string('eltManufacturer');
             $table->string('eltModel');
             $table->string('eltSerial');
-            $table->string('eltBattery');
+            $table->string('eltBattery');            
+            $table->string('engineType');
+            $table->string('reciprocatingSystem');
+            $table->string('makerPropeller');
+            $table->string('modelPropeller');
+            $table->string('pitchPropeller');
+            $table->string('manufacturerEngine');
+            $table->string('modelEngine');
+            $table->string('powerEngine');
+            $table->text('engineSerie1');
+            $table->text('manufacturingDate1');
+            $table->text('totalTime1');
+            $table->text('lastIspection1');
+            $table->text('lastRrepair1');
+            $table->text('engineSerie2');
+            $table->text('manufacturingDate2');
+            $table->text('totalTime2');
+            $table->text('lastIspection2');
+            $table->text('lastRrepair2');
+            $table->text('engineSerie3');
+            $table->text('manufacturingDate3');
+            $table->text('totalTime3');
+            $table->text('lastIspection3');
+            $table->text('lastRrepair3');
+            $table->text('engineSerie4');
+            $table->text('manufacturingDate4');
+            $table->text('totalTime4');
+            $table->text('lastIspection4');
+            $table->text('lastRrepair4');
+            $table->text('copyRevalidation');
             $table->timestamps();
         });
     }

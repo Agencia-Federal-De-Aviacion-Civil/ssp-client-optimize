@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Daaia001 extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
 }
