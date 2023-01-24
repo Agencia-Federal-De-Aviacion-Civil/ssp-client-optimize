@@ -6,6 +6,7 @@ use App\Models\Catalogue\Municipal;
 use App\Models\Catalogue\State;
 use App\Models\Report\Daaia001;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Create extends Component
 {
@@ -21,6 +22,7 @@ class Create extends Component
     $lastRrepair4,$copyRevalidation;        
     public $states,$municipals;
     
+    use WithFileUploads;
     public function rules()
     {
         return [
@@ -82,7 +84,8 @@ class Create extends Component
             'pitchPropeller' => 'required',
             'manufacturerEngine' => 'required',
             'modelEngine' => 'required',
-            'powerEngine' => 'required',            
+            'powerEngine' => 'required',
+            'copyRevalidation'=> 'required|mimetypes:application/pdf|max:500',            
         ];
     }
 
@@ -98,6 +101,10 @@ class Create extends Component
             ->extends('layouts.app')
             ->section('content');
     }
+    public function updatedcopyRevalidation()
+    {
+        $this->validate(['copyRevalidation' => 'mimetypes:application/pdf|max:5000']);
+    }    
     public function updatedStateId($state_id){
         $this->municipals = Municipal::where('state_id',$state_id)->get();
     }
