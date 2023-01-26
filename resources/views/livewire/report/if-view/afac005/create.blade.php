@@ -528,7 +528,7 @@
                     </div>
                 </div>
                 <div class="py-12 mb-2 text-right">
-                    <x-button wire:click.prevent="" icon="document-download" spinner="" blue label="GENERAR REPORTE" />
+                    <x-button wire:click.prevent="print" icon="document-download" spinner="" blue label="GENERAR REPORTE" />
                 </div>
         </section>
     </section>

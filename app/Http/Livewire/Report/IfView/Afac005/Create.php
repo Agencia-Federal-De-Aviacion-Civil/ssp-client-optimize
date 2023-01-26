@@ -20,5 +20,16 @@ class Create extends Component
             ->extends('layouts.app')
             ->section('content');
     }
+    public function print()
+    {
+        //$id = $this->afac001aid->id;
+        return redirect()->route('afac005-pdf');
+    }
+    public function PdfAfac005()
+    {
+
+        $pdf = PDF::loadView('report.ifView.afac005.pdf.afac005-pdf');
+        return $pdf->download('reporte_No_'.'.pdf');
+    }
    
 }
