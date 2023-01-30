@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Report\IfView\Daaia001;
 
+use App\Models\Catalogue\aModel;
 use App\Models\Catalogue\Municipal;
 use App\Models\Catalogue\State;
 use App\Models\Report\Daaia001;
@@ -19,8 +20,16 @@ class Create extends Component
     $reciprocatingSystem,$makerPropeller,$modelPropeller,$pitchPropeller,$manufacturerEngine,$modelEngine,$powerEngine,$engineSerie1,
     $manufacturingDate1,$totalTime1,$lastIspection1,$lastRrepair1,$engineSerie2,$manufacturingDate2,$totalTime2,$lastIspection2,$lastRrepair2,
     $engineSerie3,$manufacturingDate3,$totalTime3,$lastIspection3,$lastRrepair3,$engineSerie4,$manufacturingDate4,$totalTime4,$lastIspection4,
-    $lastRrepair4,$copyRevalidation;        
-    public $states,$municipals;
+    $lastRrepair4,$nameOwner1,$directionOwner1,$nameOperator1,$directionOperator1,$flightPurpose,$operation,$loadOperation,
+    $passengersHow,$concessionType,$others,$tuitionInvolved,$makerInvolved,$modelInvolved,$damageInvolved,$nameOwner2,$directionOwner2,
+    $nameOperator2,$directionOperator2,$malfunction,$a_model_id,$descriptionFail,$componentHours,$componentCycles,$componentInspection,$presenceFire,
+    $explosion,$describeDamage,$identificationOACI,$nameAerodrome,$distanceAerodrome,$directionAerodrome,$elevation,$proximityAirport,$approachSegment,
+    $approachIFR,$approachVFR,$trackHeader,$longitude2,$broad,$materialHead,$conditionsRunway,$lastTakeoff,$timeTakeoff,$destinationAirport,$planFlight,
+    $clearanceFlight,$eventOccurred,$loadAircraft,$otherAircraft,$litersFuel,$gallonsfuel,$typeFuel,$specifyFuel,$otherService,$evacuationAircraft,$evacuationDescription
+    ,$installationObservation,$timeObservation,$distanceAccident,$directionAccident;
+
+    public $copyRevalidation,$filesPermissions,$filesLatestservices,$filereceiptFuel,$fileProcedures;
+    public $states,$municipals,$models;
     
     use WithFileUploads;
     public function rules()
@@ -85,7 +94,72 @@ class Create extends Component
             'manufacturerEngine' => 'required',
             'modelEngine' => 'required',
             'powerEngine' => 'required',
-            'copyRevalidation'=> 'required|mimetypes:application/pdf|max:500',            
+            // 'copyRevalidation'=> 'required|mimetypes:application/pdf|max:500',            
+            'nameOwner1' => 'required',
+            'directionOwner1' => 'required',
+            'nameOperator1' => 'required',
+            'directionOperator1' => 'required',
+            'flightPurpose' => 'required',
+            'operation' => 'required',
+            'loadOperation' => 'required',
+            'passengersHow' => 'required',
+            'concessionType' => 'required',
+            'others' => 'required',
+            // 'filesPermissions'=> 'required|mimetypes:application/pdf|max:500',            
+            'tuitionInvolved' => 'required',
+            'makerInvolved' => 'required',
+            'modelInvolved' => 'required',
+            'damageInvolved' => 'required',
+            'nameOwner2' => 'required',
+            'directionOwner2' => 'required',
+            'nameOperator2' => 'required',
+            'directionOperator2' => 'required',
+            'malfunction' => 'required',
+            'descriptionFail' => 'required',
+            'componentHours' => 'required',
+            'componentCycles' => 'required',
+            'componentInspection' => 'required',
+            // 'filesLatestservices'=> 'required|mimetypes:application/pdf|max:500',
+            'a_model_id' => 'required',
+            'presenceFire' => 'required',
+            'explosion' => 'required',
+            'describeDamage' => 'required',
+            'identificationOACI' => 'required',
+            'nameAerodrome' => 'required',
+            'distanceAerodrome' => 'required',
+            'directionAerodrome' => 'required',
+            'elevation' => 'required',
+            'proximityAirport'=>'required',
+            'approachSegment'=>'required',
+            'approachIFR'=>'required',
+            'approachVFR'=>'required',
+            'trackHeader'=>'required',
+            'longitude2'=>'required',
+            'broad'=>'required',
+            'materialHead'=>'required',
+            'conditionsRunway'=>'required',
+            'lastTakeoff' => 'required',
+            'timeTakeoff' => 'required',
+            'destinationAirport' => 'required',
+            'planFlight' => 'required',
+            'clearanceFlight' => 'required',
+            'eventOccurred' => 'required',
+            'loadAircraft' => 'required',
+            'otherAircraft' => 'required',
+            'litersFuel' => 'required',
+            'gallonsfuel' => 'required',
+            'typeFuel' => 'required',
+            'specifyFuel' => 'required',
+            'otherService' => 'required',
+            // 'filereceiptFuel'=> 'required|mimetypes:application/pdf|max:500',
+            'evacuationAircraft' => 'required',
+            'evacuationDescription' => 'required',
+            // 'fileProcedures'=> 'required|mimetypes:application/pdf|max:500',
+            'installationObservation' => 'required',
+            'timeObservation' => 'required',
+            'distanceAccident' => 'required',
+            'directionAccident' => 'required',
+
         ];
     }
 
@@ -93,7 +167,7 @@ class Create extends Component
     $this->idReporter = $idReporter;
     $this->states = State::all();
     $this->municipals = collect();
-    
+    $this->models = aModel::all();
     }
     public function render()
     {
@@ -104,6 +178,18 @@ class Create extends Component
     public function updatedcopyRevalidation()
     {
         $this->validate(['copyRevalidation' => 'mimetypes:application/pdf|max:5000']);
+    }
+    public function  updatedfilesPermissions(){
+        $this->validate(['filesPermissions' => 'mimetypes:application/pdf|max:5000']);        
+    }
+    public function updatedfilesLatestservices(){
+        $this->validate(['filesLatestservices' => 'mimetypes:application/pdf|max:5000']);                
+    }
+    public function updatedfilereceiptFuel(){
+        $this->validate(['filereceiptFuel' => 'mimetypes:application/pdf|max:5000']);                                
+    }
+    public function updatedfileProcedures(){
+        $this->validate(['fileProcedures' => 'mimetypes:application/pdf|max:5000']);                                        
     }    
     public function updatedStateId($state_id){
         $this->municipals = Municipal::where('state_id',$state_id)->get();
@@ -111,6 +197,7 @@ class Create extends Component
 
     public function save(){
         // $this->validate();
+        // dd($this->directionOwner);
         $this->daaia001 = Daaia001::updateOrCreate(
             ['id' => $this->id_reporter],
             [
@@ -194,8 +281,199 @@ class Create extends Component
                 'totalTime4' => $this->totalTime4,
                 'lastIspection4' => $this->lastIspection4,
                 'lastRrepair4' => $this->lastRrepair4,
-                'copyRevalidation' => $this->copyRevalidation->store('documentos', 'public','Revalidacion'),
+                // 'copyRevalidation' => $this->copyRevalidation->store('documentos', 'public','Revalidacion'),
+                'nameOwner1' => $this->nameOwner1,
+                'directionOwner1' => $this->directionOwner1,
+                'nameOperator1' => $this->nameOperator1,
+                'directionOperator1' => $this->directionOperator1,
+                'flightPurpose' => $this->flightPurpose,
+                'operation' => $this->operation,
+                'loadOperation' => $this->loadOperation,
+                'passengersHow' => $this->passengersHow,
+                'concessionType' => $this->concessionType,
+                'others' => $this->others,
+                // 'filesPermissions' => $this->filesPermissions->store('documentos', 'public','Permisos'),
+                'tuitionInvolved' => $this->tuitionInvolved,
+                'makerInvolved' => $this->makerInvolved,
+                'modelInvolved' => $this->modelInvolved,
+                'damageInvolved' => $this->damageInvolved,
+                'nameOwner2' => $this->nameOwner2,
+                'directionOwner2' => $this->directionOwner2,
+                'nameOperator2' => $this->nameOperator2,
+                'directionOperator2' => $this->directionOperator2,
+                'malfunction' => $this->malfunction,
+                'descriptionFail' => $this->descriptionFail,
+                'componentHours' => $this->componentHours,
+                'componentCycles' => $this->componentCycles,
+                'componentInspection' => $this->lastInspection,
+                // 'filesLatestservices' => $this->filesLatestservices->store('documentos', 'public','Servicios'),                
+                'a_model_id' => $this->a_model_id,
+                'presenceFire' => $this->presenceFire,
+                'explosion' => $this->explosion,
+                'describeDamage' => $this->describeDamage,
+                'identificationOACI' => $this->identificationOACI,
+                'nameAerodrome' => $this->nameAerodrome,
+                'distanceAerodrome' => $this->distanceAerodrome,
+                'directionAerodrome' => $this->directionAerodrome,
+                'elevation' => $this->elevation,
+                'proximityAirport' => $this->proximityAirport,
+                'approachSegment' => $this->approachSegment,
+                'approachIFR' => $this->approachIFR,
+                'approachVFR' => $this->approachVFR,
+                'trackHeader' => $this->trackHeader,
+                'longitude2' => $this->longitude2,
+                'broad' => $this->broad,
+                'materialHead' => $this->materialHead,
+                'conditionsRunway' => $this->conditionsRunway,
+                'lastTakeoff' => $this->lastTakeoff,
+                'timeTakeoff' => $this->timeTakeoff,
+                'destinationAirport' => $this->destinationAirport,
+                'planFlight' => $this->planFlight,
+                'clearanceFlight' => $this->clearanceFlight,
+                'eventOccurred' => $this->eventOccurred,
+                'loadAircraft' => $this->loadAircraft,
+                'otherAircraft' => $this->otherAircraft,
+                'litersFuel' => $this->litersFuel,
+                'gallonsfuel' => $this->gallonsfuel,
+                'typeFuel' => $this->typeFuel,
+                'specifyFuel' => $this->specifyFuel,
+                'otherService' => $this->otherService,
+                // 'filereceiptFuel' => $this->filereceiptFuel->store('documentos', 'public','Recibo'),                
+                'evacuationAircraft' => $this->evacuationAircraft,
+                'evacuationDescription' => $this->evacuationDescription,
+                // 'fileProcedures' => $this->fileProcedures->store('documentos', 'public','Procedimientos '),                
+                'installationObservation' => $this->installationObservation,
+                'timeObservation' => $this->timeObservation,
+                'distanceAccident' => $this->distanceAccident,
+                'directionAccident' => $this->directionAccident,
+
                 ]
         );
     }
+    public function messages()
+    {
+        return [
+            'exactPlace.required' => 'Campo obligaotrio',
+            'state_id.required' => 'Campo obligaotrio',
+            'municipal_id.required' => 'Campo obligaotrio',
+            'city.required' => 'Campo obligaotrio',
+            'latitude.required' => 'Campo obligaotrio',
+            'longitude.required' => 'Campo obligaotrio',
+            'date.required' => 'Campo obligaotrio',
+            'time.required' => 'Campo obligaotrio',
+            'aeronauticalAuthority.required' => 'Campo obligaotrio',
+            'flight_phase.required' => 'Campo obligaotrio',
+            'indicate.required' => 'Campo obligaotrio',
+            'collision.required' => 'Campo obligaotrio',
+            'altitudeEvent.required' => 'Campo obligaotrio',
+            'maker.required' => 'Campo obligaotrio',
+            'modelReport.required' => 'Campo obligaotrio',
+            'serialNumber.required' => 'Campo obligaotrio',
+            'enrollment.required' => 'Campo obligaotrio',
+            'amateur.required' => 'Campo obligaotrio',
+            'maximumWeight.required' => 'Campo obligaotrio',
+            'accidentWeight.required' => 'Campo obligaotrio',
+            'nose.required' => 'Campo obligaotrio',
+            'datum.required' => 'Campo obligaotrio',
+            'noseI.required' => 'Campo obligaotrio',
+            'datumI.required' => 'Campo obligaotrio',
+            'aircraftCategory.required' => 'Campo obligaotrio',
+            'indicateI.required' => 'Campo obligaotrio',
+            'airworthiness.required' => 'Campo obligaotrio',
+            'indicateII.required' => 'Campo obligaotrio',
+            'numberSeats.required' => 'Campo obligaotrio',
+            'flightCrew.required' => 'Campo obligaotrio',
+            'cabinCrew.required' => 'Campo obligaotrio',
+            'passengerSeats.required' => 'Campo obligaotrio',
+            'undercarriage.required' => 'Campo obligaotrio',
+            'MaintenanceProgram.required' => 'Campo obligaotrio',
+            'specify.required' => 'Campo obligaotrio',
+            'lastInspection.required' => 'Campo obligaotrio',
+            'other.required' => 'Campo obligaotrio',
+            'lastInspectionDate.required' => 'Campo obligaotrio',
+            'gliderHours.required' => 'Campo obligaotrio',
+            'hoursLastInsp.required' => 'Campo obligaotrio',
+            'hoursTimeAccident.required' => 'Campo obligaotrio',
+            'ifrTeam.required' => 'Campo obligaotrio',
+            'collapseSystem.required' => 'Campo obligaotrio',
+            'fireSystem.required' => 'Campo obligaotrio',
+            'type.required' => 'Campo obligaotrio',
+            'eltInstalled.required' => 'Campo obligaotrio',
+            'eltActivated.required' => 'Campo obligaotrio',
+            'eltManufacturer.required' => 'Campo obligaotrio',
+            'eltModel.required' => 'Campo obligaotrio',
+            'eltSerial.required' => 'Campo obligaotrio',
+            'eltBattery.required' => 'Campo obligaotrio',
+            'engineType.required' => 'Campo obligaotrio',
+            'reciprocatingSystem.required' => 'Campo obligaotrio',
+            'makerPropeller.required' => 'Campo obligaotrio',
+            'modelPropeller.required' => 'Campo obligaotrio',
+            'pitchPropeller.required' => 'Campo obligaotrio',
+            'manufacturerEngine.required' => 'Campo obligaotrio',
+            'modelEngine.required' => 'Campo obligaotrio',
+            'powerEngine.required' => 'Campo obligaotrio',
+            'nameOwner1.required' => 'Campo obligaotrio',
+            'directionOwner1.required' => 'Campo obligaotrio',
+            'nameOperator1.required' => 'Campo obligaotrio',
+            'directionOperator1.required' => 'Campo obligaotrio',
+            'flightPurpose.required' => 'Campo obligaotrio',
+            'operation.required' => 'Campo obligaotrio',
+            'loadOperation.required' => 'Campo obligaotrio',
+            'passengersHow.required' => 'Campo obligaotrio',
+            'concessionType.required' => 'Campo obligaotrio',
+            'others.required' => 'Campo obligaotrio',
+            'tuitionInvolved.required' => 'Campo obligaotrio',
+            'makerInvolved.required' => 'Campo obligaotrio',
+            'modelInvolved.required' => 'Campo obligaotrio',
+            'damageInvolved.required' => 'Campo obligaotrio',
+            'nameOwner2.required' => 'Campo obligaotrio',
+            'directionOwner2.required' => 'Campo obligaotrio',
+            'nameOperator2.required' => 'Campo obligaotrio',
+            'directionOperator2.required' => 'Campo obligaotrio',
+            'malfunction.required' => 'Campo obligaotrio',
+            'descriptionFail.required' => 'Campo obligaotrio',
+            'componentHours.required' => 'Campo obligaotrio',
+            'componentCycles.required' => 'Campo obligaotrio',
+            'componentInspection.required' => 'Campo obligaotrio',
+            'a_model_id.required' => 'Campo obligaotrio',
+            'presenceFire.required' => 'Campo obligaotrio',
+            'explosion.required' => 'Campo obligaotrio',
+            'describeDamage.required' => 'Campo obligaotrio',
+            'identificationOACI.required' => 'Campo obligaotrio',
+            'nameAerodrome.required' => 'Campo obligaotrio',
+            'distanceAerodrome.required' => 'Campo obligaotrio',
+            'directionAerodrome.required' => 'Campo obligaotrio',
+            'elevation.required' => 'Campo obligaotrio',
+            'proximityAirport.required' => 'Campo obligaotrio',
+            'approachSegment.required' => 'Campo obligaotrio',
+            'approachIFR.required' => 'Campo obligaotrio',
+            'approachVFR.required' => 'Campo obligaotrio',
+            'trackHeader.required' => 'Campo obligaotrio',
+            'longitude2.required' => 'Campo obligaotrio',
+            'broad.required' => 'Campo obligaotrio',
+            'materialHead.required' => 'Campo obligaotrio',
+            'conditionsRunway.required' => 'Campo obligaotrio',
+            'lastTakeoff.required' => 'Campo obligaotrio',
+            'timeTakeoff.required' => 'Campo obligaotrio',
+            'destinationAirport.required' => 'Campo obligaotrio',
+            'planFlight.required' => 'Campo obligaotrio',
+            'clearanceFlight.required' => 'Campo obligaotrio',
+            'eventOccurred.required' => 'Campo obligaotrio',
+            'loadAircraft.required' => 'Campo obligaotrio',
+            'otherAircraft.required' => 'Campo obligaotrio',
+            'litersFuel.required' => 'Campo obligaotrio',
+            'gallonsfuel.required' => 'Campo obligaotrio',
+            'typeFuel.required' => 'Campo obligaotrio',
+            'specifyFuel.required' => 'Campo obligaotrio',
+            'otherService.required' => 'Campo obligaotrio',
+            'evacuationAircraft.required' => 'Campo obligaotrio',
+            'evacuationDescription.required' => 'Campo obligaotrio',
+            'installationObservation.required' => 'Campo obligaotrio',
+            'timeObservation.required' => 'Campo obligaotrio',
+            'distanceAccident.required' => 'Campo obligaotrio',
+            'directionAccident.required' => 'Campo obligaotrio',
+
+        ];
+    }
+
 }

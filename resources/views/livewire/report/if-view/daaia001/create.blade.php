@@ -52,6 +52,7 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Municipio</label>
                     <x-native-select class="w-full" placeholder="Selecciona" wire:model="municipal_id">
+                        <option value="">SELECCIONE...</option>
                         @foreach ($municipals as $municipal)                        
                         <option value="{{$municipal->id}}" >{{$municipal->name}}</option>
                         @endforeach
@@ -647,7 +648,7 @@
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                    <input type="text"  wire:model=""
+                    <input type="text"  wire:model="nameOwner1"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
@@ -656,7 +657,7 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Dirección</label>
                     <div class="md:flex col-span-8">
-                        <textarea name="" id="" cols="30" rows="2" type="text" wire:model="" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        <textarea name="" id="" cols="30" rows="2" type="text" wire:model="directionOwner1" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresa..."></textarea>
                     </div>
                 </div>
@@ -667,7 +668,7 @@
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                    <input type="text"  wire:model=""
+                    <input type="text"  wire:model="nameOperator1"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
@@ -676,7 +677,7 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Dirección</label>
                     <div class="md:flex col-span-8">
-                        <textarea name="" id="" cols="30" rows="2" type="text" wire:model="" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        <textarea name="" id="" cols="30" rows="2" type="text" wire:model="directionOperator1" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresa..."></textarea>
                     </div>
                 </div>
@@ -684,28 +685,46 @@
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Propósito del vuelo:</label>
-                    <x-select class="px-2 py-0 w-full">
-                        <x-select.option label="" value="" />
-                    </x-select>
+                    <x-select class="px-2 py-0 w-full" placeholder="Selecciona" wire:model="flightPurpose">
+                        <x-select.option label="PERSONAL" value="PERSONAL"/>
+                        <x-select.option label="NEGOCIOS" value="NEGOCIOS"/>
+                        <x-select.option label="EJECUTIVO/CORPORATIVO" value="EJECUTIVO/CORPORATIVO"/>
+                        <x-select.option label="OTRO" value="OTRO"/>
+                        <x-select.option label="INSTRUCCIÓN" value="INSTRUCCIÓN"/>
+                        <x-select.option label="FERRY" value="FERRY"/>
+                        <x-select.option label="FUMIGACIÓN" value="FUMIGACIÓN"/>
+                        <x-select.option label="OBSERVACIÓN" value="OBSERVACIÓN"/>
+                        <x-select.option label="SHOW AÉREO" value="SHOW AÉREO"/>
+                        <x-select.option label="VUELO DE PRUEBA" value="VUELO DE PRUEBA"/>
+                        <x-select.option label="USO PUBLICO" value="USO PUBLICO"/>    
+                    </x-select>                  
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Operación:</label>
-                    <x-select class="px-2 py-0 w-full">
-                        <x-select.option label="" value="" />
+                    <x-select class="px-2 py-0 w-full" placeholder="Selecciona" wire:model="operation">
+                        <x-select.option label="ITINERARIO" value="ITINERARIO" />
+                        <x-select.option label="SIN ITINERARIO" value="SIN ITINERARIO" />
+                        <x-select.option label="TAXI AÉREO" value="TAXI AÉREO" />
+                        <x-select.option label="REGULAR" value="REGULAR" />
+                        <x-select.option label="NO REGULAR" value="NO REGULAR" />
+                        <x-select.option label="NACIONAL" value="NACIONAL" />
+                        <x-select.option label="INTERNACIONAL" value="INTERNACIONAL" />                        
                     </x-select>
                 </div>
             </div>
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Operación de carga</label>
-                    <x-select class="px-2 py-0 w-full">
-                        <x-select.option label="" value="" />
+                    <x-select class="px-2 py-0 w-full" placeholder="Selecciona" wire:model="loadOperation">
+                        <x-select.option label="PASAJEROS" value="PASAJEROS" />
+                        <x-select.option label="CARGA" value="CARGA" />
+                        <x-select.option label="CORREO" value="CORREO" />
                     </x-select>
                 </div>
                  {{-- Si se selecciona pasajeros aparece--}}
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Pasajeros cuantos</label>
-                    <input type="text"  wire:model=""
+                    <input type="text"  wire:model="passengersHow"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
@@ -713,14 +732,23 @@
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Tipo de concesión/permiso</label>
-                    <x-select class="px-2 py-0 w-full">
-                        <x-select.option label="" value="" />
+                    <x-select class="px-2 py-0 w-full" placeholder="Selecciona" wire:model="concessionType">
+                        <x-select.option label="NO TIENE" value="NO TIENE" />
+                        <x-select.option label="CARGA AÉREA" value="CARGA AÉREA" />
+                        <x-select.option label="NACIONAL REGULAR" value="NACIONAL REGULAR" />
+                        <x-select.option label="TAXI AÉREO" value="TAXI AÉREO" />
+                        <x-select.option label="CARGA EXTERNA" value="CARGA EXTERNA" />
+                        <x-select.option label="FUMIGACIÓN" value="FUMIGACIÓN" />
+                        <x-select.option label="INTERNACIONAL REGULAR" value="INTERNACIONAL REGULAR" />
+                        <x-select.option label="PRIVADO COMERCIAL" value="PRIVADO COMERCIAL" />
+                        <x-select.option label="SERVICIO AÉREO ESPECIALIZADO" value="SERVICIO AÉREO ESPECIALIZADO" />
+                        <x-select.option label="OTRO" value="OTRO" />                        
                     </x-select>
                 </div>
                 {{-- Si se aparece al seleccionar otros--}}
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Otros</label>
-                    <input type="text"  wire:model=""
+                    <input type="text"  wire:model="others"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
@@ -741,7 +769,7 @@
                         </div>
                         <form>
                             <label for="small-file-input" class="sr-only">Choose file</label>
-                            <input type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
+                            <input wire:model="filesPermissions" type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
                     file:bg-transparent file:border-0
                       file:bg-gray-200 file:mr-4
                       file:py-2 file:px-4
@@ -762,19 +790,19 @@
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Matricula</label>
-                    <input type="text"  wire:model=""
+                    <input type="text"  wire:model="tuitionInvolved"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Fabricante</label>
-                    <input type="text"  wire:model=""
+                    <input type="text"  wire:model="makerInvolved"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">modelo</label>
-                    <input type="text"  wire:model=""
+                    <input type="text"  wire:model="modelInvolved"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
@@ -782,8 +810,11 @@
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Daños</label>
-                    <x-select class="w-full">
-                        <x-select.option label="" value="" />
+                    <x-select class="w-full" placeholder="Selecciona" wire:model="damageInvolved">
+                        <x-select.option label="DESTRUIDA" value="DESTRUIDA" />
+                        <x-select.option label="MAYORES" value="MAYORES" />
+                        <x-select.option label="MENORES" value="MENORES" />
+                        <x-select.option label="SIN DAÑOS" value="SIN DAÑOS" />
                     </x-select>
                 </div>
             </div>
@@ -793,7 +824,7 @@
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                    <input type="text"  wire:model=""
+                    <input type="text"  wire:model="nameOwner2"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
@@ -802,7 +833,7 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Dirección</label>
                     <div class="md:flex col-span-8">
-                        <textarea name="" id="" cols="30" rows="2" type="text" wire:model="" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        <textarea name="" id="" cols="30" rows="2" type="text" wire:model="directionOwner2" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresa..."></textarea>
                     </div>
                 </div>
@@ -813,7 +844,7 @@
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                    <input type="text"  wire:model=""
+                    <input type="text"  wire:model="nameOperator2"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
@@ -822,7 +853,7 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Dirección</label>
                     <div class="md:flex col-span-8">
-                        <textarea name="" id="" cols="30" rows="2" type="text" wire:model="" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        <textarea name="" id="" cols="30" rows="2" type="text" wire:model="directionOperator2" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresa..."></textarea>
                     </div>
                 </div>
@@ -840,19 +871,19 @@
             </div>
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-6">
             <div class="md:flex py-2">
-                <x-radio class="text-lg" id="fallas1" name="fallas" left-label="SI" value="SI" wire:model="" />
+                <x-radio class="text-lg" id="fallas1" name="fallas" left-label="SI" value="SI" wire:model="malfunction" />
             </div>
             <div class="md:flex py-2">
-                <x-radio class="text-lg" id="fallas2" name="fallas" left-label="NO" value="NO" wire:model="" />
+                <x-radio class="text-lg" id="fallas2" name="fallas" left-label="NO" value="NO" wire:model="malfunction" />
             </div>
             <div class="md:flex py-2">
-                <x-radio class="text-lg" id="fallas3" name="fallas" left-label="DESCONOCIDO" value="DESCONOCIDO" wire:model="" />
+                <x-radio class="text-lg" id="fallas3" name="fallas" left-label="DESCONOCIDO" value="DESCONOCIDO" wire:model="malfunction" />
             </div>
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
             <div class="">
                 <label for="" class="block text-lg mb-2 dark:text-white">Si hubo, asiente el nombre de la parte, fabricante,número de parte y serie, decriba la falla</label>
-                <textarea name="" id="" cols="30" rows="4" type="text" wire:model="" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <textarea name="" id="" cols="30" rows="4" type="text" wire:model="descriptionFail" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresa..."></textarea>
             </div>
         </div>
@@ -861,10 +892,10 @@
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-8">
             <div class="md:flex col-span-2">
-                <x-input class="w-full" wire:model="" placeholder="Ingresa..." suffix="horas." />
+                <x-input class="w-full" wire:model="componentHours" placeholder="Ingresa..." suffix="horas." />
             </div>
             <div class="md:flex col-span-2">
-                <x-input class=" w-full" wire:model="" placeholder="Ingresa..." suffix="ciclos." />
+                <x-input class=" w-full" wire:model="componentCycles" placeholder="Ingresa..." suffix="ciclos." />
             </div>
         </div>
         <div class="flex flex-col py-0">
@@ -872,7 +903,7 @@
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-8">
             <div class="md:flex col-span-4">
-                <x-input class="w-full" wire:model="" placeholder="Ingresa..." suffix="horas." />
+                <x-input class="w-full" wire:model="lastInspection" placeholder="Ingresa..." suffix="horas." />
             </div>
         </div>
         <div class="bg-blue-50 border border-blue-200 rounded-md p-4" role="alert">
@@ -891,7 +922,7 @@
                     </div>
                     <form>
                         <label for="small-file-input" class="sr-only">Choose file</label>
-                        <input type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
+                        <input wire:model="filesLatestservices" type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
                   file:bg-transparent file:border-0
                   file:bg-gray-200 file:mr-4
                   file:py-2 file:px-4
@@ -912,20 +943,30 @@
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">modelo</label>
-                <x-select class="" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="" placeholder="Selecciona" wire:model="a_model_id">
+                    @foreach ($models as $model)
+                    <x-select.option label="{{$model->name}}" value="{{$model->id}}" />                        
+                    @endforeach
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Presencia de fuego</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="presenceFire">
+                    <x-select.option label="NO HUBO" value="NO HUBO" />
+                    <x-select.option label="EN VUELO" value="EN VUELO" />
+                    <x-select.option label="EN TIERRA" value="EN TIERRA" />
+                    <x-select.option label="EN AMBOS" value="EN AMBOS" />
+                    <x-select.option label="ORIGEN DESCONOCIDO" value="ORIGEN DESCONOCIDO" />
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Exploción</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="explosion">
+                    <x-select.option label="NO HUBO" value="NO HUBO" />
+                    <x-select.option label="EN VUELO" value="EN VUELO" />
+                    <x-select.option label="EN TIERRA" value="EN TIERRA" />
+                    <x-select.option label="EN AMBOS" value="EN AMBOS" />
+                    <x-select.option label="ORIGEN DESCONOCIDO" value="ORIGEN DESCONOCIDO" />   
                 </x-select>
             </div>
         </div>
@@ -934,7 +975,7 @@
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
             <div class="md:flex">
-                <textarea name="" id="" cols="30" rows="6" type="text" wire:model="" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <textarea name="" id="" cols="30" rows="6" type="text" wire:model="describeDamage" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresa..."></textarea>
             </div>
         </div>
@@ -949,13 +990,13 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-1">
                 <label for="" class="block text-lg mb-2 dark:text-white">Identificación aeródromo OACI</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="identificationOACI"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="nameAerodrome"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
@@ -963,72 +1004,113 @@
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-1">
                 <label for="" class="block text-lg mb-2 dark:text-white">Distancia al centro del aeródromo</label>
-                <x-input class="w-full" wire:model="" placeholder="Ingresa..." suffix="SM" />
+                <x-input class="w-full" wire:model="distanceAerodrome" placeholder="Ingresa..." suffix="SM" />
             </div>
             <div class="col-span-1">
                 <label for="" class="block text-lg mb-2 dark:text-white">Dirección al aerodromo</label>
-                <x-input class="w-full" wire:model="" placeholder="Ingresa..." suffix="grados magneticos."/> 
+                <x-input class="w-full" wire:model="directionAerodrome" placeholder="Ingresa..." suffix="grados magneticos."/> 
             </div>
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-1">
                 <label for="" class="block text-lg mb-2 dark:text-white">Elevación</label>
-                <x-input class="w-full" wire:model="" placeholder="Ingresa..." suffix="m."/> 
+                <x-input class="w-full" wire:model="elevation" placeholder="Ingresa..." suffix="m."/> 
             </div>
             <div class="col-span-1">
                 <label for="" class="block text-lg mb-2 dark:text-white">Proximidad al aeropuerto</label>
-                <x-select class="w-full">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="proximityAirport">
+                    <x-select.option label="FUERA DEL AEROPUERTO" value="FUERA DEL AEROPUERTO" />
+                    <x-select.option label="EN EL AEROPUERTO" value="EN EL AEROPUERTO" />
                 </x-select>
             </div>
         </div>
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Segmento de aproximación</label>
-                <x-select class="w-full">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="approachSegment">
+                    <x-select.option label="APROXIMACION POR INSTRUMENTOS" value="APROXIMACION POR INSTRUMENTOS" />
+                    <x-select.option label="ATERRIZAJE" value="ATERRIZAJE" />
+                    <x-select.option label="TRAMO BÁSICO" value="TRAMO BÁSICO" />
+                    <x-select.option label="TRAMO FINA" value="TRAMO FINA" />
+                    <x-select.option label="IDA AL AIRE" value="IDA AL AIRE" />
+                    <x-select.option label="TRAMO DE VIENTO CRUZADO" value="TRAMO DE VIENTO CRUZADO" />
+                    <x-select.option label="TRAMO A FAVOR DEL VIENTO" value="TRAMO A FAVOR DEL VIENTO" />
+                    <x-select.option label="APROXIMACIÓN BAJA" value="APROXIMACIÓN BAJA" />
+                    <x-select.option label="DESCONTINUACIÓN DEL ATERRIZAJE (DESPUÉS DEL TOQUE CON LA PISTA)" value="DESCONTINUACIÓN DEL ATERRIZAJE (DESPUÉS DEL TOQUE CON LA PISTA)" />
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Aproximación IFR</label>
-                <x-select class="w-full">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="approachIFR">
+                        <x-select.option label="NO" value="NO" />
+                        <x-select.option label="ADF/NDB" value="ADF/NDB" />
+                        <x-select.option label="SDF1" value="SDF1" />
+                        <x-select.option label="VOR/DME" value="VOR/DME" />
+                        <x-select.option label="ILS" value="ILS" />
+                        <x-select.option label="LOCALIZADOR SOLAMENTE" value="LOCALIZADOR SOLAMENTE" />
+                        <x-select.option label="RNAV" value="RNAV" />
+                        <x-select.option label="LDA" value="LDA" />
+                        <x-select.option label="VISUAL" value="VISUAL" />
+                        <x-select.option label="CIRCUITO" value="CIRCUITO" />
+                        <x-select.option label="PRACTICA" value="PRACTICA" />
+                        <x-select.option label="GPS" value="GPS" />
+                        <x-select.option label="LORAN" value="LORAN" />
+                        <x-select.option label="SE DESCONOCE" value="SE DESCONOCE" />
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Aproximación VFR</label>
-                <x-select class="w-full">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="approachVFR">
+                    <x-select.option label="NO" value="NO" />
+                    <x-select.option label="PATRÓN DE TRAFICO" value="PATRÓN DE TRAFICO" />
+                    <x-select.option label="DIRECTO" value="DIRECTO" />
+                    <x-select.option label="IDA AL AIRE" value="IDA AL AIRE" />
+                    <x-select.option label="TOQUES Y DESPEGUES" value="TOQUES Y DESPEGUES" />
+                    <x-select.option label="ATERRIZAJE FORZOSO" value="ATERRIZAJE FORZOSO" />
+                    <x-select.option label="ATERRIZAJE PRECAUTORIO" value="ATERRIZAJE PRECAUTORIO" />
+                    <x-select.option label="SE DESCONOCE" value="SE DESCONOCE" />                    
                 </x-select>
             </div>
         </div>
         <div class="px-1 py-0 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Cabecera de pista</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="trackHeader"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Longitud</label>
-                <x-input class="px-2 py-2 w-full" wire:model="" placeholder="Ingresa..." suffix="m" />
+                <x-input class="px-2 py-2 w-full" wire:model="longitude2" placeholder="Ingresa..." suffix="m" />
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Ancho</label>
-                <x-input class="px-2 py-2 w-full" wire:model="" placeholder="Ingresa..." suffix="m" />
+                <x-input class="px-2 py-2 w-full" wire:model="broad" placeholder="Ingresa..." suffix="m" />
             </div>
         </div>
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Material de la cabecera de la pista</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="materialHead">
+                        <x-select.option label="ASFALTO" value="ASFALTO" />
+                        <x-select.option label="CONCRETO" value="CONCRETO" />
+                        <x-select.option label="PASTO/CESPED" value="PASTO/CESPED" />
+                        <x-select.option label="GRAVA" value="GRAVA" />
+                        <x-select.option label="AGUA" value="AGUA" />
+                        <x-select.option label="TERRACERÍA" value="TERRACERÍA" />                    
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Condiciones de la superficie de la pista:</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="conditionsRunway">
+                        <x-select.option label="SECO" value="SECO" />
+                        <x-select.option label="CON AGUJEROS" value="CON AGUJEROS" />
+                        <x-select.option label="DEPÓSITOS DE CAUCHO" value="DEPÓSITOS DE CAUCHO" />
+                        <x-select.option label="FANGOSA" value="FANGOSA" />
+                        <x-select.option label="NO COMPACTADA" value="NO COMPACTADA" />
+                        <x-select.option label="VEGETACIÓN ALTA" value="VEGETACIÓN ALTA" />
+                        <x-select.option label="HÚMEDA" value="HÚMEDA" />
+                        <x-select.option label="SE DESCONOCE" value="SE DESCONOCE" />
                 </x-select>
             </div>
         </div>
@@ -1043,13 +1125,17 @@
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Ultimo aeropuerto de despegue</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
-                </x-select>
+
+                <x-input class="w-full" wire:model="lastTakeoff" placeholder="Ingresa..."/>
+                
+                {{-- <x-select class="w-full" placeholder="Selecciona" wire:model="lastTakeoff">
+                    <x-select.option label="" value="" />                    
+                </x-select> --}}
+
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Hora de despegue</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="timeTakeoff"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
@@ -1057,42 +1143,65 @@
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Aeropuerto de destino</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
-                </x-select>
+                <x-input class="w-full" wire:model="destinationAirport" placeholder="Ingresa..."/>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Tipo de Plan de vuelo</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="planFlight">
+                    <x-select.option label="NINGUNO" value="NINGUNO" />
+                    <x-select.option label="COMPAÑÍA VFR" value="COMPAÑÍA VFR" />
+                    <x-select.option label="VFR" value="VFR" />
+                    <x-select.option label="VFR/IFR" value="VFR/IFR" />
+                    <x-select.option label="IFR" value="IFR" />
+                    <x-select.option label="SE DESCONOCE" value="SE DESCONOCE" />
+                    <x-select.option label="ELECTRÓNICO" value="ELECTRÓNICO" />
+
                 </x-select>
             </div>
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">            
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Autorización de vuelo</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="clearanceFlight">
+                    <x-select.option label="NINGUNO" value="NINGUNO" />
+                    <x-select.option label="ESPECIAL VFR" value="ESPECIAL VFR" />
+                    <x-select.option label="ESPECIAL IFR" value="ESPECIAL IFR" />
+                    <x-select.option label="ASESORAMIENTO" value="ASESORAMIENTO" />
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Espacio aéreo donde ocurrió el suceso</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="eventOccurred">
+                    <x-select.option label="CLASE A" value="CLASE A" />
+                    <x-select.option label="CLASE B" value="CLASE B" />
+                    <x-select.option label="CLASE C" value="CLASE C" />
+                    <x-select.option label="CLASE D" value="CLASE D" />
+                    <x-select.option label="CLASE E" value="CLASE E" />
+                    <x-select.option label="CLASE G" value="CLASE G" />
+                    <x-select.option label="AREA PROHIBIDA" value="AREA PROHIBIDA" />
+                    <x-select.option label="AREA RESTRINGIDA" value="AREA RESTRINGIDA" />
+                    <x-select.option label="OPERACIONES MILITARES" value="OPERACIONES MILITARES" />
+                    <x-select.option label="ESPECIAL" value="ESPECIAL" />
+                    <x-select.option label="AREA DE CONTROL DE TRÁFICO AÉREO" value="AREA DE CONTROL DE TRÁFICO AÉREO" />
+                    <x-select.option label="AREA DE ASESORAMIENTO AEROPORTUARIO" value="AREA DE ASESORAMIENTO AEROPORTUARIO" />
+                    <x-select.option label="OTRO" value="OTRO" />
                 </x-select>
             </div>
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Carga de la aeronave</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="loadAircraft">
+                    <x-select.option label="NO LLEVABA" value="NO LLEVABA" />
+                    <x-select.option label="PASAJEROS" value="PASAJEROS" />
+                    <x-select.option label="CARGO" value="CARGO" />
+                    <x-select.option label="OTRO" value="OTRO" />
                 </x-select>
             </div>
             {{-- aparece al seleccionar otros --}}
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Otros</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="otherAircraft"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
@@ -1110,23 +1219,31 @@
                 <p class="text-lg py-2 whitespace-no-wrap">Cantidad de combustible a bordo en el último despegue:</p>
             </div>
             <div class="md:flex col-span-4">
-                <x-input class="px-2 py-2 w-full" wire:model="" placeholder="Ingresa..." suffix="litos" />
+                <x-input class="px-2 py-2 w-full" wire:model="litersFuel" placeholder="Ingresa..." suffix="litros" />
             </div>
             <div class="md:flex col-span-3">
-                <x-input class="px-2 py-2 w-full" wire:model="" placeholder="Ingresa..." suffix="galones" />
+                <x-input class="px-2 py-2 w-full" wire:model="gallonsfuel" placeholder="Ingresa..." suffix="galones" />
             </div>
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Tipo de combustible</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="typeFuel">
+                    <x-select.option label="80/87" value="80/87" />
+                    <x-select.option label="100/130" value="100/130" />
+                    <x-select.option label="115/145" value="115/145" />
+                    <x-select.option label="AUTOMOTRIZ" value="AUTOMOTRIZ" />
+                    <x-select.option label="JET A" value="JET A" />
+                    <x-select.option label="JP3" value="JP3" />
+                    <x-select.option label="JP4" value="JP4" />
+                    <x-select.option label="JP5" value="JP5" />
+                    <x-select.option label="OTRO" value="OTRO" />                    
                 </x-select>
             </div>
             {{-- APARECE AL SELECCIONAR OTRO--}}
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="specifyFuel"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
@@ -1134,7 +1251,7 @@
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
             <div class="">
                 <label for="" class="block text-lg mb-2 dark:text-white">Otros servicio aeroportuario proporcionado en tierra, antes de la salida de la puerta de embarque</label>
-                <textarea name="" id="" cols="30" rows="4" type="text" wire:model="" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <textarea name="" id="" cols="30" rows="4" type="text" wire:model="otherService" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresa..."></textarea>
             </div>
         </div>
@@ -1154,7 +1271,7 @@
                     </div>
                     <form>
                         <label for="small-file-input" class="sr-only">Choose file</label>
-                        <input type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
+                        <input wire:model="filereceiptFuel" type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
                   file:bg-transparent file:border-0
                   file:bg-gray-200 file:mr-4
                   file:py-2 file:px-4
@@ -1176,16 +1293,16 @@
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-6">
             <div class="md:flex py-2">
-                <x-radio class="text-lg" id="evacuacion1" name="evacuacion" left-label="SI" value="SI" wire:model="" />
+                <x-radio class="text-lg" id="evacuacion1" name="evacuacion" left-label="SI" value="SI" wire:model="evacuationAircraft" />
             </div>
             <div class="md:flex py-2">
-                <x-radio class="text-lg" id="evacuacion2" name="evacuacion" left-label="NO" value="NO" wire:model="" />
+                <x-radio class="text-lg" id="evacuacion2" name="evacuacion" left-label="NO" value="NO" wire:model="evacuationAircraft" />
             </div>
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
             <div class="">
                 <label for="" class="block text-lg mb-2 dark:text-white">Método de evacuación. Describa como los ocupantes abandonaron la aeronave y cuantos utilizaron cada salida de emergencia de la aeronave</label>
-                <textarea name="" id="" cols="30" rows="4" type="text" wire:model="" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <textarea name="" id="" cols="30" rows="4" type="text" wire:model="evacuationDescription" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresa..."></textarea>
             </div>
         </div>
@@ -1205,7 +1322,7 @@
                     </div>
                     <form>
                         <label for="small-file-input" class="sr-only">Choose file</label>
-                        <input type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
+                        <input wire:model="fileProcedures" type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
                   file:bg-transparent file:border-0
                   file:bg-gray-200 file:mr-4
                   file:py-2 file:px-4
@@ -1225,13 +1342,13 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Instalación que le proporciono la observación</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="installationObservation"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
             <div class="col-span-1">
                 <label for="" class="block text-lg mb-2 dark:text-white">Hora de la observación</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="timeObservation"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
@@ -1239,60 +1356,85 @@
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Distancia del lugar del accidente</label>
-                <x-input class="w-full" wire:model="" placeholder="Ingresa..." suffix="SM" />
+                <x-input class="w-full" wire:model="distanceAccident" placeholder="Ingresa..." suffix="SM" />
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Dirección del lugar del accidente</label>
-                <x-input class="w-full" wire:model="" placeholder="Ingresa..." suffix="grados magneticos" />
+                <x-input class="w-full" wire:model="directionAccident" placeholder="Ingresa..." suffix="grados magneticos" />
             </div>
         </div>
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Fuente de la información</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="sourceInformation">
+                    <x-select.option label="SERVICIO METEOROLÓGICO NACIONAL" value="SERVICIO METEOROLÓGICO NACIONAL" />
+                    <x-select.option label="ESTACIÓN DE INFORMACIÓN DE VUELO" value="ESTACIÓN DE INFORMACIÓN DE VUELO" />
+                    <x-select.option label="TV/RADIO" value="TV/RADIO" />
+                    <x-select.option label="COMPAÑÍA" value="COMPAÑÍA" />
+                    <x-select.option label="INTERNET" value="INTERNET" />
+                    <x-select.option label="SERVICIO METEOROLÓGICO COMERCIAL" value="SERVICIO METEOROLÓGICO COMERCIAL" />                    
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Información obtenida</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="obtainedInformation">
+                    <x-select.option label="EN PERSONA" value="EN PERSONA" />
+                    <x-select.option label="TELETIPO" value="TELETIPO" />
+                    <x-select.option label="TV/RADIO" value="TV/RADIO" />
+                    <x-select.option label="TELÉFONO / COMPUTADORA" value="TELÉFONO / COMPUTADORA" />
                 </x-select>
             </div>
         </div>
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Condiciones de la luz</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="lightConditions">
+                <x-select.option label="AMANECER" value="AMANECER" />
+                <x-select.option label="DÍA" value="DÍA" />
+                <x-select.option label="NEBLINA" value="NEBLINA" />
+                <x-select.option label="NOCHE" value="NOCHE" />
+                <x-select.option label="NOCHE OBSCURA" value="NOCHE OBSCURA" />
+                <x-select.option label="NOCHE ILUMINADA" value="NOCHE ILUMINADA" />
+                <x-select.option label="NO REPORTADO" value="NO REPORTADO" />
+                <x-select.option label="OTRO" value="OTRO" />                    
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Cielo/nubes</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="skyClouds">
+                <x-select.option label="LIMPIO" value="LIMPIO" />
+                <x-select.option label="POCAS NUBES" value="POCAS NUBES" />
+                <x-select.option label="PARCIALMENTE OSCURECIDO" value="PARCIALMENTE OSCURECIDO" />
+                <x-select.option label="NUBLADO" value="NUBLADO" />
+                <x-select.option label="DISPERSO" value="DISPERSO" />
                 </x-select>
             </div>
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Techo</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="ceiling">
+                    <x-select.option label="CLARO" value="CLARO" />
+                    <x-select.option label="OSCURECIDO" value="OSCURECIDO" />
+                    <x-select.option label="INDEFINIDO" value="INDEFINIDO" />
+                    <x-select.option label="NUBES BAJAS" value="NUBES BAJAS" />                    
                 </x-select>
             </div>
-            {{--Sale si se selecciona nubes bajas--}}
+            
+            {{--Sale si se selecciona nubes bajas / condicion--}}
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Altura más baja de la nube</label>
-                <x-input class="w-full" wire:model="" placeholder="Ingresa..." suffix="a nivel del terreno" />
+                <x-input class="w-full" wire:model="lowestCloud" placeholder="Ingresa..." suffix="a nivel del terreno" />
             </div>
+
+
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Restricción a la visibilidad</label>
                 <x-select class="w-full" placeholder="Selecciona" wire:model="">
                     <x-select.option label="" value="" />
                 </x-select>
             </div>
-        </div>
+        </div>ñ
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Viento</label>
