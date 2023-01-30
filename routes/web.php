@@ -34,3 +34,4 @@ Route::get('create/{slug}/avs0102/{idReporter}', Avs0102Create::class)->name('av
 // ROUTE PDFS
 Route::get('PdfAfac001', [Create::class, 'PdfAfac001'])->name('afac001-pdf');
 Route::get('PdfAfac001a', [Afac001aCreate::class, 'PdfAfac001a'])->name('afac001a-pdf');
+Route::get('PdfAfac005', [Afac005Create::class, 'PdfAfac005'])->name('afac005-pdf');
