@@ -34,12 +34,19 @@ class Create extends Component
     $copilotRugged,$copilotMultiengine ,$copilotInstruments,$daysAircraft90,$daysRugged90,$daysMultiengine90,$daysInstruments90,$daysAircraft30,$daysRugged30,$daysMultiengine30,
     $daysInstruments30,$hoursAircraft24,$hoursRugged24,$hoursMultiengine24,$hoursInstruments24,$capabilities,$medicalCertificate,$limitationsCertificate,$exceptionCertificate,
     $observationsCertificate,$otherCertificate,$occupiedSeat,$injury,$performsFunctions,$seatBelt,$theHarness,$inspectionDate,$verificationDate,$nameCopilot,$datebirthCopilot,
-    $domicileCopilot,$classLicense2,$numberLicense2,$validityLicense2;
-        
+    $domicileCopilot,$classLicense2,$numberLicense2,$validityLicense2,$pilotAircraft2,$pilotBumpy2,$pilotMultiengine2,$pilotInstruments2,$instructorAircraft2,$instructorRugged2,
+    $instructorMultiengine2,$instructorInstruments2,$copilotAircraft2,$copilotRugged2,$copilotMultiengine2,$copilotInstruments2,$daysAircraft902,$daysRugged902,$daysMultiengine902,
+    $daysInstruments902,$daysAircraft302,$daysRugged302,$daysMultiengine302,$daysInstruments302,$hoursAircraft242,$hoursRugged242,$hoursMultiengine242,$hoursInstruments242,
+    $capabilities2,$medicalCertificate2,$limitationsCertificate2,$exceptionCertificate2,$observationsCertificate2,$otherCertificate2,$occupiedSeat2,$injury2,$performsFunctions2,
+    $seatBelt2,$theHarness2,$inspectionDate2,$verificationDate2,$nameOthers,$nationalityother_id,$datebirthOthers,$domicileOthers,$classLicense3,$numberLicense3,$validityLicense3,
+    $pilotAircraft3,$pilotBumpy3,$pilotMultiengine3,$pilotInstruments3,$instructorAircraft3,$instructorRugged3,$instructorMultiengine3,$instructorInstruments3,$copilotAircraft3,
+    $copilotRugged3,$copilotMultiengine3,$copilotInstruments3,$daysAircraft903,$daysRugged903,$daysMultiengine903,$daysInstruments903,$daysAircraft303,$daysRugged303,$daysMultiengine303,
+    $daysInstruments303,$hoursAircraft243,$hoursRugged243,$hoursMultiengine243,$hoursInstruments243,$capabilities3,$medicalCertificate3,$limitationsCertificate3,$exceptionCertificate3,
+    $observationsCertificate3,$otherCertificate3,$occupiedSeat3,$injury3,$performsFunctions3,$seatBelt3,$theHarness3,$inspectionDate3,$verificationDate3,$historyDescription,$safetyRecommendation,
+    $additionalInformation;  
 
 
-
-    public $copyRevalidation,$filesPermissions,$filesLatestservices,$filereceiptFuel,$fileProcedures,$fileForecast,$fileLicense;
+    public $copyRevalidation,$filesPermissions,$filesLatestservices,$filereceiptFuel,$fileProcedures,$fileForecast,$fileLicense,$fileCertificate,$filePassengers,$fileSusceptible;
     public $states,$municipals,$models,$nacionality;
     
     use WithFileUploads;
@@ -221,7 +228,6 @@ class Create extends Component
             'hoursRugged24' => 'required',
             'hoursMultiengine24' => 'required',
             'hoursInstruments24' => 'required',
-
             'capabilities' => 'required',
             'medicalCertificate' => 'required',
             'limitationsCertificate' => 'required',
@@ -244,8 +250,96 @@ class Create extends Component
             'numberLicense2' => 'required',
             'validityLicense2' => 'required',
             
-
-
+            'pilotAircraft2' => 'required',
+            'pilotBumpy2' => 'required',
+            'pilotMultiengine2' => 'required',
+            'pilotInstruments2' => 'required',
+            'instructorAircraft2' => 'required',
+            'instructorRugged2' => 'required',
+            'instructorMultiengine2' => 'required',
+            'instructorInstruments2' => 'required',
+            'copilotAircraft2' => 'required',
+            'copilotRugged2' => 'required',
+            'copilotMultiengine2' => 'required',
+            'copilotInstruments2' => 'required',
+            'daysAircraft902' => 'required',
+            'daysRugged902' => 'required',
+            'daysMultiengine902' => 'required',
+            'daysInstruments902' => 'required',
+            'daysAircraft302' => 'required',
+            'daysRugged302' => 'required',
+            'daysMultiengine302' => 'required',
+            'daysInstruments302' => 'required',
+            'hoursAircraft242' => 'required',
+            'hoursRugged242' => 'required',
+            'hoursMultiengine242' => 'required',
+            'hoursInstruments242' => 'required',
+            'capabilities2' => 'required',
+            'medicalCertificate2' => 'required',
+            'limitationsCertificate2' => 'required',
+            'exceptionCertificate2' => 'required',
+            'observationsCertificate2' => 'required',
+            'otherCertificate2' => 'required',
+            'occupiedSeat2' => 'required',
+            'injury2' => 'required',
+            'performsFunctions2' => 'required',
+            'seatBelt2' => 'required',
+            'theHarness2' => 'required',
+            'inspectionDate2' => 'required',
+            'verificationDate2' => 'required',
+           // 'fileBinnacle'=> 'required|mimetypes:application/pdf|max:500',
+            'nameOthers' => 'required',
+            'nationalityother_id' => 'required',
+            'datebirthOthers' => 'required',
+            'domicileOthers' => 'required',
+            'classLicense3' => 'required',
+            'numberLicense3' => 'required',
+            'validityLicense3' => 'required',
+            'pilotAircraft3' => 'required',
+            'pilotBumpy3' => 'required',
+            'pilotMultiengine3' => 'required',
+            'pilotInstruments3' => 'required',
+            'instructorAircraft3' => 'required',
+            'instructorRugged3' => 'required',
+            'instructorMultiengine3' => 'required',
+            'instructorInstruments3' => 'required',
+            'copilotAircraft3' => 'required',
+            'copilotRugged3' => 'required',
+            'copilotMultiengine3' => 'required',
+            'copilotInstruments3' => 'required',
+            'daysAircraft903' => 'required',
+            'daysRugged903' => 'required',
+            'daysMultiengine903' => 'required',
+            'daysInstruments903' => 'required',
+            'daysAircraft303' => 'required',
+            'daysRugged303' => 'required',
+            'daysMultiengine303' => 'required',
+            'daysInstruments303' => 'required',
+            'hoursAircraft243' => 'required',
+            'hoursRugged243' => 'required',
+            'hoursMultiengine243' => 'required',
+            'hoursInstruments243' => 'required',
+            'capabilities3' => 'required',
+            'medicalCertificate3' => 'required',
+            'limitationsCertificate3' => 'required',
+            'exceptionCertificate3' => 'required',
+            'observationsCertificate3' => 'required',
+            'otherCertificate3' => 'required',
+            'occupiedSeat3' => 'required',
+            'injury3' => 'required',
+            'performsFunctions3' => 'required',
+            'seatBelt3' => 'required',
+            'theHarness3' => 'required',
+            'inspectionDate3' => 'required',
+            'verificationDate3' => 'required',
+           // 'fileCertificate'=> 'required|mimetypes:application/pdf|max:500',              
+            'historyDescription' => 'required',
+           // 'filePassengers'=> 'required|mimetypes:application/pdf|max:500',              
+            'safetyRecommendation' => 'required',
+           // 'fileSusceptible'=> 'required|mimetypes:application/pdf|max:500',              
+            'additionalInformation' => 'required',
+           
+           
         ];
     }
 
@@ -284,7 +378,22 @@ class Create extends Component
     public function updatedfileLicense(){
         $this->validate(['fileLicense' => 'mimetypes:application/pdf|max:5000']);                                        
     }     
+    public function updatedfileBinnacle(){
+        $this->validate(['fileBinnacle' => 'mimetypes:application/pdf|max:5000']);                                        
+    }
+    public function updatedfileCertificate(){
+        $this->validate(['fileCertificate' => 'mimetypes:application/pdf|max:5000']);                                        
+    }
 
+    public function updatedfilePassengers(){
+        $this->validate(['filePassengers' => 'mimetypes:application/pdf|max:5000']);                                        
+    }
+
+    public function updatedfileSusceptible(){
+        $this->validate(['fileSusceptible' => 'mimetypes:application/pdf|max:5000']);                                        
+    }
+
+    
     public function updatedStateId($state_id){
         $this->municipals = Municipal::where('state_id',$state_id)->get();
     }
@@ -440,14 +549,12 @@ class Create extends Component
                 'timeObservation' => $this->timeObservation,
                 'distanceAccident' => $this->distanceAccident,
                 'directionAccident' => $this->directionAccident,
-
                 'sourceInformation' => $this->sourceInformation,
                 'obtainedInformation' => $this->obtainedInformation,
                 'lightConditions' => $this->lightConditions,
                 'skyClouds' => $this->skyClouds,
                 'ceiling' => $this->ceiling,
                 'lowestCloud' => $this->lowestCloud,
-
                 'visibilityRestriction' => $this->visibilityRestriction,
                 'Wind' => $this->Wind,
                 'orientation' => $this->orientation,
@@ -493,7 +600,6 @@ class Create extends Component
                 'hoursRugged24' => $this->hoursRugged24,
                 'hoursMultiengine24' => $this->hoursMultiengine24,
                 'hoursInstruments24' => $this->hoursInstruments24,
-
                 'capabilities' => $this->capabilities,
                 'medicalCertificate' => $this->medicalCertificate,
                 'limitationsCertificate' => $this->limitationsCertificate,
@@ -515,6 +621,98 @@ class Create extends Component
                 'classLicense2' => $this->classLicense2,
                 'numberLicense2' => $this->numberLicense2,
                 'validityLicense2' => $this->validityLicense2,
+
+                'pilotAircraft2' => $this->pilotAircraft2,
+                'pilotBumpy2' => $this->pilotBumpy2,
+                'pilotMultiengine2' => $this->pilotMultiengine2,
+                'pilotInstruments2' => $this->pilotInstruments2,
+                'instructorAircraft2' => $this->instructorAircraft2,
+                'instructorRugged2' => $this->instructorRugged2,
+                'instructorMultiengine2' => $this->instructorMultiengine2,
+                'instructorInstruments2' => $this->instructorInstruments2,
+                'copilotAircraft2' => $this->copilotAircraft2,
+                'copilotRugged2' => $this->copilotRugged2,
+                'copilotMultiengine2' => $this->copilotMultiengine2,
+                'copilotInstruments2' => $this->copilotInstruments2,
+                'daysAircraft902' => $this->daysAircraft902,
+                'daysRugged902' => $this->daysRugged902,
+                'daysMultiengine902' => $this->daysMultiengine902,
+                'daysInstruments902' => $this->daysInstruments902,
+                'daysAircraft302' => $this->daysAircraft302,
+                'daysRugged302' => $this->daysRugged302,
+                'daysMultiengine302' => $this->daysMultiengine302,
+                'daysInstruments302' => $this->daysInstruments302,
+                'hoursAircraft242' => $this->hoursAircraft242,
+                'hoursRugged242' => $this->hoursRugged242,
+                'hoursMultiengine242' => $this->hoursMultiengine242,
+                'hoursInstruments242' => $this->hoursInstruments242,
+
+                'capabilities2' => $this->capabilities2,
+                'medicalCertificate2' => $this->medicalCertificate2,
+                'limitationsCertificate2' => $this->limitationsCertificate2,
+                'exceptionCertificate2' => $this->exceptionCertificate2,
+                'observationsCertificate2' => $this->observationsCertificate2,
+                'otherCertificate2' => $this->otherCertificate2,
+                'occupiedSeat2' => $this->occupiedSeat2,
+                'injury2' => $this->injury2,
+                'performsFunctions2' => $this->performsFunctions2,
+                'seatBelt2' => $this->seatBelt2,
+                'theHarness2' => $this->theHarness2,
+                'inspectionDate2' => $this->inspectionDate2,
+                'verificationDate2' => $this->verificationDate2,
+                // 'fileBinnacle' => $this->fileBinnacle->store('documentos', 'public','Bitacora'), 
+
+                'nameOthers' => $this->nameOthers,
+                'nationalityother_id' => $this->nationalityother_id,
+                'datebirthOthers' => $this->datebirthOthers,
+                'domicileOthers' => $this->domicileOthers,
+                'classLicense3' => $this->classLicense3,
+                'numberLicense3' => $this->numberLicense3,
+                'validityLicense3' => $this->validityLicense3,
+
+                'pilotAircraft3' => $this->pilotAircraft3,
+                'pilotBumpy3' => $this->pilotBumpy3,
+                'pilotMultiengine3' => $this->pilotMultiengine3,
+                'pilotInstruments3' => $this->pilotInstruments3,
+                'instructorAircraft3' => $this->instructorAircraft3,
+                'instructorRugged3' => $this->instructorRugged3,
+                'instructorMultiengine3' => $this->instructorMultiengine3,
+                'instructorInstruments3' => $this->instructorInstruments3,
+                'copilotAircraft3' => $this->copilotAircraft3,
+                'copilotRugged3' => $this->copilotRugged3,
+                'copilotMultiengine3' => $this->copilotMultiengine3,
+                'copilotInstruments3' => $this->copilotInstruments3,
+                'daysAircraft903' => $this->daysAircraft903,
+                'daysRugged903' => $this->daysRugged903,
+                'daysMultiengine903' => $this->daysMultiengine903,
+                'daysInstruments903' => $this->daysInstruments903,
+                'daysAircraft303' => $this->daysAircraft303,
+                'daysRugged303' => $this->daysRugged303,
+                'daysMultiengine303' => $this->daysMultiengine303,
+                'daysInstruments303' => $this->daysInstruments303,
+                'hoursAircraft243' => $this->hoursAircraft243,
+                'hoursRugged243' => $this->hoursRugged243,
+                'hoursMultiengine243' => $this->hoursMultiengine243,
+                'hoursInstruments243' => $this->hoursInstruments243,
+                'capabilities3' => $this->capabilities3,
+                'medicalCertificate3' => $this->medicalCertificate3,
+                'limitationsCertificate3' => $this->limitationsCertificate3,
+                'exceptionCertificate3' => $this->exceptionCertificate3,
+                'observationsCertificate3' => $this->observationsCertificate3,
+                'otherCertificate3' => $this->otherCertificate3,
+                'occupiedSeat3' => $this->occupiedSeat3,
+                'injury3' => $this->injury3,
+                'performsFunctions3' => $this->performsFunctions3,
+                'seatBelt3' => $this->seatBelt3,
+                'theHarness3' => $this->theHarness3,
+                'inspectionDate3' => $this->inspectionDate3,
+                'verificationDate3' => $this->verificationDate3,
+                // 'fileCertificate' => $this->fileCertificate->store('documentos', 'public','Certificado'), 
+                'historyDescription' => $this->historyDescription,                
+                // 'filePassengers' => $this->filePassengers->store('documentos', 'public','Pasajeros'), 
+                'safetyRecommendation' => $this->safetyRecommendation,
+                // 'fileSusceptible' => $this->fileSusceptible->store('documentos', 'public','Susceptible'), 
+                'additionalInformation' => $this->additionalInformation,                
                 ]
         );
     }
