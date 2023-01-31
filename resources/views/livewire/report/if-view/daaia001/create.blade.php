@@ -1,6 +1,6 @@
 <div>
-    <section class="bg-gray-50 dark:bg-gray-900 py-20">
-        <div class="container px-6 py-10 py-20 mx-auto content-center">
+    <section class="bg-gray-50 dark:bg-gray-900 py-12">
+        <div class="container px-6 py-10 py-6 mx-auto content-center">
             <h1 class="text-xl font-semibold text-center text-gray-800 capitalize lg:text-2xl dark:text-white">AP.4 INFORME DE ACCIDENTE/INCIDENTE DE PILOTO/OPERADOR</h1>
             <div class="flex justify-center mx-auto mt-6">
                 <span class="inline-block w-80 h-1 bg-blue-500 rounded-full"></span>

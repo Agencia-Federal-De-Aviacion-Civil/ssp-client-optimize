@@ -13,10 +13,11 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
-        "wireui/wireui": "^1.17"
+        "wireui/wireui": "^1.17",
+        "fakerphp/faker": "^1.9.1",
+        "ext-gd": "*"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
