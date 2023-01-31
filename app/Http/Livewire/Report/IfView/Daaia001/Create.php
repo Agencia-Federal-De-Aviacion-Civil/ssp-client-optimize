@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Report\IfView\Daaia001;
 
 use App\Models\Catalogue\aModel;
 use App\Models\Catalogue\Municipal;
+use App\Models\Catalogue\Nacionality;
 use App\Models\Catalogue\State;
 use App\Models\Report\Daaia001;
 use Livewire\Component;
@@ -11,7 +12,7 @@ use Livewire\WithFileUploads;
 
 class Create extends Component
 {
-    public $idReporter,$id_reporter,$state_id,$municipal_id,$daaia001;
+    public $idReporter,$id_reporter,$state_id,$municipal_id,$daaia001,$nacionalities_id,$nationalitycopilot_id;
     public $exactPlace,$city,$latitude,$longitude,$date,$time,$aeronauticalAuthority,$flight_phase,$indicate,$collision,
     $altitudeEvent,$maker,$modelReport,$serialNumber,$enrollment,$amateur,$maximumWeight,$accidentWeight,$nose,$datum,
     $noseI,$datumI,$aircraftCategory,$indicateI,$airworthiness,$indicateII,$numberSeats,$flightCrew,$cabinCrew,$passengerSeats,
@@ -25,11 +26,21 @@ class Create extends Component
     $nameOperator2,$directionOperator2,$malfunction,$a_model_id,$descriptionFail,$componentHours,$componentCycles,$componentInspection,$presenceFire,
     $explosion,$describeDamage,$identificationOACI,$nameAerodrome,$distanceAerodrome,$directionAerodrome,$elevation,$proximityAirport,$approachSegment,
     $approachIFR,$approachVFR,$trackHeader,$longitude2,$broad,$materialHead,$conditionsRunway,$lastTakeoff,$timeTakeoff,$destinationAirport,$planFlight,
-    $clearanceFlight,$eventOccurred,$loadAircraft,$otherAircraft,$litersFuel,$gallonsfuel,$typeFuel,$specifyFuel,$otherService,$evacuationAircraft,$evacuationDescription
-    ,$installationObservation,$timeObservation,$distanceAccident,$directionAccident;
+    $clearanceFlight,$eventOccurred,$loadAircraft,$otherAircraft,$litersFuel,$gallonsfuel,$typeFuel,$specifyFuel,$otherService,$evacuationAircraft,$evacuationDescription,
+    $installationObservation,$timeObservation,$distanceAccident,$directionAccident,$sourceInformation,$obtainedInformation,$lightConditions,$skyClouds,$ceiling,
+    $lowestCloud,$visibilityRestriction,$Wind,$orientation,$intensity,$typeTurbulence,$severityTurbulence,$weatherConditions,$currentTimeaccident,$temperature,$altimeter,
+    $altitudeDensity,$DewPoint,$precipitationType,$nameCommander,$datebirthCommander,$domicileCommander,$classLicense,$numberLicense,$validityLicense,
+    $pilotAircraft ,$pilotBumpy,$pilotMultiengine,$pilotInstruments,$instructorAircraft,$instructorRugged ,$instructorMultiengine ,$instructorInstruments,$copilotAircraft,
+    $copilotRugged,$copilotMultiengine ,$copilotInstruments,$daysAircraft90,$daysRugged90,$daysMultiengine90,$daysInstruments90,$daysAircraft30,$daysRugged30,$daysMultiengine30,
+    $daysInstruments30,$hoursAircraft24,$hoursRugged24,$hoursMultiengine24,$hoursInstruments24,$capabilities,$medicalCertificate,$limitationsCertificate,$exceptionCertificate,
+    $observationsCertificate,$otherCertificate,$occupiedSeat,$injury,$performsFunctions,$seatBelt,$theHarness,$inspectionDate,$verificationDate,$nameCopilot,$datebirthCopilot,
+    $domicileCopilot,$classLicense2,$numberLicense2,$validityLicense2;
+        
 
-    public $copyRevalidation,$filesPermissions,$filesLatestservices,$filereceiptFuel,$fileProcedures;
-    public $states,$municipals,$models;
+
+
+    public $copyRevalidation,$filesPermissions,$filesLatestservices,$filereceiptFuel,$fileProcedures,$fileForecast,$fileLicense;
+    public $states,$municipals,$models,$nacionality;
     
     use WithFileUploads;
     public function rules()
@@ -159,6 +170,81 @@ class Create extends Component
             'timeObservation' => 'required',
             'distanceAccident' => 'required',
             'directionAccident' => 'required',
+            'sourceInformation' => 'required',
+            'obtainedInformation' => 'required',
+            'lightConditions' => 'required',
+            'skyClouds' => 'required',
+            'ceiling' => 'required',
+            'lowestCloud' => 'required',
+            'visibilityRestriction' => 'required',
+            'Wind' => 'required',
+            'orientation' => 'required',
+            'intensity' => 'required',
+            'typeTurbulence' => 'required',
+            'severityTurbulence' => 'required',
+            'weatherConditions' => 'required',
+            'currentTimeaccident' => 'required',
+            'temperature' => 'required',
+            'altimeter' => 'required',
+            'altitudeDensity' => 'required',
+            'DewPoint' => 'required',
+            'precipitationType' => 'required',
+            // 'fileForecast'=> 'required|mimetypes:application/pdf|max:500',
+            'nameCommander' => 'required',
+            'nacionalities_id' => 'required',
+            'datebirthCommander' => 'required',
+            'domicileCommander' => 'required',
+            'classLicense' => 'required',
+            'numberLicense' => 'required',
+            'validityLicense' => 'required',
+            'pilotAircraft ' => 'required',
+            'pilotBumpy' => 'required',
+            'pilotMultiengine' => 'required',
+            'pilotInstruments' => 'required',
+            'instructorAircraft' => 'required',
+            'instructorRugged ' => 'required',
+            'instructorMultiengine ' => 'required',
+            'instructorInstruments' => 'required',
+            'copilotAircraft' => 'required',
+            'copilotRugged' => 'required',
+            'copilotMultiengine ' => 'required',
+            'copilotInstruments' => 'required',
+            'daysAircraft90' => 'required',
+            'daysRugged90' => 'required',
+            'daysMultiengine90' => 'required',
+            'daysInstruments90' => 'required',
+            'daysAircraft30' => 'required',
+            'daysRugged30' => 'required',
+            'daysMultiengine30' => 'required',
+            'daysInstruments30' => 'required',
+            'hoursAircraft24' => 'required',
+            'hoursRugged24' => 'required',
+            'hoursMultiengine24' => 'required',
+            'hoursInstruments24' => 'required',
+
+            'capabilities' => 'required',
+            'medicalCertificate' => 'required',
+            'limitationsCertificate' => 'required',
+            'exceptionCertificate' => 'required',
+            'observationsCertificate' => 'required',
+            'otherCertificate' => 'required',
+            'occupiedSeat' => 'required',
+            'injury' => 'required',
+            'performsFunctions' => 'required',
+            'seatBelt' => 'required',
+            'theHarness' => 'required',
+            'inspectionDate' => 'required',
+            'verificationDate' => 'required',
+            // 'fileLicense'=> 'required|mimetypes:application/pdf|max:500',                        
+            'nameCopilot' => 'required',
+            'nationalitycopilot_id' => 'required',
+            'datebirthCopilot' => 'required',
+            'domicileCopilot' => 'required',
+            'classLicense2' => 'required',
+            'numberLicense2' => 'required',
+            'validityLicense2' => 'required',
+            
+
 
         ];
     }
@@ -168,6 +254,7 @@ class Create extends Component
     $this->states = State::all();
     $this->municipals = collect();
     $this->models = aModel::all();
+    $this->nacionality = Nacionality::all();
     }
     public function render()
     {
@@ -190,7 +277,14 @@ class Create extends Component
     }
     public function updatedfileProcedures(){
         $this->validate(['fileProcedures' => 'mimetypes:application/pdf|max:5000']);                                        
-    }    
+    } 
+    public function updatedfileForecast(){
+        $this->validate(['fileForecast' => 'mimetypes:application/pdf|max:5000']);                                        
+    }     
+    public function updatedfileLicense(){
+        $this->validate(['fileLicense' => 'mimetypes:application/pdf|max:5000']);                                        
+    }     
+
     public function updatedStateId($state_id){
         $this->municipals = Municipal::where('state_id',$state_id)->get();
     }
@@ -347,6 +441,80 @@ class Create extends Component
                 'distanceAccident' => $this->distanceAccident,
                 'directionAccident' => $this->directionAccident,
 
+                'sourceInformation' => $this->sourceInformation,
+                'obtainedInformation' => $this->obtainedInformation,
+                'lightConditions' => $this->lightConditions,
+                'skyClouds' => $this->skyClouds,
+                'ceiling' => $this->ceiling,
+                'lowestCloud' => $this->lowestCloud,
+
+                'visibilityRestriction' => $this->visibilityRestriction,
+                'Wind' => $this->Wind,
+                'orientation' => $this->orientation,
+                'intensity' => $this->intensity,
+                'typeTurbulence' => $this->typeTurbulence,
+                'severityTurbulence' => $this->severityTurbulence,
+                'weatherConditions' => $this->weatherConditions,
+                'currentTimeaccident' => $this->currentTimeaccident,
+                'temperature' => $this->temperature,
+                'altimeter' => $this->altimeter,
+                'altitudeDensity' => $this->altitudeDensity,
+                'DewPoint' => $this->DewPoint,
+                'precipitationType' => $this->precipitationType,
+                // 'fileForecast' => $this->fileForecast->store('documentos', 'public','Pronostico'),                                
+                'nameCommander' => $this->nameCommander,
+                'nacionalities_id' => $this->nacionalities_id,
+                'datebirthCommander' => $this->datebirthCommander,
+                'domicileCommander' => $this->domicileCommander,
+                'classLicense' => $this->classLicense,
+                'numberLicense' => $this->numberLicense,
+                'validityLicense' => $this->validityLicense,
+                'pilotAircraft' => $this->pilotAircraft,
+                'pilotBumpy' => $this->pilotBumpy,
+                'pilotMultiengine' => $this->pilotMultiengine,
+                'pilotInstruments' => $this->pilotInstruments,
+                'instructorAircraft' => $this->instructorAircraft,
+                'instructorRugged' => $this->instructorRugged ,
+                'instructorMultiengine' => $this->instructorMultiengine ,
+                'instructorInstruments' => $this->instructorInstruments,
+                'copilotAircraft' => $this->copilotAircraft,
+                'copilotRugged' => $this->copilotRugged,
+                'copilotMultiengine' => $this->copilotMultiengine ,
+                'copilotInstruments' => $this->copilotInstruments,
+                'daysAircraft90' => $this->daysAircraft90,
+                'daysRugged90' => $this->daysRugged90 ,
+                'daysMultiengine90' => $this->daysMultiengine90,
+                'daysInstruments90' => $this->daysInstruments90,
+                'daysAircraft30' => $this->daysAircraft30,
+                'daysRugged30' => $this->daysRugged30,
+                'daysMultiengine30' => $this->daysMultiengine30 ,
+                'daysInstruments30' => $this->daysInstruments30,
+                'hoursAircraft24' => $this->hoursAircraft24,
+                'hoursRugged24' => $this->hoursRugged24,
+                'hoursMultiengine24' => $this->hoursMultiengine24,
+                'hoursInstruments24' => $this->hoursInstruments24,
+
+                'capabilities' => $this->capabilities,
+                'medicalCertificate' => $this->medicalCertificate,
+                'limitationsCertificate' => $this->limitationsCertificate,
+                'exceptionCertificate' => $this->exceptionCertificate,
+                'observationsCertificate' => $this->observationsCertificate,
+                'otherCertificate' => $this->otherCertificate,
+                'occupiedSeat' => $this->occupiedSeat,
+                'injury' => $this->injury,
+                'performsFunctions' => $this->performsFunctions,
+                'seatBelt' => $this->seatBelt,
+                'theHarness' => $this->theHarness,
+                'inspectionDate' => $this->inspectionDate,
+                'verificationDate' => $this->verificationDate,
+                // 'fileLicense' => $this->fileLicense->store('documentos', 'public','Licencia'),                  
+                'nameCopilot' => $this->nameCopilot,
+                'nationalitycopilot_id' => $this->nationalitycopilot_id,
+                'datebirthCopilot' => $this->datebirthCopilot,
+                'domicileCopilot' => $this->domicileCopilot,
+                'classLicense2' => $this->classLicense2,
+                'numberLicense2' => $this->numberLicense2,
+                'validityLicense2' => $this->validityLicense2,
                 ]
         );
     }

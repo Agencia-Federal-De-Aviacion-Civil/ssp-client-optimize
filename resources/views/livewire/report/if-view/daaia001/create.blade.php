@@ -1423,34 +1423,42 @@
             
             {{--Sale si se selecciona nubes bajas / condicion--}}
             <div>
+                @if ($ceiling=='NUBES BAJAS')                    
                 <label for="" class="block text-lg mb-2 dark:text-white">Altura más baja de la nube</label>
                 <x-input class="w-full" wire:model="lowestCloud" placeholder="Ingresa..." suffix="a nivel del terreno" />
+                @endif
             </div>
 
 
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Restricción a la visibilidad</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="visibilityRestriction">
+                    <x-select.option label="NINGUNA" value="NINGUNA" />
+                    <x-select.option label="NIEBLA" value="NIEBLA" />
+                    <x-select.option label="NIEBLA EN TIERRA" value="NIEBLA EN TIERRA" />
+                    <x-select.option label="HUMO" value="HUMO" />
+                    <x-select.option label="BRUMA" value="BRUMA" />
+                    <x-select.option label="NUBOSIDAD" value="NUBOSIDAD" />                    
                 </x-select>
             </div>
-        </div>ñ
+        </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Viento</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="Wind">
+                    <x-select.option label="CALMA" value="CALMA" />
+                    <x-select.option label="VARIABLE" value="VARIABLE" />
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">a)Orientación</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="orientation"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">b)Intensidad</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="intensity"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
@@ -1458,20 +1466,27 @@
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Tipo de turbulencia</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="typeTurbulence">
+                    <x-select.option label="NO" value="NO" />
+                    <x-select.option label="AIRE CLARO" value="AIRE CLARO" />
+                    <x-select.option label="EN NUBES" value="EN NUBES" /> 
+                    <x-select.option label="CERCANÍAS A TORMENTA" value="CERCANÍAS A TORMENTA" />                                       
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Severidad de la turbulencia</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="severityTurbulence">
+                    <x-select.option label="EXTREMA" value="EXTREMA" />
+                    <x-select.option label="SEVERA" value="SEVERA" />
+                    <x-select.option label="MODERADA" value="MODERADA" />
+                    <x-select.option label="LIGERA" value="LIGERA" />
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Condiciones meteorológicas prevalecientes</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="weatherConditions">
+                    <x-select.option label="IMC" value="IMC" />
+                    <x-select.option label="VMC" value="VMC" />
                 </x-select>
             </div>
         </div>
@@ -1479,7 +1494,7 @@
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">NOTAM,AIRMETs,SIGMETs,PIREPs vigentes a la hora del accidente</label>
                 <div class="md:flex col-span-8">
-                    <textarea name="" id="" cols="30" rows="4" type="text" wire:model="" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    <textarea name="" id="" cols="30" rows="4" type="text" wire:model="currentTimeaccident" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresa..."></textarea>
                 </div>
             </div>
@@ -1487,26 +1502,34 @@
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Temperatura</label>
-                <x-input class="px-2 py-2 w-full" wire:model="" placeholder="Ingresa..." suffix="°C" />
+                <x-input class="px-2 py-2 w-full" wire:model="temperature" placeholder="Ingresa..." suffix="°C" />
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Altímetro</label>
-                <x-input class="px-2 py-2 w-full" wire:model="" placeholder="Ingresa..." suffix="°C" />
+                <x-input class="px-2 py-2 w-full" wire:model="altimeter" placeholder="Ingresa..." suffix="°C" />
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Altitud densidad</label>
-                <x-input class="px-2 py-2 w-full" wire:model="" placeholder="Ingresa..." suffix="°C" />
+                <x-input class="px-2 py-2 w-full" wire:model="altitudeDensity" placeholder="Ingresa..." suffix="°C" />
             </div>
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Punto de roció</label>
-                <x-input class="px-2 py-2 w-full" wire:model="" placeholder="Ingresa..." suffix="°C" />
+                <x-input class="px-2 py-2 w-full" wire:model="DewPoint" placeholder="Ingresa..." suffix="°C" />
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Tipo de precipitación</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="precipitationType">
+                    <x-select.option label="NINGUNA" value="NINGUNA" />
+                    <x-select.option label="LLUVIA" value="LLUVIA" />
+                    <x-select.option label="GRANIZO" value="GRANIZO" />
+                    <x-select.option label="AGUACERO" value="AGUACERO" />
+                    <x-select.option label="LLOVIZNA" value="LLOVIZNA" />
+                    <x-select.option label="INTENSIDAD" value="INTENSIDAD" />
+                    <x-select.option label="LIGERA" value="LIGERA" />
+                    <x-select.option label="MODERADA" value="MODERADA" />
+                    <x-select.option label="FUERTE" value="FUERTE" />                   
                 </x-select>
             </div>
         </div>
@@ -1526,7 +1549,7 @@
                     </div>
                     <form>
                         <label for="small-file-input" class="sr-only">Choose file</label>
-                        <input type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
+                        <input wire:modal="fileForecast" type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
                   file:bg-transparent file:border-0
                   file:bg-gray-200 file:mr-4
                   file:py-2 file:px-4
@@ -1549,25 +1572,28 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="nameCommander"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Nacionalidad</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="nacionalities_id">
+                @foreach ($nacionality as $nacionaliti)
+                <x-select.option label="{{$nacionaliti->name}}" value="{{$nacionaliti->id}}" />
+                @endforeach
                 </x-select>
+            
             </div>
         </div>
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Fecha de nacimiento</label>
-                <x-datetime-picker class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
+                <x-datetime-picker wire:model="datebirthCommander" class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
             </div>
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Domicilio</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="domicileCommander"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
@@ -1578,19 +1604,24 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Clase</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
+
+                <input type="text"  wire:model="classLicense"
+                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                placeholder="ingresar...">
+
+                {{-- <x-select class="w-full" placeholder="Selecciona" wire:model="classLicense">
                     <x-select.option label="" value="" />
-                </x-select>
+                </x-select> --}}
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Número</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="numberLicense"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Vigencia</label>
-                <x-datetime-picker class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
+                <x-datetime-picker wire:model="validityLicense" class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
             </div>
         </div>
         <div class="flex flex-col">
@@ -1610,91 +1641,97 @@
                             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Piloto al mando</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                        <input wire:model="pilotAircraft" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
                                             placeholder="Ingresar..."></td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                        <input wire:model="pilotBumpy" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
                                             placeholder="Ingresar..."></td>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="pilotMultiengine" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="pilotInstruments" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Instructor</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                        <input wire:model="instructorAircraft" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
                                             placeholder="Ingresar..."></td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                        <input wire:model="instructorRugged" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
                                             placeholder="Ingresar...">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="instructorMultiengine" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="instructorInstruments" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Copiloto</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                        <input wire:model="copilotAircraft" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
                                             placeholder="Ingresar..."></td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                        <input wire:model="copilotRugged" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
                                             placeholder="Ingresar...">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="copilotMultiengine" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="copilotInstruments" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Ultimos 90 dias</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                        <input wire:model="daysAircraft90" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
                                             placeholder="Ingresar..."></td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="daysRugged90" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="daysMultiengine90" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="daysInstruments90" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Ultimos 30 dias</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                        <input wire:model="daysAircraft30" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
                                             placeholder="Ingresar..."></td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="daysRugged30" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="daysMultiengine30" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="daysInstruments30" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Ultimas 24 horas </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                        <input wire:model="hoursAircraft24" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
                                             placeholder="Ingresar..."></td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="hoursRugged24" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="hoursMultiengine24" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                        <input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                        <input wire:model="hoursInstruments24" type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
                                     </td>
                                 </tr>
                             </tbody>
@@ -1706,13 +1743,13 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Capacidades</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="capabilities"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Certificado médico número</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="medicalCertificate"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
@@ -1720,13 +1757,13 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Limitaciones del certificado</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="limitationsCertificate"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Excepción al certificado</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="exceptionCertificate"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
@@ -1734,60 +1771,73 @@
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Observaciones</label>
-                <x-select class="w-full">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" wire:model="observationsCertificate">
+                    <x-select.option label="NINGUNO" value="NINGUNO" />
+                    <x-select.option label="LENTES" value="LENTES" />
+                    <x-select.option label="OTRO" value="OTRO" />
                 </x-select>
             </div>
             {{--APARECER EN CASO DE SELECCIONAR OTRO--}}
             <div>
+                @if ($observationsCertificate=='OTRO')
                 <label for="" class="block text-lg mb-2 dark:text-white">Otro</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="otherCertificate"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                placeholder="ingresar...">
+                placeholder="ingresar...">                    
+                @endif
             </div>
         </div>
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Asiento ocupado</label>
-                <x-select class="w-full">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" wire:model="occupiedSeat">                    
+                    <x-select.option label="IZQUIERDO" value="IZQUIERDO" />
+                    <x-select.option label="DERECHO" value="DERECHO" />
+                    <x-select.option label="CENTRO" value="CENTRO" />
+                    <x-select.option label="OTRO" value="OTRO" />
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Lesión</label>
-                <x-select class="w-full">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" wire:model="injury">
+                    <x-select label="FATAL" value="FATAL" />
+                    <x-select label="GRAVE" value="GRAVE" />
+                    <x-select label="LEVE" value="LEVE" />
+                    <x-select label="ILESO" value="ILESO" />
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Desempeña funciones de</label>
-                <x-select class="w-full">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" wire:model="performsFunctions">
+                    <x-select.option label="PILOTO AL MANDO" value="PILOTO AL MANDO" />
+                    <x-select.option label="PILOTO MONITOREANDO" value="PILOTO MONITOREANDO" />
                 </x-select>
             </div>
         </div>
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Utilizo el cinturón de seguridad?</label>
-                <x-select class="w-full">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" wire:model="seatBelt">
+                    <x-select.option label="SI" value="SI" />
+                    <x-select.option label="NO" value="NO" />                    
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Utilizo el arnes?</label>
-                <x-select class="w-full">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" wire:model="theHarness">
+                    <x-select.option label="SI" value="SI" />
+                    <x-select.option label="NO" value="NO" />                    
                 </x-select>
             </div>
         </div>
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Fecha última inspección en ruta</label>
-                <x-datetime-picker class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
+                <x-datetime-picker wire:model="inspectionDate" class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Ultima verificación de la aeronave</label>
-                <x-datetime-picker class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
+                <x-datetime-picker wire:model="verificationDate" class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
             </div>
         </div>
         <div class="bg-blue-50 border border-blue-200 rounded-md p-4" role="alert">
@@ -1806,7 +1856,7 @@
                     </div>
                     <form>
                         <label for="small-file-input" class="sr-only">Choose file</label>
-                        <input type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
+                        <input type="file" wire:modal="fileLicense" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
                   file:bg-transparent file:border-0
                   file:bg-gray-200 file:mr-4
                   file:py-2 file:px-4
@@ -1821,25 +1871,27 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="nameCopilot"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Nacionalidad</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
-                    <x-select.option label="" value="" />
+                <x-select class="w-full" placeholder="Selecciona" wire:model="nationalitycopilot_id">
+                @foreach ($nacionality as $nacionaliti)
+                <x-select.option label="{{$nacionaliti->name}}" value="{{$nacionaliti->id}}" />
+                @endforeach
                 </x-select>
             </div>
         </div>
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Fecha de nacimiento</label>
-                <x-datetime-picker class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
+                <x-datetime-picker wire:model="datebirthCopilot" class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
             </div>
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Domicilio</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="domicileCopilot"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
@@ -1850,19 +1902,19 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Clase</label>
-                <x-select class="w-full" placeholder="Selecciona" wire:model="">
+                <x-select class="w-full" placeholder="Selecciona" wire:model="classLicense2">
                     <x-select.option label="" value="" />
                 </x-select>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Número</label>
-                <input type="text"  wire:model=""
+                <input type="text"  wire:model="numberLicense2"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 placeholder="ingresar...">
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Vigencia</label>
-                <x-datetime-picker class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
+                <x-datetime-picker wire:model="validityLicense2" class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
             </div>
         </div>
         <div class="flex flex-col">
