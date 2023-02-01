@@ -454,6 +454,222 @@ tr {
                 <td colspan="5"><span class="labelss">Pista de aterrizaje</span></td>
                 <td class="ingresarleft" colspan="8"></td>
             </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">Otros</td>
+                <td colspan="3"><span class="labelss">especifique</span></td>
+                <td class="ingresarleft" colspan="8"></td>
+                <td colspan="3"></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="5"><span class="labelss">Calle de rodaje</span></td>
+                <td class="ingresarleft" colspan="6"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="16"></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="5"><span class="labelss">Intersección con</span></td>
+                <td class="ingresarleft" colspan="6"></td>
+            </tr>
+            <tr>
+                <td>12.</td>
+                <td colspan="16">Información del peatón</td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="7"><span class="labelss">Otras áreas, especifique:</span></td>
+                <td class="ingresarleft" colspan="6"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3">Nombre</td>
+                <td class="ingresarleft" colspan="11"></td>
+                <td colspan="6"></td>
+            </tr>
+            <tr>
+                <td ></td>
+                <td colspan="4">Empleado de: </td>
+                <td class="ingresarleft" colspan="10"></td>
+                <td colspan="1"></td>
+                <td>19.</td>
+                <td colspan="14">Área de movimiento presentaba</td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Aerolínea</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td colspan="14"><span class="labelss">Cambios recientes en la configuración de la</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Aeródromo</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td colspan="14"><span class="labelss">pista o calle de rodaje </span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Contratista</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td colspan="14"><span class="labelss">Actividad de construcción</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Autoridad Aeronáutica</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td colspan="14"><span class="labelss">Área cerrada por NOTAM, especificar el área</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Otro Gobierno</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td class="ingresarleft" colspan="14"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Pasajero de la línea aérea</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="5"><span class="labelss">Otro,especifique</span></td>
+                <td class="ingresarleft" colspan="8"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Visitante del aeropuerto</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td colspan="14"><span class="labelss">Ninguna de las anteriores</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Piloto de Aviación General</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td>20.</td>
+                <td colspan="14">Se emitió o modificó una autorización para</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">Otros</td>
+                <td colspan="3"><span class="labelss">especifique</span></td>
+                <td class="ingresarleft" colspan="8"></td>
+                <td colspan="3"></td>
+                <td colspan="14">impedir una pérdida de separación o riesgo de</td>
+            </tr>
+            <tr>
+                <td>13.</td>
+                <td colspan="15">Desviación detectada por:</td>
+                <td colspan="1"></td>
+                <td colspan="14">colisión</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Personal de torre</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="5"><span class="labelss">Sí, especifique</span></td>
+                <td class="ingresarleft" colspan="8"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">CCO del aeródromo</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td colspan="14"><span class="labelss">No</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Seguridad aeroportuaria</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Piloto</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td>21.</td>
+                <td colspan="14">Hubo una pérdida de separación</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">Otros</td>
+                <td colspan="3"><span class="labelss">especifique</span></td>
+                <td class="ingresarleft" colspan="9"></td>
+                <td colspan="2"></td>
+                <td colspan="14"><span class="labelss">Sí</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"></td>
+                <td></td>
+                <td colspan="14"><span class="labelss">No</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td>14.</td>
+                <td colspan="15">El área es visible desde torre</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Sí</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td>22.</td>
+                <td colspan="14">Se adjunta</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">No</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td colspan="14"><span class="labelss">Declaración del conductor o del peatón</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="4"><span class="labelss">Otro,especifique</span></td>
+                <td class="ingresarleft" colspan="9"></td>
+                <td colspan="2"></td>
+                <td colspan="15"><span class="labelss">Croquis del aeropuerto</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"></td>
+                <td colspan="1"></td>
+                <td colspan="15"><span class="labelss">Acta de hechos </span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td>15.</td>
+                <td colspan="15">El piloto, conductor o peatón tomaron o </td>
+                <td colspan="1"></td>
+                <td colspan="14"><span class="labelss">Análisis del RST</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15">solicitaron una acción evasiva para evitar la</td>
+                <td colspan="1"></td>
+                <td colspan="14"><span class="labelss">AFAC-14</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15">colisión</td>
+                <td colspan="1"></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="4"><span class="labelss">Otro,especifique</span></td>
+                <td class="ingresarleft" colspan="9"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Sí</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td>23.</td>
+                <td colspan="14">Acciones tomadas o que se plantean tomar</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">No</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td colspan="14"><span class="labelss">Proceso sancionador de la Autoridad</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Se desconoce</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td colspan="14"><span class="labelss">Proceso sancionador del explotador del</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td>16.</td>
+                <td colspan="15">Para la pérdida de separación, fue de:</td>
+                <td colspan="1"></td>
+                <td colspan="14">aeródromo</td>
+            </tr>
         </table>
     </div>    
 </body>
