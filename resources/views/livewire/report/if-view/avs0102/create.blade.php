@@ -16,8 +16,8 @@
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Explotador</label>
-                    <input type="text" wire:model="exploitative" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">
+                    <x-input type="text" wire:model="exploitative" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresar..."/>
                 </div>
             </div>
             <div class="flex flex-col py-0">
@@ -43,8 +43,8 @@
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Matrícula</label>
-                    <input type="text" wire:model="aircraftRegistration" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">
+                    <x-input type="text" wire:model="aircraftRegistration" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresar..." />
                 </div>
             </div>
             <div class="flex flex-col py-0">
@@ -97,34 +97,34 @@
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre del aeródromo</label>
-                    <input type="text" wire:model="aerodromeName" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresa al Propetario">
+                    <x-input type="text" wire:model="aerodromeName" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresa al Propetario" />
                 </div>
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Pista utilizada</label>
-                    <input type="text" wire:model="trackUsed" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresa al Propetario">
+                    <x-input type="text" wire:model="trackUsed" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresa al Propetario" />
                 </div>
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Posición,si fue en ruta</label>
-                    <input type="text" wire:model="positionRoute" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresa al Propetario">
+                    <x-input type="text" wire:model="positionRoute" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresa al Propetario" />
                 </div>
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Altura</label>
-                    <input type="text" wire:model="height" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresa al Propetario">
+                    <x-input type="text" wire:model="height" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresa al Propetario" />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Velocidad indicada</label>
-                    <input type="text" wire:model="indicatedSpeed" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresa al Propetario">
+                    <x-input type="text" wire:model="indicatedSpeed" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresa al Propetario" />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Fases de vuelo</label>
@@ -159,7 +159,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-full">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="radome" id="radomo-1" name="radomo" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="radome" id="radomo-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="radomo-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -172,7 +172,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="radome" id="radomo-2" name="radomo" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="radome" id="radomo-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="radomo-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -187,7 +187,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-full">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="propeller" id="helice-1" name="helice" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="propeller" id="helice-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="helice-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                         Golpeadas
@@ -200,7 +200,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="propeller" id="helice-2" name="helice" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="propeller" id="helice-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="helice-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                            Dañadas
@@ -217,7 +217,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="windshield" id="Parabrisas-1" name="Parabrisas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="windshield" id="Parabrisas-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="Parabrisas-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -230,7 +230,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="windshield" id="Parabrisas-2" name="Parabrisas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="windshield" id="Parabrisas-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                             </div>
                                             <label for="Parabrisas-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -245,7 +245,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-full">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="wingEngine" id="ala_motor-1" name="ala_motor" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="wingEngine" id="ala_motor-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="ala_motor-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                         Golpeadas
@@ -258,7 +258,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="wingEngine" id="ala_motor-2" name="ala_motor" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="wingEngine" id="ala_motor-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                             </div>
                                             <label for="ala_motor-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                            Dañadas
@@ -275,7 +275,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="bowExcept" id="proa-1" name="proa" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="bowExcept" id="proa-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="proa-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -288,7 +288,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="bowExcept" id="proa-2" name="proa" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="bowExcept" id="proa-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                             </div>
                                             <label for="proa-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -303,7 +303,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="fuselage" id="fuselaje-1" name="fuselaje" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="fuselage" id="fuselaje-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="fuselaje-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -316,7 +316,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="fuselage" id="fuselaje-2" name="fuselaje" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="fuselage" id="fuselaje-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                             </div>
                                             <label for="fuselaje-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -333,7 +333,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="engine1" id="motor-1" name="motor" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="engine1" id="motor-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="motor-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -346,7 +346,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="engine1" id="motor-2" name="motor" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="engine1" id="motor-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                             </div>
                                             <label for="motor-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -361,7 +361,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="undercarriage" id="tren-1" name="tren" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="undercarriage" id="tren-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="tren-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -374,7 +374,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="undercarriage" id="tren-2" name="tren" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="undercarriage" id="tren-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                             </div>
                                             <label for="tren-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -391,7 +391,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="hitOdamada2" id="2-1" name="2" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="hitOdamada2" id="2-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="2-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -404,7 +404,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="hitOdamada2" id="2-2" name="2" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="hitOdamada2" id="2-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                             </div>
                                             <label for="2-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -419,7 +419,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="line" id="cola-1" name="cola" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="line" id="cola-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="cola-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -432,7 +432,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="line" id="cola-2" name="cola" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="line" id="cola-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                             </div>
                                             <label for="cola-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -449,7 +449,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="struckHurted3" id="3-1" name="3" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="struckHurted3" id="3-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="3-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -462,7 +462,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="struckHurted3" id="3-2" name="3" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="struckHurted3" id="3-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                             </div>
                                             <label for="3-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -477,7 +477,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="lights" id="luces-1" name="luces" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="lights" id="luces-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="luces-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -490,7 +490,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="lights" id="luces-2" name="luces" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="lights" id="luces-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                             </div>
                                             <label for="luces-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -507,7 +507,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="hitOdamada4" id="4-1" name="4" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="hitOdamada4" id="4-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="4-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -520,7 +520,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="hitOdamada4" id="4-2" name="4" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="hitOdamada4" id="4-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                             </div>
                                             <label for="4-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -535,7 +535,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="otherSpecify" id="otros-1" name="otros" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                <x-input wire:model="otherSpecify" id="otros-1" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <label for="otros-1" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -548,7 +548,7 @@
                                     <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                         <div class="relative flex items-start w-70">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="otherSpecify" id="otros-2" name="otros" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                <x-input wire:model="otherSpecify" id="otros-2" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                             </div>
                                             <label for="otros-2" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -601,8 +601,8 @@
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Especie de ave</label>
-                    <input type="text" wire:model="birdSpecies" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">
+                    <x-input type="text" wire:model="birdSpecies" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresar..."/>
                 </div>
 
             </div>
@@ -629,7 +629,7 @@
                                             <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                                 <div class="relative flex items-start w-full">
                                                     <div class="flex items-center h-5">
-                                                        <input wire:model="hitOdamaged1" id="numerounoobser" name="numerouno" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                        <x-input wire:model="hitOdamaged1" id="numerounoobser" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"  />
                                                     </div>
                                                     <label for="numerounoobser" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -642,7 +642,7 @@
                                             <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                                 <div class="relative flex items-start w-70">
                                                     <div class="flex items-center h-5">
-                                                        <input wire:model="hitOdamaged1" id="numeroundaño" name="numerouno" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                        <x-input wire:model="hitOdamaged1" id="numeroundaño" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                                     </div>
                                                     <label for="numeroundaño" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -659,7 +659,7 @@
                                             <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                                 <div class="relative flex items-start w-full">
                                                     <div class="flex items-center h-5">
-                                                        <input wire:model="hitOdamaged2" id="dosdiezobser" name="dosdiez" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                        <x-input wire:model="hitOdamaged2" id="dosdiezobser" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                                     </div>
                                                     <label for="dosdiezobser" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -672,7 +672,7 @@
                                             <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                                 <div class="relative flex items-start w-70">
                                                     <div class="flex items-center h-5">
-                                                        <input wire:model="hitOdamaged2" id="dosdiezdaño" name="dosdiez" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                        <x-input wire:model="hitOdamaged2" id="dosdiezdaño" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                                     </div>
                                                     <label for="dosdiezdaño" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -689,7 +689,7 @@
                                             <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                                 <div class="relative flex items-start w-full">
                                                     <div class="flex items-center h-5">
-                                                        <input wire:model="hitOdamaged3" id="oncecienobser" name="oncecien" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                        <x-input wire:model="hitOdamaged3" id="oncecienobser" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                                     </div>
                                                     <label for="oncecienobser" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -702,7 +702,7 @@
                                             <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                                 <div class="relative flex items-start w-70">
                                                     <div class="flex items-center h-5">
-                                                        <input wire:model="hitOdamaged3" id="onceciendaño" name="oncecien" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                        <x-input wire:model="hitOdamaged3" id="onceciendaño" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                                     </div>
                                                     <label for="onceciendaño" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -719,7 +719,7 @@
                                             <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                                 <div class="relative flex items-start w-full">
                                                     <div class="flex items-center h-5">
-                                                        <input wire:model="hitOdamaged4" id="masobservada" name="mas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                                                        <x-input wire:model="hitOdamaged4" id="masobservada" value="Golpeadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                                     </div>
                                                     <label for="masobservada" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                     Golpeadas
@@ -732,7 +732,7 @@
                                             <li class="inline-flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ml-px sm:mt-0 sm:first:rounded-tr-none sm:first:rounded-bl-lg sm:last:rounded-bl-none sm:last:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                                                 <div class="relative flex items-start w-70">
                                                     <div class="flex items-center h-5">
-                                                        <input wire:model="hitOdamaged4" id="masdañada" name="mas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                                                        <x-input wire:model="hitOdamaged4" id="masdañada" value="Dañadas" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"/>
                                                     </div>
                                                     <label for="masdañada" class="ml-3 block w-full text-sm text-gray-600 dark:text-gray-500">
                                        Dañadas
@@ -751,50 +751,28 @@
                         <p class="px-2 text-lg py-4 font-semibold whitespace-no-wrap">Tamaño de las aves:</p>
                     </div>
                     <div class="grid space-y-3">
-                        <div class="relative flex items-start">
-                            <div class="flex items-center h-5 mt-1">
-                                <input wire:model="birdSize" id="checkbox-pequeñas" name="checkbox-pequeñas" type="checkbox" class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                    aria-describedby="hs-checkbox-delete-description" checked>
-                            </div>
-                            <label for="checkbox-pequeñas" class="ml-3">
-                                <span class="block text-regular font-semibold text-gray-800 dark:text-gray-300">pequeñas</span>
-                                <span id="checkbox-pequeñas-description" class="block text-sm text-gray-600 dark:text-gray-500">S</span>
-                            </label>
+                        <x-select class="w-full" wire:model="birdSize">
+                            <x-select.option label="PEQUEÑAS" value="pequeñas" />
+                            <x-select.option label="MEDIANAS" value="medianas" />
+                            <x-select.option label="GRANDES" value="grandes" />
+                        </x-select>
+        
+                        <div class="flex flex-col py-0">
+                            <p class="px-1 text-lg py-2 whitespace-no-wrap">Se advirtió al piloto del peligro?</p>
                         </div>
-                        <div class="relative flex items-start">
-                            <div class="flex items-center h-5 mt-1">
-                                <input wire:model="birdSize" id="checkbox-medianas" name="checkbox-medianas" type="checkbox" class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                    aria-describedby="hs-checkbox-archive-description">
+                        <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-6">
+                            <div class="md:flex py-2">
+                                <x-radio class="text-lg" id="fallas1" name="fallas" left-label="SI" value="SI" wire:model="pilotDanger" />
                             </div>
-                            <label for="checkbox-archive" class="ml-3">
-                                <span class="block text-regular font-semibold text-gray-800 dark:text-gray-300">medianas</span>
-                                <span id="checkbox-medianas-description" class="block text-sm text-gray-600 dark:text-gray-500">M</span>
-                            </label>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex items-center h-5 mt-1">
-                                <input wire:model="birdSize" id="checkbox-grandes" name="checkbox-grandes" type="checkbox" class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                    aria-describedby="hs-checkbox-archive-description">
+                            <div class="md:flex py-2">
+                                <x-radio class="text-lg" id="fallas2" name="fallas" left-label="NO" value="NO" wire:model="pilotDanger" />
                             </div>
-                            <label for="checkbox-grandes" class="ml-3">
-                                <span class="block text-regular font-semibold text-gray-800 dark:text-gray-300">grandes</span>
-                                <span id="checkbox-grandes-description" class="block text-sm text-gray-600 dark:text-gray-500">L</span>
-                            </label>
                         </div>
+
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col py-0">
-                <p class="px-1 text-lg py-2 whitespace-no-wrap">Se advirtió al piloto del peligro?</p>
-            </div>
-            <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-6">
-                <div class="md:flex py-2">
-                    <x-radio class="text-lg" id="fallas1" name="fallas" left-label="SI" value="SI" wire:model="pilotDanger" />
-                </div>
-                <div class="md:flex py-2">
-                    <x-radio class="text-lg" id="fallas2" name="fallas" left-label="NO" value="NO" wire:model="pilotDanger" />
-                </div>
-            </div>
+
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div class="">
                     <label for="" class="block text-lg mb-2 dark:text-white">Observaciones(describanse los daños y las lesiones y consiganse otros datos pertinentes)</label>
