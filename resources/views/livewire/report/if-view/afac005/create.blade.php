@@ -1,4 +1,7 @@
 <div>
+    <x-errors></x-errors>
+    <x-notifications position="top-center" />
+    <x-dialog z-index="z-50" blur="md" align="center" />
     <section class="bg-gray-50 dark:bg-gray-900 py-12">
         <div class="container px-6 py-6 mx-auto content-center">
             <h1 class="text-xl font-semibold text-center text-gray-800 capitalize lg:text-2xl dark:text-white">AP.5 DESVIACIÓN DE VEHÍCULOS Y PEATONES AFAC-005</h1>
@@ -28,18 +31,7 @@
                     <label for="" class="block text-lg mb-2 dark:text-white">Identificador del aeropuerto</label>
                     <input type="text" wire:model="airportIdentifier" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresar...">
-                {{-- @error('dateLocal')
-                <span
-                    class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
-                @enderror                --}}
-        
-
                     </div>
-                {{-- @error('dateLocal')
-                <span
-                    class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
-                @enderror                --}}
-
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Tipo de desviación</label>
                     <x-select class="w-full" placeholder="Selecciona" wire:model="deviationType">

@@ -81,7 +81,35 @@ class Create extends Component
                 'fileMinutes' => $this->fileMinutes->store('documentos', 'public','Minutas'),
                 ]
         );
+        $this->takeClass();        
     }
+    public function takeClass()
+    {
+        $this->dialog()->confirm([
+            'title'       => 'REPORTE GENERADO',
+            'description' => '¿DESEAS IMPRIMIR REPORTE?',
+            'icon'        => 'success',
+            'accept'      => [
+                'label'  => 'IMPRIMIR',
+                'method' => 'print',
+            ],
+            'reject' => [
+                'label'  => 'SALIR',
+                // 'method' => 'cleanInput',
+            ],
+        ]);
+    }
+    public function print()
+    {
+        // return redirect()->route('afac006-pdf');
+    }
+    public function PdfAfac005()
+    {
+
+        // $pdf = PDF::loadView('report.ifView.afac006.pdf.afac005-pdf');
+        // return $pdf->download('reporte_No_'.'.pdf');
+    }
+
     public function messages()
     {
         return [           

@@ -82,6 +82,10 @@ class Create extends Component
             'email' => 'required|email',
         ];
     }
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }    
     public function render()
     {
         return view('livewire.report.if-view.afac001.create')

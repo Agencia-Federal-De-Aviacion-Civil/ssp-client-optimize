@@ -1,5 +1,7 @@
 <div>
     {{-- <x-errors></x-errors> --}}
+    <x-notifications position="top-center" />
+    <x-dialog z-index="z-50" blur="md" align="center" />
     <section class="bg-gray-50 dark:bg-gray-900 py-12">
         <div class="container px-6 py-4 mx-auto content-center">
             <h1 class="text-xl font-semibold text-center text-gray-800 capitalize lg:text-2xl dark:text-white">AP.6 RECLASIFICACIÓN DE UN INCIDENTE AFAC-006</h1>
