@@ -8,6 +8,7 @@ use App\Http\Livewire\Report\IfView\Daaia001\Create as Daaia001Create;
 use App\Http\Livewire\Report\IfView\Afac005\Create as Afac005Create;
 use App\Http\Livewire\Report\IfView\Afac006\Create as Afac006Create;
 use App\Http\Livewire\Report\IfView\Avs0102\Create as Avs0102Create;
+use App\Http\Livewire\Report\IfView\Avs02\Create as Avs02Create;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,7 @@ Route::get('create/{slug}/daaia001/{idReporter}', Daaia001Create::class)->name('
 Route::get('create/{slug}/afac005/{idReporter}', Afac005Create::class)->name('afac005');
 Route::get('create/{slug}/afac006/{idReporter}', Afac006Create::class)->name('afac006');
 Route::get('create/{slug}/avs0102/{idReporter}', Avs0102Create::class)->name('avs0102');
+Route::get('create/{slug}/avs02/{idReporter}', Avs02Create::class)->name('avs02');
 // ROUTE PDFS
 Route::get('PdfAfac001', [Create::class, 'PdfAfac001'])->name('afac001-pdf');
 Route::get('PdfAfac001a', [Afac001aCreate::class, 'PdfAfac001a'])->name('afac001a-pdf');
