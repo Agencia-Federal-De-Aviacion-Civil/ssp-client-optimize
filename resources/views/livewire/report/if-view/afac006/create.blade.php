@@ -1,4 +1,5 @@
 <div>
+    {{-- <x-errors></x-errors> --}}
     <section class="bg-gray-50 dark:bg-gray-900 py-12">
         <div class="container px-6 py-4 mx-auto content-center">
             <h1 class="text-xl font-semibold text-center text-gray-800 capitalize lg:text-2xl dark:text-white">AP.6 RECLASIFICACIÓN DE UN INCIDENTE AFAC-006</h1>
@@ -59,8 +60,8 @@
             </div>
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
                 <div>
-                    <input type="text" wire:model="" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">
+                    <x-input type="text" wire:model="folioNumber" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresar..." />
                 </div>
             </div>
             <div class="flex flex-col py-0">
@@ -74,22 +75,22 @@
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Ciudad o poblado más cercano y Estado</label>
-                    <input type="text" wire:model="" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresar...">
+                    <x-input type="text" wire:model="cityTown" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    placeholder="ingresar..."/>
                 </div>
             </div>
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-4">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Fecha (UTC)</label>
-                    <x-datetime-picker class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
+                    <x-datetime-picker wire:model="dateUTC" class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Hora (UTC)</label>
-                    <x-time-picker placeholder="00:00" format="24" class="w-full px-2 py-2" />
+                    <x-time-picker wire:model="timeUTC" placeholder="00:00" format="24" class="w-full px-2 py-2" />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Hora local</label>
-                    <x-time-picker placeholder="00:00" format="24" class="w-full px-2 py-2" />
+                    <x-time-picker wire:model="localTime" placeholder="00:00" format="24" class="w-full px-2 py-2" />
                 </div>
             </div>
             <div class="flex flex-col py-0">
@@ -104,22 +105,22 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Región (Centro, Noreste, Noroeste,
                         Occidente y Sureste)</label>
-                    <input type="text" wire:model="" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">
+                    <x-input type="text" wire:model="region" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresar..." />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Identificación de los Servicios de Tránsito
                         Aéreo (ACC Mazatlán, ACC Mérida, ACC
                         México y ACC Monterrey)</label>
-                    <input type="text" wire:model="" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">
+                    <x-input type="text" wire:model="identificationServices" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresar..." />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Control de tránsito aéreo (de Área,
                         Aproximación, de Aeródromo,
                         asesoramiento, de Vuelo, de Alerta)</label>
-                    <input type="text" wire:model="" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">
+                    <x-input type="text" wire:model="airtrafficControl" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresar..." />
                 </div>
             </div>
             <br>
@@ -128,29 +129,40 @@
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Incidente reclasificado como</label>
-                    <x-select class="w-full">
-                        <x-select.option label="" value="" />
+                    <x-select class="w-full" wire:model="incidentReclassified">                        
+                        <x-select.option label="A. Error operacional " value="A. Error operacional" />
+                        <x-select.option label="B. Desviación operacional " value="B. Desviación operacional" />
+                        <x-select.option label="C. Corrección del número de reporte " value="C. Corrección del número de reporte" />
+                        <x-select.option label="D. Evidencias insuficientes para investigar " value="D. Evidencias insuficientes para investigar" />
+                        <x-select.option label="E. No incidente " value="E. No incidente" />
+                        <x-select.option label="F. Otro" value="F. Otro" />
                     </x-select>
                 </div>
                 {{-- SE APARECE AL DAR CLIC otro --}}
                 <div>
+                    @if ($incidentReclassified=='F. Otro')
                     <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
-                    <input type="text" wire:model="" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">
+                    <input type="text" wire:model="specify" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresar...">                        
+                    @endif
                 </div>
             </div>
             <div class="px-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nuevo número de incidente otorgado por la
                         DAAIA</label>
-                    <input type="text" wire:model="" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresar...">
+                    <x-input type="text" wire:model="incidentNumber" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    placeholder="ingresar..." />
                 </div>
                 {{-- SE APARECE AL DAR CLIC otro --}}
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">ó nueva reclasificación.</label>
-                    <x-select class="w-full">
-                        <x-select.option label="" value="" />
+                    <x-select class="w-full" wire:model="newReclassification">
+                        <x-select.option label="A. Error operacional" value="A. Error operacional" /> 
+                        <x-select.option label="B. Desviación operacional o pérdida de la separación " value="B. Desviación operacional o pérdida de la separación" /> 
+                        <x-select.option label="C. Reclasificar como 'Evidencias insuficientes para investigar'" value="C. Reclasificar como 'Evidencias insuficientes para investigar'" />
+                        <x-select.option label="D. Reclasificar como 'No incidente' " value="D. Reclasificar como 'No incidente'" /> 
+                        <x-select.option label="E. No aplica " value="E. No aplica" /> 
                     </x-select>
                 </div>
             </div>
@@ -158,7 +170,7 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Razón de la reclasificación</label>
                     <div class="md:flex col-span-8">
-                        <textarea name="" id="" cols="30" rows="2" type="text" wire:model="" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        <textarea wire:model="reasonReclassification" name="" id="" cols="30" rows="2" type="text" wire:model="" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresa..."></textarea>
                     </div>
                 </div>
@@ -174,17 +186,17 @@
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-4">
                 <div class="col-span-2">
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                    <input type="text" wire:model="" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">
+                    <x-input type="text" wire:model="name" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresar..." />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">FIRMA</label>
-                    <input type="text" wire:model="" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">
+                    <x-input type="text" wire:model="firm" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        placeholder="ingresar..." />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Fecha</label>
-                    <x-datetime-picker class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
+                    <x-datetime-picker wire:model="date" class="w-full" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
                 </div>
             </div>
             <div class="bg-blue-50 border border-blue-200 rounded-md p-2" role="alert">
@@ -203,7 +215,7 @@
                         </div>
                         <form>
                             <label for="small-file-input" class="sr-only">Choose file</label>
-                            <input type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
+                            <input wire:model="fileMinutes" type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
                       file:bg-transparent file:border-0
                       file:bg-gray-200 file:mr-4
                       file:py-2 file:px-4
@@ -213,7 +225,7 @@
                 </div>
             </div>
             <div class="py-4 mb-2 text-right">
-                <x-button wire:click.prevent="" icon="document-download" spinner="" blue label="GENERAR REPORTE" />
+                <x-button wire:click.prevent="save" icon="document-download" spinner="" blue label="GENERAR REPORTE" />
             </div>
         </section>
     </section>
