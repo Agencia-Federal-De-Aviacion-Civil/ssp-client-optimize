@@ -1,5 +1,5 @@
 <div>
-    <x-errors></x-errors>
+    {{-- <x-errors></x-errors> --}}
     <x-notifications position="top-center" />
     <x-dialog z-index="z-50" blur="md" align="center" />
     <section class="bg-gray-50 dark:bg-gray-900 py-12">
