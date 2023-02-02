@@ -199,9 +199,9 @@ tr {
             </tr>
             <tr>
                 <td></td>
-                <td colspan="2">Otros</td>
-                <td colspan="3"><span class="labelss">especifique</span></td>
-                <td class="ingresarleft" colspan="9"></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="5"><span class="labelss">Otro,especifique</span></td>
+                <td class="ingresarleft" colspan="8"></td>
                 <td colspan="2"></td>
                 <td>9.</td>
                 <td colspan="14">El conductor o la persona tenia falta de</td>
@@ -304,9 +304,9 @@ tr {
             </tr>
             <tr>
                 <td></td>
-                <td colspan="2">Otros</td>
-                <td colspan="3"><span class="labelss">especifique</span></td>
-                <td class="ingresarleft" colspan="9"></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="5"><span class="labelss">Otro,especifique</span></td>
+                <td class="ingresarleft" colspan="8"></td>
                 <td colspan="2"></td>
                 <td></td>
                 <td colspan="14"><span class="labelss">Estaba desorientado o perdido</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
@@ -387,9 +387,9 @@ tr {
                 <td colspan="15"><span class="labelss">movimiento</span></td>
                 <td colspan="1"></td>
                 <td></td>
-                <td colspan="2">Otros</td>
-                <td colspan="3"><span class="labelss">especifique</span></td>
-                <td class="ingresarleft" colspan="7"></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="5"><span class="labelss">Otro,especifique</span></td>
+                <td class="ingresarleft" colspan="8"></td>
             </tr>
             <br>
             <tr>
@@ -456,8 +456,8 @@ tr {
             </tr>
             <tr>
                 <td></td>
-                <td colspan="2">Otros</td>
-                <td colspan="3"><span class="labelss">especifique</span></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="5"><span class="labelss">Otro,especifique</span></td>
                 <td class="ingresarleft" colspan="8"></td>
                 <td colspan="3"></td>
                 <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
@@ -545,8 +545,8 @@ tr {
             </tr>
             <tr>
                 <td></td>
-                <td colspan="2">Otros</td>
-                <td colspan="3"><span class="labelss">especifique</span></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="5"><span class="labelss">Otro,especifique</span></td>
                 <td class="ingresarleft" colspan="8"></td>
                 <td colspan="3"></td>
                 <td colspan="14">impedir una pérdida de separación o riesgo de</td>
@@ -669,6 +669,80 @@ tr {
                 <td colspan="15">Para la pérdida de separación, fue de:</td>
                 <td colspan="1"></td>
                 <td colspan="14">aeródromo</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3"><span class="labelss">Horizontal</span></td>
+                <td class="ingresarleft" colspan="9"></td>
+                <td colspan="2">metros</td>
+                <td colspan="2"></td>
+                <td colspan="14"><span class="labelss">Cambios de procedimientos</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3"><span class="labelss">Vertical</span></td>
+                <td class="ingresarleft" colspan="9"></td>
+                <td colspan="2">metros</td>
+                <td colspan="2"></td>
+                <td colspan="14"><span class="labelss">Ninguna</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td>17.</td>
+                <td colspan="15">El piloto, conductor o peatón tomaron o </td>
+                <td colspan="1"></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="4"><span class="labelss">Especifique</span></td>
+                <td class="ingresarleft" colspan="9"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Día</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Nublado</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td>24.</td>
+                <td height="1px" colspan="5">Inspector: Nombre:</td>
+                <td class="ingresarleft" colspan="7"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Noche iluminada</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td></td>
+                <td height="1px" colspan="13">Firma</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Noche oscura</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="1"></td>
+                <td class="ingresarleft" colspan="14"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="15"><span class="labelss">Lluvia ( ) ligera/moderado ( ) intensa</span><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td></td>
+                <td height="1px" colspan="13">Fecha</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="1"><div class="cuadradito"><span id="idprguI5" name="idprguI5" class="palomita"></div></td>
+                <td colspan="4"><span class="labelss">Otro,especifique</span></td>
+                <td class="ingresarleft" colspan="9"></td>
+                <td colspan="2"></td>
+                <td class="ingresarleft" colspan="14"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="7"><span class="labelss">Visibilidad prevaleciente</span></td>
+                <td class="ingresarleft" colspan="6"></td>
+                <td colspan="1">MS</td>
+            </tr>
+            <br>
+            <tr>
+                <td colspan="6"><b>Revisión:</b></td>
+                <td colspan="4"><b>9ª Edición</td>
+                <td colspan="14"><b>Manual del Inspector de Aeronavegabilidad</b></td>
+                <td colspan="10"><b>Página: 94 de 149</b></td>
             </tr>
         </table>
     </div>    
