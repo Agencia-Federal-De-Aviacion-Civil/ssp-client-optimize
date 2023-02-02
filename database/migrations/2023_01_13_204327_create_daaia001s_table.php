@@ -124,8 +124,8 @@ return new class extends Migration
             $table->text('descriptionFail');
             $table->text('componentHours');
             $table->text('componentCycles');
-            $table->text('componentInspection');
-//            $table->text('filesLatestservices');            
+//          $table->text('componentInspection');
+//          $table->text('filesLatestservices');            
             $table->unsignedBigInteger('a_model_id')->nullable();
             $table->foreign('a_model_id')->references('id')->on('a_models')->onDelete('set null');
             $table->text('presenceFire');

@@ -1,4 +1,7 @@
 <div>
+    <x-errors></x-errors>
+    <x-notifications position="top-center" />
+    <x-dialog z-index="z-50" blur="md" align="center" />
     <section class="bg-gray-50 dark:bg-gray-900 py-12">
         <div class="container px-6 py-10 py-6 mx-auto content-center">
             <h1 class="text-xl font-semibold text-center text-gray-800 capitalize lg:text-2xl dark:text-white">AP.4 INFORME DE ACCIDENTE/INCIDENTE DE PILOTO/OPERADOR</h1>
@@ -535,72 +538,76 @@
                                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Pos 1</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
-                                                placeholder="Ingresar..." wire:model="engineSerie1"></td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            <x-input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                                placeholder="Ingresar..." wire:model="engineSerie1"/></td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
                                             <x-datetime-picker wire:model="manufacturingDate1" class="md:w-60 w-full px-2 py-2" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                            <input type="text" wire:model="totalTime1" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                            <x-input type="text" wire:model="totalTime1" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar..."/>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                            <input type="text" wire:model="lastIspection1" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                            <x-input type="text" wire:model="lastIspection1" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar..."/>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                            <input type="text" wire:model="lastRrepair1" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                            <x-input type="text" wire:model="lastRrepair1" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar..."/>
                                         </td>
                                     </tr>
 
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Pos 2</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
-                                                placeholder="Ingresar..." wire:model="engineSerie2"></td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            <x-input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                                placeholder="Ingresar..." wire:model="engineSerie2" /></td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
                                             <x-datetime-picker wire:model="manufacturingDate2" class="md:w-60 w-full px-2 py-2" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                            <input type="text" wire:model="totalTime2" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                            <x-input type="text" wire:model="totalTime2" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar..."/>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                            <input type="text" wire:model="lastIspection2" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                            <x-input type="text" wire:model="lastIspection2" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar..."/>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                            <input type="text" wire:model="lastRrepair2" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                            <x-input type="text" wire:model="lastRrepair2" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar..."/>
                                         </td>
                                     </tr>
 
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Pos 3</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
-                                                placeholder="Ingresar..." wire:model="engineSerie3"></td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            <x-input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                                placeholder="Ingresar..." wire:model="engineSerie3"/></td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
                                             <x-datetime-picker wire:model="manufacturingDate3" class="md:w-60 w-full px-2 py-2" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                            <input type="text" wire:model="totalTime3" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                            <x-input type="text" wire:model="totalTime3" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar..."/>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                            <input type="text" wire:model="lastIspection3" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                            <x-input type="text" wire:model="lastIspection3" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar..."/>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                            <input type="text" wire:model="lastRrepair3" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                            <x-input type="text" wire:model="lastRrepair3" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar..."/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Pos 4</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
-                                                placeholder="Ingresar..." wire:model="engineSerie4"></td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                            <x-input type="text" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200"
+                                                placeholder="Ingresar..." wire:model="engineSerie4"/></td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
                                             <x-datetime-picker wire:model="manufacturingDate4" class="md:w-60 w-full px-2 py-2" placeholder="Seleccione fecha..." parse-format="YYYY-MM-DD" without-time="true" />
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                            <input type="text" wire:model="totalTime4" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                            <x-input type="text" wire:model="totalTime4" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar..."/>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                            <input type="text" wire:model="lastIspection4" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                            <x-input type="text" wire:model="lastIspection4" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar..."/>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                                            <input type="text" wire:model="lastRrepair4" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar...">
+                                            <x-input type="text" wire:model="lastRrepair4" class="px-1 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200" placeholder="Ingresar..."/>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -658,7 +665,7 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Dirección</label>
                     <div class="md:flex col-span-8">
-                        <textarea name="" id="" cols="30" rows="2" type="text" wire:model="directionOwner1" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        <textarea cols="30" rows="2" type="text" wire:model="directionOwner1" class="uppercase w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresa..."></textarea>
                     </div>
                 </div>
@@ -724,10 +731,12 @@
                 </div>
                  {{-- Si se selecciona pasajeros aparece--}}
                 <div>
+                    @if ($loadOperation == 'PASAJEROS')
                     <label for="" class="block text-lg mb-2 dark:text-white">Pasajeros cuantos</label>
                     <input type="text"  wire:model="passengersHow"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresar...">
+                    placeholder="ingresar...">                    
+                    @endif
                 </div>
             </div>
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
@@ -791,21 +800,21 @@
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Matricula</label>
-                    <input type="text"  wire:model="tuitionInvolved"
+                    <x-input type="text"  wire:model="tuitionInvolved"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresar...">
+                    placeholder="ingresar..."/>
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Fabricante</label>
-                    <input type="text"  wire:model="makerInvolved"
+                    <x-input type="text"  wire:model="makerInvolved"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresar...">
+                    placeholder="ingresar..."/>
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">modelo</label>
-                    <input type="text"  wire:model="modelInvolved"
+                    <x-input type="text"  wire:model="modelInvolved"
                     class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresar...">
+                    placeholder="ingresar..."/>
                 </div>
             </div>
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
@@ -991,9 +1000,9 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-1">
                 <label for="" class="block text-lg mb-2 dark:text-white">Identificación aeródromo OACI</label>
-                <input type="text"  wire:model="identificationOACI"
+                <x-input type="text"  wire:model="identificationOACI"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                placeholder="ingresar...">
+                placeholder="ingresar..."/>
             </div>
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
@@ -1136,9 +1145,9 @@
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Hora de despegue</label>
-                <input type="text"  wire:model="timeTakeoff"
+                <x-input type="text"  wire:model="timeTakeoff"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                placeholder="ingresar...">
+                placeholder="ingresar..."/>
             </div>
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
@@ -1343,15 +1352,15 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Instalación que le proporciono la observación</label>
-                <input type="text"  wire:model="installationObservation"
+                <x-input type="text"  wire:model="installationObservation"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                placeholder="ingresar...">
+                placeholder="ingresar..."/>
             </div>
             <div class="col-span-1">
                 <label for="" class="block text-lg mb-2 dark:text-white">Hora de la observación</label>
-                <input type="text"  wire:model="timeObservation"
+                <x-input type="text"  wire:model="timeObservation"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                placeholder="ingresar...">
+                placeholder="ingresar..."/>
             </div>
         </div>
         <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
@@ -1426,7 +1435,7 @@
             <div>
                 @if ($ceiling=='NUBES BAJAS')                    
                 <label for="" class="block text-lg mb-2 dark:text-white">Altura más baja de la nube</label>
-                <x-input class="w-full" wire:model="lowestCloud" placeholder="Ingresa..." suffix="a nivel del terreno" />
+                <input class="w-full" wire:model="lowestCloud" placeholder="Ingresa..." suffix="a nivel del terreno">
                 @endif
             </div>
 
@@ -1606,9 +1615,9 @@
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Clase</label>
 
-                <input type="text"  wire:model="classLicense"
+                <x-input type="text"  wire:model="classLicense"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                placeholder="ingresar...">
+                placeholder="ingresar..."/>
 
                 {{-- <x-select class="w-full" placeholder="Selecciona" wire:model="classLicense">
                     <x-select.option label="" value="" />
@@ -1616,9 +1625,9 @@
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Número</label>
-                <input type="text"  wire:model="numberLicense"
+                <x-input type="text"  wire:model="numberLicense"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                placeholder="ingresar...">
+                placeholder="ingresar..."/>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Vigencia</label>
@@ -2189,9 +2198,9 @@
             </div>
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Domicilio</label>
-                <input type="text"  wire:model="domicileOthers"
+                <x-input type="text"  wire:model="domicileOthers"
                 class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                placeholder="ingresar...">
+                placeholder="ingresar..."/>
             </div>
         </div>
         <div class="flex flex-col py-0">
@@ -2581,8 +2590,7 @@
                             <div></div>
                         </div>
                     </div>
-                </div>
-                
+                </div>                
         </div>
         </section>
     </section>
