@@ -61,10 +61,6 @@
                         <x-select.option label="OTROS CAMIONES (INCLUYE AUTOBUSES, CAMIONETAS, ETC.)" value="OTROS CAMIONES" />
                         <x-select.option label="OTROS" value="OTROS" />
                     </x-select>
-                    {{-- <select name="" id="" x-model="vehicle">
-                        <option value="MOTOCICLETA">MOTOCICLETA</option>
-                        <option value="OTROS">OTROS</option>
-                    </select> --}}
                 </div>
                 {{-- aparece al seccionar otro --}}
                 <div>
@@ -156,8 +152,9 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Desviación</label>
                     <x-select class="w-full" wire:model="deviation">
+                        <x-select.option label="NO" value="NO" />
                         <x-select.option label="NO AUTORIZADO PARA ESTAR EN EL AERÓDROMO" value="NO AUTORIZADO PARA ESTAR EN EL AERÓDROMO" />
-                        <x-select.option label="AUTORIZADO PARA ESTAR EN EL AERÓDROMO, PERO NO EN EL ÁREA DE MOVIMIENTO" value="AUTORIZADO PARA ESTAR EN EL AERÓDROMO, PERO NO EN EL ÁREA DE MOVIMIENTO" />
+                        <x-select.option label="AUTORIZADO PARA ESTAR EN EL AERÓDROMO, PERO NO EN EL ÁREA DE MOVIMIENTO" value="AUTORIZADO PARA ESTAR EN EL AERÓDROMO" />
                         <x-select.option label="AUTORIZADO PARA ESTAR EN EL ÁREA DE MOVIMIENTO" value="AUTORIZADO PARA ESTAR EN EL ÁREA DE MOVIMIENTO" />
                         <x-select.option label="SE DESCONOCE" value="SE DESCONOCE" />
                     </x-select>
@@ -173,9 +170,12 @@
                     <x-select class="w-full" wire:model="airfieldProvides">
                         <x-select.option label="SI" value="SI" />
                         <x-select.option label="NO" value="NO" />
+                        <x-select.option label="EL CONDUCTOR COMPLETO EN PROGRAMA DE CAPACITACIÓN" value="EL CONDUCTOR"/>
                     </x-select>
                 </div>
                 <div>
+                    {{-- SE APARECE AL DAR CLIC EL CONDUCTOR --}}
+                    @if ($airfieldProvides=='EL CONDUCTOR')
                     <label for="" class="block text-lg mb-2 dark:text-white">El conductor completo en programa de
                         capacitación</label>
                     <x-select class="w-full" wire:model="completeDriver">
@@ -183,6 +183,8 @@
                         <x-select.option label="NO" value="NO" />
                         <x-select.option label="SE DESCONOCE" value="SE DESCONOCE" />
                     </x-select>
+                    @endif
+
                 </div>
                 {{-- SE APARECE AL DAR CLIC SI --}}
                 <div>
@@ -197,8 +199,8 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">El programa de capacitación incluye</label>
                     <x-select class="w-full" wire:model="trainingProgram">
-                        <x-select.option label="FAMILIARIZACIÓN CON LAS INSTALACIONES" value="FAMILIARIZACIÓN CON LAS INSTALACIONES" />
-                        <x-select.option label="PROCEDIMIENTOS OPERACIONALES DEL AEROPUERTO" value="PROCEDIMIENTOS OPERACIONALES DEL AEROPUERTO" />
+                        <x-select.option label="FAMILIARIZACIÓN CON LAS INSTALACIONES" value="FAMILIARIZACIÓN" />
+                        <x-select.option label="PROCEDIMIENTOS OPERACIONALES DEL AEROPUERTO" value="PROCEDIMIENTOS" />
                         <x-select.option label="SE DESCONOCE" value="SE DESCONOCE" />
                     </x-select>
                 </div>
@@ -208,18 +210,18 @@
                     <label for="" class="block text-lg mb-2 dark:text-white">El conductor o la persona tenia falta de
                         conocimientos o experiencia</label>
                     <x-select class="w-full" wire:model="knowledgeExperience">
-                        <x-select.option label="DISEÑO DEL AEROPUERTO" value="DISEÑO DEL AEROPUERTO" />
-                        <x-select.option label="SEÑALIZACIÓN, MARCAS, ILUMINACIÓN..." value="SEÑALIZACIÓN, MARCAS, ILUMINACIÓN..." />
-                        <x-select.option label="PROCEDIMIENTOS DE TORRE DE CONTROL EN EL ÁREA DE MOVIMIENTO" value="PROCEDIMIENTOS DE TORRE DE CONTROL EN EL ÁREA DE MOVIMIENTO" />
-                        <x-select.option label="FRASEOLOGÍA DE LA TORRE DE CONTROL" value="FRASEOLOGÍA DE LA TORRE DE CONTROL" />
+                        <x-select.option label="DISEÑO DEL AEROPUERTO" value="DISEÑO" />
+                        <x-select.option label="SEÑALIZACIÓN, MARCAS, ILUMINACIÓN..." value="SEÑALIZACIÓN" />
+                        <x-select.option label="PROCEDIMIENTOS DE TORRE DE CONTROL EN EL ÁREA DE MOVIMIENTO" value="PROCEDIMIENTOS" />
+                        <x-select.option label="FRASEOLOGÍA DE LA TORRE DE CONTROL" value="FRASEOLOGÍA" />
                         <x-select.option label="SE DESCONOCE" value="SE DESCONOCE" />
-                        <x-select.option label="OTRA" value="OTRA" />
-                        <x-select.option label="NINGUNA DE LAS ANTERIORES, ES UN FACTOR" value="NINGUNA DE LAS ANTERIORES, ES UN FACTOR" />
+                        <x-select.option label="OTRA ESPECIFIQUE" value="OTRA" />
+                        <x-select.option label="NINGUNA DE LAS ANTERIORES, ES UN FACTOR" value="NINGUNA DE LAS ANTERIORES" />
                     </x-select>
                 </div>
                 {{-- SE APARECE AL DAR CLIC OTROS --}}
                 <div>
-                    @if ($knowledgeExperience=='OTRA')
+                    @if ($knowledgeExperience=='OTRA' || $knowledgeExperience=='SEÑALIZACIÓN')
                     <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                     <input type="text" wire:model="specify2" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresar...">                        
@@ -231,21 +233,24 @@
                     <label for="" class="block text-lg mb-2 dark:text-white">La investigación detecto que el conductor o el
                         peatón</label>
                     <x-select class="w-full" wire:model="investigationFound">
-                        <x-select.option label="FUE INCAPAZ DE LOCALIZAR LA RUTA" value="FUE INCAPAZ DE LOCALIZAR LA RUTA" />
-                        <x-select.option label="ESTABA DESORIENTADO O PERDIDO" value="ESTABA DESORIENTADO O PERDIDO" />
-                        <x-select.option label="NO OBSERVO MARCAS, SEÑALES O ILUMINACIÓN" value="NO OBSERVO MARCAS, SEÑALES O ILUMINACIÓN" />
-                        <x-select.option label="NO SE APEGÓ A LOS PROCEDIMIENTOS PARA EL ÁREA DE MOVIMIENTO" value="NO SE APEGÓ A LOS PROCEDIMIENTOS PARA EL ÁREA DE MOVIMIENTO" />
-                        <x-select.option label="NO SE APEGÓ A LAS INSTRUCCIONES DE RUTA EMITIDAS POR LA TORRE DE CONTROL" value="NO SE APEGÓ A LAS INSTRUCCIONES DE RUTA EMITIDAS POR LA TORRE DE CONTROL" />
-                        <x-select.option label="TOMO ACCIONES DE MANERA INADVERTIDA" value="TOMO ACCIONES DE MANERA INADVERTIDA" />
-                        <x-select.option label="SE LE OLVIDO SOLICITAR AUTORIZACIÓN" value="SE LE OLVIDO SOLICITAR AUTORIZACIÓN" />
-                        <x-select.option label="SE LE OLVIDO QUE HABÍA SIDO AUTORIZADO" value="SE LE OLVIDO QUE HABÍA SIDO AUTORIZADO" />
-                        <x-select.option label="ESTABA DISTRAÍDO" value="ESTABA DISTRAÍDO" />
-                        <x-select.option label="OTRAS" value="OTRAS" />
+                        <x-select.option label="FUE INCAPAZ DE LOCALIZAR LA RUTA" value="FUE INCAPAZ" /> 
+                        <x-select.option label="ESTABA DESORIENTADO O PERDIDO " value="ESTABA DESORIENTADO" /> 
+                        <x-select.option label="NO OBSERVO MARCAS, SEÑALES O ILUMINACIÓN " value="NO OBSERVO MARCAS" /> 
+                        <x-select.option label="NO SE APEGÓ A LOS PROCEDIMIENTOS PARA EL ÁREA DE MOVIMIENTO " value="NO SE APEGÓ A LOS PROCEDIMIENTOS" /> 
+                        <x-select.option label="NO SE APEGÓ A LAS INSTRUCCIONES DE RUTA EMITIDAS POR LA TORRE DE CONTROL " value="NO SE APEGÓ A LAS INSTRUCCIONES" /> 
+                        <x-select.option label="NO SIGUIÓ LAS INSTRUCCIONES DE EMITIDAS POR TORRE DE CONTROL" value="NO SIGUIÓ LAS INSTRUCCIONES" /> 
+                        <x-select.option label="TOMO ACCIONES DE MANERA INADVERTIDA " value="TOMO ACCIONES" /> 
+                        <x-select.option label="SE LE OLVIDO SOLICITAR AUTORIZACIÓN " value="SE LE OLVIDO SOLICITAR" /> 
+                        <x-select.option label="SE LE OLVIDO QUE HABÍA SIDO AUTORIZADO " value="SE LE OLVIDO QUE" /> 
+                        <x-select.option label="ESTABA DISTRAÍDO MOVIMIENTO " value="ESTABA DISTRAÍDO" /> 
+                        <x-select.option label="OTRO" value="OTRO" /> 
+                        
+
                     </x-select>
                 </div>
                 {{-- SE APARECE AL DAR CLIC No siguió las instrucciones, especifique --}}
                 <div>
-                    @if ($investigationFound == 'NO SE APEGÓ A LAS INSTRUCCIONES DE RUTA EMITIDAS POR LA TORRE DE CONTROL')
+                    @if ($investigationFound == 'NO SIGUIÓ LAS INSTRUCCIONES' || $investigationFound == 'OTRO')
                     <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                     <input type="text" wire:model="specify3" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresar...">                       
@@ -295,6 +300,7 @@
                             <x-select.option label="CONTRATISTA" value="CONTRATISTA" />
                             <x-select.option label="AUTORIDAD AERONÁUTICA" value="AUTORIDAD AERONÁUTICA" />
                             <x-select.option label="OTRO GOBIERNO" value="OTRO GOBIERNO" />
+                            <x-select.option label="PASAJERO DE LA LÍNEA AÉREA" value="PASAJERO DE LA LÍNEA AÉREA" />
                             <x-select.option label="VISITANTE DEL AEROPUERTO" value="VISITANTE DEL AEROPUERTO" />
                             <x-select.option label="PILOTO DE AVIACIÓN GENERAL" value="PILOTO DE AVIACIÓN GENERAL" />
                             <x-select.option label="OTROS" value="OTROS" />
@@ -431,8 +437,8 @@
                         <label for="" class="block text-lg mb-2 dark:text-white">Área de
                         movimiento</label>
                         <x-select class="w-full" wire:model="movementArea">
-                            <x-select.option label="PISTA DE ATERRIZAJE" value="PISTA DE ATERRIZAJE" />
-                            <x-select.option label="CALLE DE RODAJE" value="CALLE DE RODAJE" />
+                            <x-select.option label="PISTA DE ATERRIZAJE" value="PISTA" />
+                            <x-select.option label="CALLE DE RODAJE" value="CALLE" />
                             <x-select.option label="INTERSECCIÓN CON" value="INTERSECCIÓN" />
                             <x-select.option label="OTRAS ÁREAS" value="OTRAS" />
                         </x-select>
@@ -448,7 +454,7 @@
                     <div>
                         <label for="" class="block text-lg mb-2 dark:text-white">Área de movimiento presentaba</label>
                         <x-select class="w-full" wire:model="movementFeatured">
-                            <x-select.option label="CAMBIOS RECIENTES EN LA CONFIGURACIÓN DE LA PISTA O CALLE DE RODAJE" value="CAMBIOS RECIENTES EN LA CONFIGURACIÓN DE LA PISTA O CALLE DE RODAJE" />
+                            <x-select.option label="CAMBIOS RECIENTES EN LA CONFIGURACIÓN DE LA PISTA O CALLE DE RODAJE" value="CAMBIOS RECIENTES" />
                             <x-select.option label="ACTIVIDAD DE CONSTRUCCIÓN" value="ACTIVIDAD DE CONSTRUCCIÓN" />
                             <x-select.option label="ÁREA CERRADA POR NOTAM" value="ÁREA CERRADA POR NOTAM" />
                             <x-select.option label="OTRO" value="OTRO" />
@@ -501,7 +507,7 @@
                     <div>
                         <label for="" class="block text-lg mb-2 dark:text-white">Se adjunta</label>
                         <x-select class="w-full" wire:model="attached">
-                            <x-select.option label="DECLARACIÓN DEL CONDUCTOR O DEL PEATÓN" value="DECLARACIÓN DEL CONDUCTOR O DEL PEATÓN" />
+                            <x-select.option label="DECLARACIÓN DEL CONDUCTOR O DEL PEATÓN" value="DECLARACIÓN DEL CONDUCTOR" />
                             <x-select.option label="CROQUIS DEL AEROPUERTO" value="CROQUIS DEL AEROPUERTO" />
                             <x-select.option label="ACTA DE HECHOS" value="ACTA DE HECHOS" />
                             <x-select.option label="ANÁLISIS DEL RST" value="ANÁLISIS DEL RST" />
@@ -522,8 +528,8 @@
                     <div class="col-span-1">
                         <label for="" class="block text-lg mb-2 dark:text-white">Acciones tomadas o que se plantean tomar</label>
                         <x-select class="w-full" wire:model="takenPlanned">
-                            <x-select.option label="PROCESO SANCIONADOR DE LA AUTORIDAD" value="PROCESO SANCIONADOR DE LA AUTORIDAD" />
-                            <x-select.option label="PROCESO SANCIONADOR DEL EXPLOTADOR DEL AERÓDROMO" value="PROCESO SANCIONADOR DEL EXPLOTADOR DEL AERÓDROMO" />
+                            <x-select.option label="PROCESO SANCIONADOR DE LA AUTORIDAD" value="PROCESO SANCIONADOR" />
+                            <x-select.option label="PROCESO SANCIONADOR DEL EXPLOTADOR DEL AERÓDROMO" value="PROCESO SANCIONADOR DEL EXPLOTADOR" />
                             <x-select.option label="CAMBIOS DE PROCEDIMIENTOS" value="CAMBIOS DE PROCEDIMIENTOS" />
                             <x-select.option label="NINGUNA" value="NINGUNA" />
                             <x-select.option label="ESPECIFIQUE " value="ESPECIFIQUE" />
