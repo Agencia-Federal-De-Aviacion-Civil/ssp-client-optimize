@@ -132,17 +132,17 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Incidente reclasificado como</label>
                     <x-select class="w-full" wire:model="incidentReclassified">                        
-                        <x-select.option label="A. Error operacional " value="A. Error operacional" />
-                        <x-select.option label="B. Desviación operacional " value="B. Desviación operacional" />
-                        <x-select.option label="C. Corrección del número de reporte " value="C. Corrección del número de reporte" />
-                        <x-select.option label="D. Evidencias insuficientes para investigar " value="D. Evidencias insuficientes para investigar" />
-                        <x-select.option label="E. No incidente " value="E. No incidente" />
-                        <x-select.option label="F. Otro" value="F. Otro" />
+                        <x-select.option label="A. Error operacional " value="A" />
+                        <x-select.option label="B. Desviación operacional " value="B" />
+                        <x-select.option label="C. Corrección del número de reporte " value="C" />
+                        <x-select.option label="D. Evidencias insuficientes para investigar " value="D" />
+                        <x-select.option label="E. No incidente " value="E" />
+                        <x-select.option label="F. Otro" value="F" />
                     </x-select>
                 </div>
                 {{-- SE APARECE AL DAR CLIC otro --}}
                 <div>
-                    @if ($incidentReclassified=='F. Otro')
+                    @if ($incidentReclassified=='F')
                     <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                     <input type="text" wire:model="specify" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresar...">                        
@@ -160,11 +160,11 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">ó nueva reclasificación.</label>
                     <x-select class="w-full" wire:model="newReclassification">
-                        <x-select.option label="A. Error operacional" value="A. Error operacional" /> 
-                        <x-select.option label="B. Desviación operacional o pérdida de la separación " value="B. Desviación operacional o pérdida de la separación" /> 
-                        <x-select.option label="C. Reclasificar como 'Evidencias insuficientes para investigar'" value="C. Reclasificar como 'Evidencias insuficientes para investigar'" />
-                        <x-select.option label="D. Reclasificar como 'No incidente' " value="D. Reclasificar como 'No incidente'" /> 
-                        <x-select.option label="E. No aplica " value="E. No aplica" /> 
+                        <x-select.option label="A. Error operacional" value="A-RECLASIFICACION" /> 
+                        <x-select.option label="B. Desviación operacional o pérdida de la separación " value="B-RECLASIFICACION" /> 
+                        <x-select.option label="C. Reclasificar como 'Evidencias insuficientes para investigar'" value="C-RECLASIFICACION" />
+                        <x-select.option label="D. Reclasificar como 'No incidente' " value="D-RECLASIFICACION'" /> 
+                        <x-select.option label="E. No aplica " value="E-RECLASIFICACION" /> 
                     </x-select>
                 </div>
             </div>
