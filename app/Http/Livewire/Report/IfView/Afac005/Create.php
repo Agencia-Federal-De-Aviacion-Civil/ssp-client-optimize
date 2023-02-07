@@ -8,6 +8,7 @@ use App\Models\Catalogue\Brand;
 use App\Models\Catalogue\Nacionality;
 use App\Models\Catalogue\Place;
 use App\Models\Report\Afac005;
+use Carbon\Carbon;
 use Livewire\Component;
 use WireUi\Traits\Actions;
 use PDF;
@@ -43,7 +44,7 @@ class Create extends Component
             // 'type' => 'required',
             'deviation' => 'required',
             'airfieldProvides' => 'required',
-            'completeDriver' => 'required',
+            // 'completeDriver' => 'required',
             // 'when' => 'required',
             'trainingProgram' => 'required',
             'knowledgeExperience' => 'required',
@@ -174,14 +175,19 @@ class Create extends Component
         ]);
     }
     public function print()
-    {
+    {        
+        $id = $this->afac005id->id;
         //$id = $this->afac001aid->id;
-        return redirect()->route('afac005-pdf');
+        return redirect()->route('afac005-pdf',compact('id'));
     }
     public function PdfAfac005()
     {
+        $afac005Report = Afac005::where('id', $_GET['id'])->get();
+        $dateLocal = Carbon::parse($afac005Report[0]->dateLocal);
+        $date = Carbon::parse($afac005Report[0]->date);
+        $hour = Carbon::parse($afac005Report[0]->timeLocal); 
 
-        $pdf = PDF::loadView('report.ifView.afac005.pdf.afac005-pdf');
+        $pdf = PDF::loadView('report.ifView.afac005.pdf.afac005-pdf',compact('afac005Report','dateLocal','date','hour'));
         return $pdf->download('reporte_No_'.'.pdf');
     }
     public function messages()
@@ -203,7 +209,7 @@ class Create extends Component
             // 'type' => 'Campo obligatorio',
             'deviation' => 'Campo obligatorio',
             'airfieldProvides' => 'Campo obligatorio',
-            'completeDriver' => 'Campo obligatorio',
+            // 'completeDriver' => 'Campo obligatorio',
             // 'when' => 'Campo obligatorio',
             'trainingProgram' => 'Campo obligatorio',
             'knowledgeExperience' => 'Campo obligatorio',
