@@ -33,7 +33,7 @@ return new class extends Migration
             $table->text('type')->nullable();
             $table->text('deviation');
             $table->text('airfieldProvides');
-            $table->text('completeDriver');
+            $table->text('completeDriver')->nullable();
             $table->text('when')->nullable();
             $table->text('trainingProgram');
             $table->text('knowledgeExperience');
