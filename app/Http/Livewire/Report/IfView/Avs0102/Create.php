@@ -77,6 +77,10 @@ class Create extends Component
             'observation' => 'required',
         ];
     }
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    } 
     public function render()
     {
         return view('livewire.report.if-view.Avs0102.create')
@@ -169,23 +173,11 @@ class Create extends Component
     public function PdfAfac0102()
     {
 
-
-        // $afac001Report = Afac001::with([
-        //     'afac001GeneralUser', 'afac001Brand', 'afac001Model', 'afac001PlaceOrigen', 'afac001PlaceDestination',
-        //     'afac001BaseOperation', 'afac001NationalityPassengers', 'afac001NationalityCommander', 'afac001NationalityOficial'
-        // ])->where('id', $_GET['id'])->get();
-
-
-        $afac0102Report = Afac0102::with(['afac0102Brand'])->where('id', $_GET['id'])->get(); 
+        $afac0102Report = Afac0102::with(['afac0102Brand','afac0102Model'])->where('id', $_GET['id'])->get(); 
          
-        //  dd($afac0102Report[0]->afac0102Brand);
-
         //  dd($_GET['id']);
         $date = Carbon::parse($afac0102Report[0]->date);
         $hour = Carbon::parse($afac0102Report[0]->hour);
-        // $hour = Carbon::parse($afac0102Report[0]->localTime); 
-        // $inspectordate = Carbon::parse($afac006Report[0]->date);
-        // $pdf = PDF::loadView('report.ifView.afac0102.pdf.afac0102-pdf',compact('afac0102Report','date','hour','hourLocal','inspectordate'));
         $pdf = PDF::loadView('report.ifView.afac0102.pdf.afac0102-pdf',compact('afac0102Report','date','hour'));
         return $pdf->download('reporte_No_'.'.pdf');
     }

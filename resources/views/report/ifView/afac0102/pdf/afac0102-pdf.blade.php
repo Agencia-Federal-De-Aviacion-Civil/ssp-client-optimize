@@ -129,16 +129,18 @@
                 <tr>
                     <td colspan="7">Marca/Modelo aeronave:</td>
                     <td colspan="10" class="ingresarleft">
-                        {{-- {{$afac0102Report[0]->afac0102Brand->name}} --}}
+                        {{$afac0102Report[0]->afac0102Brand->name}}
                     </td>
                 </tr>
                 <tr>
                     <td colspan="7">Marca/Modelo motor:</td>
-                    <td colspan="10" class="ingresarleft"></td>
+                    <td colspan="10" class="ingresarleft">
+                        {{$afac0102Report[0]->afac0102Model->name}}
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="7">Matrícula de la aeronave</td>
-                    <td colspan="10" class="ingresarleft"></td>
+                    <td colspan="10" class="ingresarleft">{{$afac0102Report[0]->aircraftRegistration}}</td>
                 </tr>
                 <br>
                 <tr>
@@ -339,27 +341,26 @@
                 <tr>
                     <td></td>
                     <td colspan="7">Radomo</td>
-                    <td colspan="1"><div class="cuadradito">
-@if($afac0102Report[0]->radome=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
-
-
-                    </div>
+                    <td colspan="1">
+                        <div class="cuadradito">
+                            @if ($afac0102Report[0]->radome == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
+                        </div>
                     </td>
                     <td></td>
                     <td>18</td>
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->radome=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
-                            </div>
+                            @if ($afac0102Report[0]->radome == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -367,11 +368,11 @@
                     <td colspan="7">Parabrisas</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->windshield=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->windshield == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td></td>
@@ -379,11 +380,11 @@
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->windshield=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->windshield == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -392,11 +393,11 @@
                     <td colspan="7">proa (excepto 18 y 19)</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->bowExcept=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->bowExcept == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td></td>
@@ -404,12 +405,12 @@
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->bowExcept=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
-                            
+                            @if ($afac0102Report[0]->bowExcept == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
+
                         </div>
                     </td>
                 </tr>
@@ -417,12 +418,12 @@
                     <td></td>
                     <td colspan="7">motor Num.1</td>
                     <td colspan="1">
-                        <div class="cuadradito">                                                        
-@if($afac0102Report[0]->engine1=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                        <div class="cuadradito">
+                            @if ($afac0102Report[0]->engine1 == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td></td>
@@ -430,11 +431,11 @@
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->engine1=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->engine1 == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -443,11 +444,11 @@
                     <td colspan="7">2</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->hitOdamada2=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->hitOdamada2 == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td></td>
@@ -455,11 +456,11 @@
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->hitOdamada2=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->hitOdamada2 == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -468,11 +469,11 @@
                     <td colspan="7">3</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->struckHurted3=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->struckHurted3 == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td></td>
@@ -480,11 +481,11 @@
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->struckHurted3=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->struckHurted3 == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -493,11 +494,11 @@
                     <td colspan="7">4</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->hitOdamada4=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->hitOdamada4 == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td></td>
@@ -505,53 +506,36 @@
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->hitOdamada4=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->hitOdamada4 == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
-{{-- <tr>
-<td></td>
-<td colspan="7">3</td>
-<td colspan="1">
-<div class="cuadradito">
-<span id="" name="" class="palomita"></span>
-</div>
-</td>
-<td></td>
-<td>23</td>
-<td></td>
-<td colspan="1">
-<div class="cuadradito">
-<span id="" name="" class="palomita"></span>
-</div>
-</td>
-</tr> --}}
                 <tr>
                     <td></td>
                     <td colspan="7">hélice</td>
                     <td colspan="1">
-                        <div class="cuadradito">                                                   
-@if($afac0102Report[0]->propeller=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif                            
-                    </div>
+                        <div class="cuadradito">
+                            @if ($afac0102Report[0]->propeller == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
+                        </div>
                     </td>
                     <td></td>
                     <td>25</td>
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->propeller=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->propeller == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -561,24 +545,24 @@
                     <td colspan="1">
                         <div class="cuadradito">
 
-@if($afac0102Report[0]->wingEngine=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->wingEngine == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
 
-                    </div>
+                        </div>
                     </td>
                     <td></td>
                     <td>26</td>
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->wingEngine=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->wingEngine == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -586,12 +570,12 @@
                     <td></td>
                     <td colspan="7">fuselaje</td>
                     <td colspan="1">
-                        <div class="cuadradito">                            
-@if($afac0102Report[0]->fuselage=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif                            
+                        <div class="cuadradito">
+                            @if ($afac0102Report[0]->fuselage == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td></td>
@@ -599,11 +583,11 @@
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->fuselage=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->fuselage == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -611,24 +595,24 @@
                     <td></td>
                     <td colspan="7">tren de aterrizaje</td>
                     <td colspan="1">
-                        <div class="cuadradito">                            
-@if($afac0102Report[0]->undercarriage=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
-                    </div>
+                        <div class="cuadradito">
+                            @if ($afac0102Report[0]->undercarriage == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
+                        </div>
                     </td>
                     <td></td>
                     <td>28</td>
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->undercarriage=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->undercarriage == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -637,11 +621,11 @@
                     <td colspan="7">cola</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->line=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->line == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td></td>
@@ -649,11 +633,11 @@
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->line=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->line == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -662,23 +646,23 @@
                     <td colspan="7">luces</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->lights=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
-                     </div>
+                            @if ($afac0102Report[0]->lights == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
+                        </div>
                     </td>
                     <td></td>
                     <td>30</td>
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->lights=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->lights == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -686,12 +670,12 @@
                     <td></td>
                     <td colspan="7">otros(especifiquese)</td>
                     <td colspan="1">
-                        <div class="cuadradito">                                                        
-@if($afac0102Report[0]->otherSpecify=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                        <div class="cuadradito">
+                            @if ($afac0102Report[0]->otherSpecify == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td></td>
@@ -699,13 +683,13 @@
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if($afac0102Report[0]->otherSpecify=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else
-<span id="" name="" class="palomita"></span>
-@endif
-                </div>
-                </td>
+                            @if ($afac0102Report[0]->otherSpecify == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
+                        </div>
+                    </td>
                 </tr>
 
             </table>
@@ -720,11 +704,11 @@
                     <td colspan="2">ninguna</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->consequenceFlight=='NINGUNA')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->consequenceFlight == 'NINGUNA')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -733,11 +717,11 @@
                     <td colspan="5">despegue interrumpido</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->consequenceFlight=='DESPEGUE INTERRUMPIDO')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->consequenceFlight == 'DESPEGUE INTERRUMPIDO')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -746,11 +730,11 @@
                     <td colspan="5" style="font-size:15px">aterrizaje por precaución</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->consequenceFlight=='ATERRIZAJE POR PRECAUCIÓN')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->consequenceFlight == 'ATERRIZAJE POR PRECAUCIÓN')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -759,11 +743,11 @@
                     <td colspan="5">se apagaron los motores</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->consequenceFlight=='SE APAGARON MOTORES')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->consequenceFlight == 'SE APAGARON MOTORES')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -772,11 +756,11 @@
                     <td colspan="4" style="font-size:15px">otras(especifiquese)</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->consequenceFlight=='OTRO')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->consequenceFlight == 'OTRO')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -790,11 +774,11 @@
                     <td colspan="4">Cielo despejado</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->skyConditions=='CIELO DESPEJADO')
-<span id="" name="" class="palomita">X</span>                                
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->skyConditions == 'CIELO DESPEJADO')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -803,11 +787,11 @@
                     <td colspan="4">Algunas nubes</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->skyConditions=='ALGUNAS NUBES')
-<span id="" name="" class="palomita">X</span>                                
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->skyConditions == 'ALGUNAS NUBES')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -816,11 +800,11 @@
                     <td colspan="4">Cielo cubierto</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->skyConditions=='CIELO CUBIERTO')
-<span id="" name="" class="palomita">X</span>                                
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->skyConditions == 'CIELO CUBIERTO')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -834,10 +818,10 @@
                     <td colspan="2">niebla</td>
                     <td colspan="1">
                         <div class="cuadradito">
-                            @if ($afac0102Report[0]->precipitation=='NIEBLA')
-                            <span id="" name="" class="palomita">X</span>                                
+                            @if ($afac0102Report[0]->precipitation == 'NIEBLA')
+                                <span id="" name="" class="palomita">X</span>
                             @else
-                            <span id="" name="" class="palomita"></span>
+                                <span id="" name="" class="palomita"></span>
                             @endif
                         </div>
                     </td>
@@ -847,10 +831,10 @@
                     <td colspan="2">lluvia</td>
                     <td colspan="1">
                         <div class="cuadradito">
-                            @if ($afac0102Report[0]->precipitation=='LLUVIA')
-                            <span id="" name="" class="palomita">X</span>                                
+                            @if ($afac0102Report[0]->precipitation == 'LLUVIA')
+                                <span id="" name="" class="palomita">X</span>
                             @else
-                            <span id="" name="" class="palomita"></span>
+                                <span id="" name="" class="palomita"></span>
                             @endif
                         </div>
                     </td>
@@ -860,10 +844,10 @@
                     <td colspan="2">Nieve</td>
                     <td colspan="1">
                         <div class="cuadradito">
-                            @if ($afac0102Report[0]->precipitation=='NIEVE')
-                            <span id="" name="" class="palomita">X</span>                                
+                            @if ($afac0102Report[0]->precipitation == 'NIEVE')
+                                <span id="" name="" class="palomita">X</span>
                             @else
-                            <span id="" name="" class="palomita"></span>
+                                <span id="" name="" class="palomita"></span>
                             @endif
                         </div>
                     </td>
@@ -872,7 +856,7 @@
                 <tr>
                     <td></td>
                     <td colspan="4">Especie de ave:</td>
-                    <td colspan="12" class="ingresarleft">{{$afac0102Report[0]->birdSpecies}}</td>
+                    <td colspan="12" class="ingresarleft">{{ $afac0102Report[0]->birdSpecies }}</td>
                 </tr>
                 <br>
                 <tr>
@@ -889,22 +873,22 @@
                     <td colspan="2">1</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->hitOdamaged1=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->hitOdamaged1 == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td>A</td>
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->hitOdamaged1=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->hitOdamaged1 == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td>A</td>
@@ -914,22 +898,22 @@
                     <td colspan="2">2-10</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->hitOdamaged2=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                                                        
+                            @if ($afac0102Report[0]->hitOdamaged2 == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td>B</td>
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->hitOdamaged2=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->hitOdamaged2 == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td>B</td>
@@ -939,22 +923,22 @@
                     <td colspan="2">11-100</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->hitOdamaged3=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                                                        
+                            @if ($afac0102Report[0]->hitOdamaged3 == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td>C</td>
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->hitOdamaged3=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->hitOdamaged3 == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td>C</td>
@@ -964,22 +948,22 @@
                     <td colspan="2">mas</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->hitOdamaged4=='Dañadas')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                                                        
+                            @if ($afac0102Report[0]->hitOdamaged4 == 'Dañadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td>D</td>
                     <td></td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->hitOdamaged4=='Golpeadas')
-<span id="" name="" class="palomita">X</span>
-@else    
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->hitOdamaged4 == 'Golpeadas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td>D</td>
@@ -993,11 +977,11 @@
                     <td colspan="3">pequeñas</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->birdSize=='pequeñas')
-<span id="" name="" class="palomita">X</span>    
-@else
-<span id="" name="" class="palomita"></span>
-@endif
+                            @if ($afac0102Report[0]->birdSize == 'pequeñas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
 
                         </div>
                     </td>
@@ -1008,11 +992,11 @@
                     <td colspan="3">medianas</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->birdSize=='medianas')
-<span id="" name="" class="palomita">X</span>    
-@else
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->birdSize == 'medianas')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td>M</td>
@@ -1022,11 +1006,11 @@
                     <td colspan="3">grandes</td>
                     <td colspan="1">
                         <div class="cuadradito">
-@if ($afac0102Report[0]->birdSize=='grandes')
-<span id="" name="" class="palomita">X</span>    
-@else
-<span id="" name="" class="palomita"></span>
-@endif                            
+                            @if ($afac0102Report[0]->birdSize == 'grandes')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
+                            @endif
                         </div>
                     </td>
                     <td>L</td>
@@ -1041,20 +1025,20 @@
                     <td>si</td>
                     <td colspan="1">
                         <div class="cuadradito">
-                            @if ($afac0102Report[0]->pilotDanger=='SI')
-                            <span id="" name="" class="palomita">X</span>
-                            @else                                
-                            <span id="" name="" class="palomita"></span>
+                            @if ($afac0102Report[0]->pilotDanger == 'SI')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
                             @endif
                         </div>
                     </td>
                     <td>no</td>
                     <td colspan="1">
                         <div class="cuadradito">
-                            @if ($afac0102Report[0]->pilotDanger=='NO')
-                            <span id="" name="" class="palomita">X</span>
-                            @else                                
-                            <span id="" name="" class="palomita"></span>
+                            @if ($afac0102Report[0]->pilotDanger == 'NO')
+                                <span id="" name="" class="palomita">X</span>
+                            @else
+                                <span id="" name="" class="palomita"></span>
                             @endif
                         </div>
                     </td>
@@ -1066,7 +1050,7 @@
                     <td colspan="12" style="font-size:14px">lesiones y consiguese otros datos pertinentes)</td>
                 </tr>
                 <tr>
-                    <td colspan="12" class="ingresarleft">{{$afac0102Report[0]->observation}}</td>
+                    <td colspan="12" class="ingresarleft">{{ $afac0102Report[0]->observation }}</td>
                 </tr>
             </table>
         </div>
