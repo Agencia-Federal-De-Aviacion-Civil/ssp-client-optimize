@@ -1,6 +1,7 @@
 <div>
      {{-- <x-errors></x-errors> --}}
-    <section class="bg-gray-50 dark:bg-gray-900 py-10">
+     <x-dialog z-index="z-50" blur="md" align="center" />
+     <section class="bg-gray-50 dark:bg-gray-900 py-10">
         <div class="container px-6 py-6 mx-auto content-center">
             <h1 class="text-xl font-semibold text-center text-gray-800 capitalize lg:text-2xl dark:text-white">AP.7 REPORTE DE IMPACTO DE AVES AVS-01 y AVS-02</h1>
             <div class="flex justify-center mx-auto mt-6">
@@ -133,7 +134,7 @@
                             <x-select.option label="RODAJE " value="RODAJE" />
                             <x-select.option label="RECORRIDO DE DESPEGUE " value="RECORRIDO DE DESPEGUE" />
                             <x-select.option label="ASCENSO " value="ASCENSO" />
-                            <x-select.option label="EN RUTA" value="EN RUT"A/>
+                            <x-select.option label="EN RUTA" value="EN RUTA"/>
                             <x-select.option label="DESCENSO " value="DESCENSO" />
                             <x-select.option label="APROXIMACIÓN " value="APROXIMACIÓN" />
                             <x-select.option label="RECORRIDO DE ATERRIZAJE " value="RECORRIDO DE ATERRIZAJE" />                                

@@ -104,7 +104,6 @@ class Create extends Component
     {
         $id = $this->Afac006id->id;
         //$id = $this->afac001aid->id;
-
         return redirect()->route('afac006-pdf',compact('id'));
     }
     public function PdfAfac006()
@@ -114,14 +113,8 @@ class Create extends Component
         $hourLocal = Carbon::parse($afac006Report[0]->localTime);
         $hour = Carbon::parse($afac006Report[0]->timeUTC); 
         $inspectordate = Carbon::parse($afac006Report[0]->date);
-
         $pdf = PDF::loadView('report.ifView.afac006.pdf.afac006-pdf',compact('afac006Report','date','hour','hourLocal','inspectordate'));
         return $pdf->download('reporte_No_'.'.pdf');
-
-
-
-        // $pdf = PDF::loadView('report.ifView.afac006.pdf.afac005-pdf');
-        // return $pdf->download('reporte_No_'.'.pdf');
     }
 
     public function messages()

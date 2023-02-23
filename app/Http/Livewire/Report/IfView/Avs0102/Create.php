@@ -8,12 +8,16 @@ use App\Models\Catalogue\Brand;
 use App\Models\Catalogue\Nacionality;
 use App\Models\Catalogue\Place;
 use App\Models\Report\Afac0102;
+use Carbon\Carbon;
+use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use WireUi\Traits\Actions;
 use PDF;
 class Create extends Component
 {
     use Actions;
+    use WithFileUploads;
     public $idReporter,$afac0102id,$id_reporter;
     public $brands,$models,$modelsengine;
     public $exploitative,$aircraftbrand_id,$aircraftmodel_id,$aircraftRegistration,$enginebrand_id,$enginemodel_id,$date,$hour,$localTime,$aerodromeName,$trackUsed,
@@ -136,7 +140,56 @@ class Create extends Component
                 'pilotDanger' => $this->pilotDanger,
                 'observation' => $this->observation,                
             ]);
+            $this->takeClass();       
     }
+    public function takeClass()
+    {
+        $this->dialog()->confirm([
+            'title'       => 'REPORTE GENERADO',
+            'description' => '¿DESEAS IMPRIMIR REPORTE?',
+            'icon'        => 'success',
+            'accept'      => [
+                'label'  => 'IMPRIMIR',
+                'method' => 'print',
+            ],
+            'reject' => [
+                'label'  => 'SALIR',
+                // 'method' => 'cleanInput',
+            ],
+        ]);
+    }
+
+    public function print()
+    {
+        $id = $this->afac0102id->id;
+
+        //$id = $this->afac001aid->id;
+        return redirect()->route('afac0102-pdf',compact('id'));
+    }
+    public function PdfAfac0102()
+    {
+
+
+        // $afac001Report = Afac001::with([
+        //     'afac001GeneralUser', 'afac001Brand', 'afac001Model', 'afac001PlaceOrigen', 'afac001PlaceDestination',
+        //     'afac001BaseOperation', 'afac001NationalityPassengers', 'afac001NationalityCommander', 'afac001NationalityOficial'
+        // ])->where('id', $_GET['id'])->get();
+
+
+        $afac0102Report = Afac0102::with(['afac0102Brand'])->where('id', $_GET['id'])->get(); 
+         
+        //  dd($afac0102Report[0]->afac0102Brand);
+
+        //  dd($_GET['id']);
+        $date = Carbon::parse($afac0102Report[0]->date);
+        $hour = Carbon::parse($afac0102Report[0]->hour);
+        // $hour = Carbon::parse($afac0102Report[0]->localTime); 
+        // $inspectordate = Carbon::parse($afac006Report[0]->date);
+        // $pdf = PDF::loadView('report.ifView.afac0102.pdf.afac0102-pdf',compact('afac0102Report','date','hour','hourLocal','inspectordate'));
+        $pdf = PDF::loadView('report.ifView.afac0102.pdf.afac0102-pdf',compact('afac0102Report','date','hour'));
+        return $pdf->download('reporte_No_'.'.pdf');
+    }
+
     public function messages()
     {
         return [           
