@@ -9,6 +9,7 @@ use App\Http\Livewire\Report\IfView\Afac005\Create as Afac005Create;
 use App\Http\Livewire\Report\IfView\Afac006\Create as Afac006Create;
 use App\Http\Livewire\Report\IfView\Avs0102\Create as Avs0102Create;
 use App\Http\Livewire\Report\IfView\Avs02\Create as Avs02Create;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,3 +38,6 @@ Route::get('create/{slug}/avs02/{idReporter}', Avs02Create::class)->name('avs02'
 Route::get('PdfAfac001', [Create::class, 'PdfAfac001'])->name('afac001-pdf');
 Route::get('PdfAfac001a', [Afac001aCreate::class, 'PdfAfac001a'])->name('afac001a-pdf');
 Route::get('PdfAfac005', [Afac005Create::class, 'PdfAfac005'])->name('afac005-pdf');
+Route::get('PdfAfac006',[Afac006Create::class, 'PdfAfac006'])->name('afac006-pdf');
+Route::get('PdfAfac0102',[Avs0102Create::class, 'PdfAfac0102'])->name('afac0102-pdf');
+// return redirect()->route('afac006-pdf',compact('id'));

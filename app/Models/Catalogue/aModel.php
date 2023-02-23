@@ -4,6 +4,7 @@ namespace App\Models\Catalogue;
 
 use App\Models\Report\Afac001;
 use App\Models\Report\Afac001a;
+use App\Models\Report\Afac0102;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,4 +24,8 @@ class aModel extends Model
     {
         return $this->hasMany(Afac001a::class);
     }
+    public function aModelAfac0102()
+    {
+        return $this->hasMany(Afac0102::class);
+    }    
 }

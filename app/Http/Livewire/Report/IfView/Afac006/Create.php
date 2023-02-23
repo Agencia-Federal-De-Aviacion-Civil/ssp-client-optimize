@@ -8,6 +8,7 @@ use App\Models\Catalogue\Brand;
 use App\Models\Catalogue\Nacionality;
 use App\Models\Catalogue\Place;
 use App\Models\Report\Afac006;
+use Carbon\Carbon;
 use Livewire\Component;
 use WireUi\Traits\Actions;
 use Livewire\WithFileUploads;
@@ -101,13 +102,19 @@ class Create extends Component
     }
     public function print()
     {
-        // return redirect()->route('afac006-pdf');
+        $id = $this->Afac006id->id;
+        //$id = $this->afac001aid->id;
+        return redirect()->route('afac006-pdf',compact('id'));
     }
-    public function PdfAfac005()
+    public function PdfAfac006()
     {
-
-        // $pdf = PDF::loadView('report.ifView.afac006.pdf.afac005-pdf');
-        // return $pdf->download('reporte_No_'.'.pdf');
+        $afac006Report = Afac006::where('id', $_GET['id'])->get();    
+        $date = Carbon::parse($afac006Report[0]->dateUTC);
+        $hourLocal = Carbon::parse($afac006Report[0]->localTime);
+        $hour = Carbon::parse($afac006Report[0]->timeUTC); 
+        $inspectordate = Carbon::parse($afac006Report[0]->date);
+        $pdf = PDF::loadView('report.ifView.afac006.pdf.afac006-pdf',compact('afac006Report','date','hour','hourLocal','inspectordate'));
+        return $pdf->download('reporte_No_'.'.pdf');
     }
 
     public function messages()
