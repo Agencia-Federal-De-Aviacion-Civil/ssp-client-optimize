@@ -34,7 +34,7 @@
                     </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Tipo de desviación</label>
-                    <x-select class="w-full" placeholder="Selecciona" wire:model="deviationType">
+                    <x-select  placeholder="Selecciona" wire:model="deviationType">
                         <x-select.option label="VEHÍCULO (INCLUIR AERONAVES QUE ESTÁN SIENDO REMOLCADAS)" value="VEHÍCULO" />
                         <x-select.option label="PERSONA (INCLUIR BICICLETAS)" value="PERSONA" />
                     </x-select>
@@ -63,13 +63,14 @@
                     </x-select>
                 </div>
                 {{-- aparece al seccionar otro --}}
+                @if ($vehicle=='OTROS')
                 <div>
-                    @if ($vehicle=='OTROS')
                     <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                     <input type="text" wire:model="specify" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresar...">                        
-                    @endif
+                    
                 </div>
+                @endif
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Número económico</label>
                     <input type="text" wire:model="economicNumber" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -118,13 +119,13 @@
                     </x-select>
                 </div>
                 {{-- aparece al seccionar otro 13012023--}}
+                @if ($employee1=='OTROS')
                 <div>
-                    @if ($employee1=='OTROS')
                     <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                     <input type="text" wire:model="specify1" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresar...">                        
-                    @endif                
                 </div>
+                @endif
             </div>
             <br>
             <div class="h-1 bg-gray-200 rounded overflow-hidden">
@@ -138,15 +139,15 @@
                     </x-select>
                 </div>
                 {{-- SE APARECE AL DAR CLIC SI --}}
+                @if ($certifiedAirport=='SI')
                 <div>
-                    @if ($certifiedAirport=='SI')
                     <label for="" class="block text-lg mb-2 dark:text-white">Tipo</label>
                     <x-select class="w-full" wire:model="type">
                         <x-select.option label="PARCIALMENTE" value="PARCIALMENTE" />
                         <x-select.option label="COMPLETAMENTE" value="COMPLETAMENTE" />
-                    </x-select>                        
-                    @endif                
+                    </x-select>                                   
                 </div>
+                @endif   
             </div>
             <div class="px-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
@@ -173,9 +174,9 @@
                         <x-select.option label="EL CONDUCTOR COMPLETO EN PROGRAMA DE CAPACITACIÓN" value="EL CONDUCTOR"/>
                     </x-select>
                 </div>
+                @if ($airfieldProvides=='EL CONDUCTOR')
                 <div>
                     {{-- SE APARECE AL DAR CLIC EL CONDUCTOR --}}
-                    @if ($airfieldProvides=='EL CONDUCTOR')
                     <label for="" class="block text-lg mb-2 dark:text-white">El conductor completo en programa de
                         capacitación</label>
                     <x-select class="w-full" wire:model="completeDriver">
@@ -183,17 +184,15 @@
                         <x-select.option label="NO" value="NO" />
                         <x-select.option label="SE DESCONOCE" value="SE DESCONOCE" />
                     </x-select>
-                    @endif
-
                 </div>
+                @endif
                 {{-- SE APARECE AL DAR CLIC SI --}}
+                @if ($completeDriver=='SI')
                 <div>
-                    @if ($completeDriver=='SI')
                     <label for="" class="block text-lg mb-2 dark:text-white">Cuando</label>
-                    <input type="text" wire:model="when" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">
-                    @endif    
+                    <x-input type="text" wire:model="when" placeholder="ingresar..."/>
                 </div>
+                @endif 
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                 <div>
@@ -220,13 +219,13 @@
                     </x-select>
                 </div>
                 {{-- SE APARECE AL DAR CLIC OTROS --}}
+                @if ($knowledgeExperience=='OTRA' || $knowledgeExperience=='SEÑALIZACIÓN')
                 <div>
-                    @if ($knowledgeExperience=='OTRA' || $knowledgeExperience=='SEÑALIZACIÓN')
                     <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                     <input type="text" wire:model="specify2" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresar...">                        
-                    @endif
                 </div>
+                @endif
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                 <div>
@@ -244,18 +243,16 @@
                         <x-select.option label="SE LE OLVIDO QUE HABÍA SIDO AUTORIZADO " value="SE LE OLVIDO QUE" /> 
                         <x-select.option label="ESTABA DISTRAÍDO MOVIMIENTO " value="ESTABA DISTRAÍDO" /> 
                         <x-select.option label="OTRO" value="OTRO" /> 
-                        
-
                     </x-select>
                 </div>
                 {{-- SE APARECE AL DAR CLIC No siguió las instrucciones, especifique --}}
+                @if ($investigationFound == 'NO SIGUIÓ LAS INSTRUCCIONES' || $investigationFound == 'OTRO')
                 <div>
-                    @if ($investigationFound == 'NO SIGUIÓ LAS INSTRUCCIONES' || $investigationFound == 'OTRO')
                     <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                     <input type="text" wire:model="specify3" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresar...">                       
-                    @endif
                 </div>
+                @endif
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                 <div>
@@ -270,13 +267,13 @@
                     </x-select>
                 </div>
                 {{-- SE APARECE AL DAR CLIC EN OTROS --}}
+                @if ($comunication=='OTRO')
                 <div>
-                    @if ($comunication=='OTRO')
                     <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                     <input type="text" wire:model="specify4" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresar...">                        
-                    @endif
                 </div>
+                @endif
             </div>
             <div class="flex flex-col py-0">
                 <div class="flex flex-wrap sm:flex-row flex-col py-2 mb-2">
@@ -307,13 +304,13 @@
                     </x-select>
                 </div>
                 {{-- aparece al seccionar otro 13012023--}}
+                @if ($employee2=='OTROS')
                 <div>
-                    @if ($employee2=='OTROS')
                     <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                     <input type="text" wire:model="specify5" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                         placeholder="ingresar...">                        
-                    @endif
                 </div>
+                @endif
             </div>
             <br>
             <div class="h-1 bg-gray-200 rounded overflow-hidden">
@@ -330,13 +327,13 @@
                     </x-select>
                 </div>
                 {{-- SE APARECE AL DAR CLIC EN OTROS --}}
+                @if ($deviationDetected=='OTRO')
                 <div>
-                    @if ($deviationDetected=='OTRO')
                     <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                     <input type="text" wire:model="specify6" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">                       
-                    @endif                                
+                        placeholder="ingresar...">                                                      
                 </div>
+                @endif 
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">El área es visible desde torre</label>
                     <x-select class="w-full" wire:model="visibleTower">
@@ -346,13 +343,13 @@
                     </x-select>
                 </div>
                 {{-- SE APARECE AL DAR CLIC EN Parcialmente --}}
+                @if ($visibleTower=='PARCIALMENTE')
                 <div>
-                    @if ($visibleTower=='PARCIALMENTE')
                     <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                     <input type="text" wire:model="specify7" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar...">                        
-                    @endif                
+                        placeholder="ingresar...">                                      
                 </div>
+                @endif  
             </div>
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div class="flex flex-col py-0">
@@ -405,13 +402,14 @@
                         </x-select>
                     </div>
                     {{-- SE APARECE AL DAR CLIC EN OTRO --}}
+                    @if ($weatherConditions=='OTRO')
                     <div>
-                        @if ($weatherConditions=='OTRO')
                         <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                         <input type="text" wire:model="specify8" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                             placeholder="ingresar...">                            
-                        @endif
-                        </div>
+                        
+                    </div>
+                    @endif
                     <div>
                         <label for="" class="block text-lg mb-2 dark:text-white">Visibilidad prevaleciente</label>
                         <x-input class="w-full" wire:model="prevailingVisibility" placeholder="Ingresa..." suffix="MS" />
@@ -462,13 +460,13 @@
                         </x-select>
                     </div>
                     {{-- SIEMPRE APARECE CUANDO SELECCIONA Área cerrada por NOTAM,Otro --}}
+                    @if ($movementFeatured=='ÁREA CERRADA POR NOTAM' || $movementFeatured=='OTRO')
                     <div>
-                        @if ($movementFeatured=='ÁREA CERRADA POR NOTAM' || $movementFeatured=='OTRO')
                         <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                         <input type="text" wire:model="specify10" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                             placeholder="ingresar...">
-                        @endif
                     </div>
+                    @endif
                 </div>
                 <div class="flex flex-col py-0">
                     <p class="px-1 text-lg py-2 whitespace-no-wrap">Se emitió o modificó una autorización para
@@ -487,14 +485,13 @@
                             </div>
                     </div>
                     {{-- SIEMPRE APARECE CUANDO SELECCIONA SI --}}
+                    @if ($clearanceCollision=='SI')
                     <div class="md:flex col-span-6">
-                        
-                        @if ($clearanceCollision=='SI')
                         <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                         <input type="text" wire:model="specify11" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                            placeholder="ingresar...">                            
-                        @endif                    
+                            placeholder="ingresar...">                                           
                     </div>
+                    @endif 
                 </div>
                 <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
                     <div>
@@ -516,13 +513,12 @@
                         </x-select>
                     </div>
                     {{-- SIEMPRE APARECE CUANDO SELECCIONA OTRA --}}
+                    @if ($attached=='OTRA')
                     <div>
-                        @if ($attached=='OTRA')
                         <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
-                        <input type="text" wire:model="specify12" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                            placeholder="ingresar...">                           
-                        @endif
+                        <x-input type="text" wire:model="specify12" placeholder="ingresar..."/>                                                 
                     </div>
+                    @endif
                 </div>
                 <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
                     <div class="col-span-1">
@@ -536,13 +532,13 @@
                         </x-select>
                     </div>
                     {{-- SIEMPRE APARECE CUANDO SELECCIONA OTRA --}}
+                    @if ($takenPlanned=='ESPECIFIQUE')
                     <div class="col-span-2">
-                        @if ($takenPlanned=='ESPECIFIQUE')
                         <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
                         <input type="text" wire:model="specify13" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                             placeholder="ingresar...">                            
-                        @endif
                     </div>
+                    @endif
                 </div>
                 <div class="flex flex-col py-0">
                     <div class="flex flex-wrap sm:flex-row flex-col py-2 mb-2">

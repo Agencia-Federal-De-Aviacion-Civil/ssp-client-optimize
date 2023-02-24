@@ -25,7 +25,6 @@
                     <div>
                         <label for="report" class="block text-lg mb-2 dark:text-white">Informe</label>
                         <x-select class="w-full" placeholder="Selecciona" wire:model="report">
-
                                 <x-select.option label="ACCIDENTE" value="ACCIDENTE" />
                                 <x-select.option label="INCIDENTE" value="INCIDENTE" />                                                                                               
                         </x-select>
@@ -33,14 +32,11 @@
                 </div>
                 <div class="h-1 bg-gray-200 rounded overflow-hidden">
                 </div>
-                
             </div>
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Lugar exacto</label>
-                    <x-input type="text" wire:model="exactPlace" 
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresa al Propetario" />
+                    <x-input type="text" wire:model="exactPlace" placeholder="ingresa al Propetario" />
                 </div>
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
@@ -66,9 +62,7 @@
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Ciudad o población más cercana</label>
-                    <x-input type="text" wire:model="city" 
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresa al Propetario" />
+                    <x-input type="text" wire:model="city" placeholder="ingresa al Propetario" />
                 </div>
             </div>
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-4">
@@ -78,15 +72,11 @@
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Latitud</label>
-                    <x-input type="text" wire:model="latitude"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresar..." />
+                    <x-input type="text" wire:model="latitude" placeholder="ingresar..." />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Longitud</label>
-                    <x-input type="text"  wire:model="longitude"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresar..." />
+                    <x-input type="text"  wire:model="longitude" placeholder="ingresar..." />
                 </div>
             </div>
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
@@ -100,9 +90,7 @@
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Autoridad Aeronáutica que interviene</label>
-                    <x-input type="text"  wire:model="aeronauticalAuthority"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresar..." />
+                    <x-input type="text"  wire:model="aeronauticalAuthority" placeholder="ingresar..." />
                 </div>
             </div>
             <div class="px-1 py-0 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
@@ -125,9 +113,7 @@
                 {{-- SE APARECE AL DAR CLIC EN OTRO --}}
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Indique</label>
-                    <input type="text"  wire:model="indicate"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresar...">
+                    <x-input type="text"  wire:model="indicate" placeholder="ingresar..."/>
                 </div>
             </div>
             <div class="px-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
@@ -142,7 +128,6 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Altitud a la que ocurrió el suceso</label>
                     <x-input type="text"  wire:model="altitudeEvent"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..." />
                 </div>
             </div>
@@ -158,13 +143,11 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Fabricante</label>
                     <x-input type="text"  wire:model="maker"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..." />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Modelo</label>
                     <x-input type="text"  wire:model="modelReport"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..." />
                 </div>
             </div>
@@ -172,13 +155,11 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Número de Serie</label>
                     <x-input type="text"  wire:model="serialNumber"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..." />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Matrícula</label>
                     <x-input type="text"  wire:model="enrollment"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..." />
                 </div>
                 <div>
@@ -193,13 +174,11 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Peso Máximo del despegue</label>
                     <x-input type="text"  wire:model="maximumWeight"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..." />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Peso al momento del accidente</label>
                     <x-input type="text"  wire:model="accidentWeight"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..." />
                 </div>
             </div>
@@ -245,7 +224,6 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Indique</label>
                     <input type="text"  wire:model="indicateI"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
             </div>
@@ -271,7 +249,6 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Indique</label>
                     <input type="text"  wire:model="indicateII"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
             </div>
@@ -279,7 +256,6 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Número de asientos</label>
                     <x-input type="text"  wire:model="numberSeats"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
             </div>
@@ -290,19 +266,16 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Asientos para tripulación de vuelo</label>
                     <x-input type="text"  wire:model="flightCrew"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Asientos para tripulación de cabina</label>
                     <x-input type="text"  wire:model="cabinCrew"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Asientos para pasajeros</label>
                     <x-input type="text"  wire:model="passengerSeats"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
             </div>
@@ -334,7 +307,6 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">especifique</label>
                     <input type="text"  wire:model="specify"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
             </div>
@@ -355,7 +327,6 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Otro</label>
                     <input type="text"  wire:model="other"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div> 
             </div>
@@ -406,7 +377,6 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">tipo</label>
                     <input type="text"  wire:model="type"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
             </div>
@@ -430,13 +400,11 @@
                 <div class="col-span-2">
                     <label for="" class="block text-lg mb-2 dark:text-white">Fabricante del ELT</label>
                     <x-input type="text"  wire:model="eltManufacturer"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
                 <div class="col-span-1">
                     <label for="" class="block text-lg mb-2 dark:text-white">Modelo</label>
                     <x-input type="text"  wire:model="eltModel"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
             </div>
@@ -444,13 +412,11 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Serie</label>
                     <x-input type="text"  wire:model="eltSerial"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Batería</label>
                     <x-input type="text"  wire:model="eltBattery"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
             </div>
@@ -480,13 +446,11 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Fabricante</label>
                     <x-input type="text"  wire:model="makerPropeller"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Modelo</label>
                     <x-input type="text"  wire:model="modelPropeller"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
                 <div>
@@ -504,19 +468,16 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Fabricante</label>
                     <x-input type="text"  wire:model="manufacturerEngine"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Modelo</label>
                     <x-input type="text"  wire:model="modelEngine"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Potencia</label>
                     <x-input type="text"  wire:model="powerEngine"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
             </div>
@@ -657,7 +618,6 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
                     <x-input type="text"  wire:model="nameOwner1"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..." />
                 </div>
             </div>
@@ -677,7 +637,6 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
                     <x-input type="text"  wire:model="nameOperator1"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
             </div>
@@ -734,7 +693,6 @@
                     @if ($loadOperation == 'PASAJEROS')
                     <label for="" class="block text-lg mb-2 dark:text-white">Pasajeros cuantos</label>
                     <input type="text"  wire:model="passengersHow"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">                    
                     @endif
                 </div>
@@ -759,7 +717,6 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Otros</label>
                     <input type="text"  wire:model="others"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar...">
                 </div>
             </div>
@@ -801,19 +758,16 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Matricula</label>
                     <x-input type="text"  wire:model="tuitionInvolved"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Fabricante</label>
                     <x-input type="text"  wire:model="makerInvolved"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">modelo</label>
                     <x-input type="text"  wire:model="modelInvolved"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
             </div>
@@ -835,7 +789,6 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
                     <x-input type="text"  wire:model="nameOwner2"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
             </div>
@@ -855,7 +808,6 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
                     <x-input type="text"  wire:model="nameOperator2"
-                    class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="ingresar..."/>
                 </div>
             </div>
@@ -1000,14 +952,12 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-1">
                 <label for="" class="block text-lg mb-2 dark:text-white">Identificación aeródromo OACI</label>
-                <x-input type="text"  wire:model="identificationOACI"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="identificationOACI
                 placeholder="ingresar..."/>
             </div>
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                <x-input type="text"  wire:model="nameAerodrome"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="nameAerodrome
                 placeholder="ingresar..."/>
             </div>
         </div>
@@ -1085,8 +1035,7 @@
         <div class="px-1 py-0 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Cabecera de pista</label>
-                <input type="text"  wire:model="trackHeader"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <input type="text"  wire:model="trackHeader
                 placeholder="ingresar...">
             </div>
             <div>
@@ -1145,8 +1094,7 @@
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Hora de despegue</label>
-                <x-input type="text"  wire:model="timeTakeoff"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="timeTakeoff
                 placeholder="ingresar..."/>
             </div>
         </div>
@@ -1211,8 +1159,7 @@
             {{-- aparece al seleccionar otros --}}
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Otros</label>
-                <input type="text"  wire:model="otherAircraft"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <input type="text"  wire:model="otherAircraft
                 placeholder="ingresar...">
             </div>
         </div>
@@ -1253,8 +1200,7 @@
             {{-- APARECE AL SELECCIONAR OTRO--}}
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Especifique</label>
-                <input type="text"  wire:model="specifyFuel"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <input type="text"  wire:model="specifyFuel
                 placeholder="ingresar...">
             </div>
         </div>  
@@ -1352,14 +1298,12 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Instalación que le proporciono la observación</label>
-                <x-input type="text"  wire:model="installationObservation"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="installationObservation
                 placeholder="ingresar..."/>
             </div>
             <div class="col-span-1">
                 <label for="" class="block text-lg mb-2 dark:text-white">Hora de la observación</label>
-                <x-input type="text"  wire:model="timeObservation"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="timeObservation
                 placeholder="ingresar..."/>
             </div>
         </div>
@@ -1462,14 +1406,12 @@
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">a)Orientación</label>
-                <x-input type="text"  wire:model="orientation"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="orientation
                 placeholder="ingresar..."/>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">b)Intensidad</label>
-                <x-input type="text"  wire:model="intensity"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="intensity
                 placeholder="ingresar..."/>
             </div>
         </div>
@@ -1582,8 +1524,7 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                <x-input type="text"  wire:model="nameCommander"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="nameCommander
                 placeholder="ingresar..."/>
             </div>
             <div>
@@ -1603,8 +1544,7 @@
             </div>
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Domicilio</label>
-                <x-input type="text"  wire:model="domicileCommander"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="domicileCommander
                 placeholder="ingresar..." />
             </div>
         </div>
@@ -1615,8 +1555,7 @@
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Clase</label>
 
-                <x-input type="text"  wire:model="classLicense"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="classLicense
                 placeholder="ingresar..."/>
 
                 {{-- <x-select class="w-full" placeholder="Selecciona" wire:model="classLicense">
@@ -1625,8 +1564,7 @@
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Número</label>
-                <x-input type="text"  wire:model="numberLicense"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="numberLicense
                 placeholder="ingresar..."/>
             </div>
             <div>
@@ -1753,28 +1691,24 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Capacidades</label>
-                <x-input type="text"  wire:model="capabilities"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="capabilities
                 placeholder="ingresar..."/>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Certificado médico número</label>
-                <x-input type="text"  wire:model="medicalCertificate"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="medicalCertificate
                 placeholder="ingresar..."/>
             </div>
         </div>
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Limitaciones del certificado</label>
-                <x-input type="text"  wire:model="limitationsCertificate"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="limitationsCertificate
                 placeholder="ingresar..."/>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Excepción al certificado</label>
-                <x-input type="text"  wire:model="exceptionCertificate"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="exceptionCertificate
                 placeholder="ingresar..."/>
             </div>
         </div>
@@ -1791,8 +1725,7 @@
             <div>
                 @if ($observationsCertificate=='OTRO')
                 <label for="" class="block text-lg mb-2 dark:text-white">Otro</label>
-                <input type="text"  wire:model="otherCertificate"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <input type="text"  wire:model="otherCertificate
                 placeholder="ingresar...">                    
                 @endif
             </div>
@@ -1881,8 +1814,7 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                <x-input type="text"  wire:model="nameCopilot"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="nameCopilot
                 placeholder="ingresar..."/>
             </div>
             <div>
@@ -1901,8 +1833,7 @@
             </div>
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Domicilio</label>
-                <x-input type="text"  wire:model="domicileCopilot"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="domicileCopilot
                 placeholder="ingresar..."/>
             </div>
         </div>
@@ -1912,14 +1843,12 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Clase</label>
-                <x-input type="text"  wire:model="classLicense2"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="classLicense2
                 placeholder="ingresar..."/>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Número</label>
-                <x-input type="text"  wire:model="numberLicense2"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="numberLicense2
                 placeholder="ingresar..."/>
             </div>
             <div>
@@ -2046,28 +1975,24 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Capacidades</label>
-                <x-input type="text"  wire:model="capabilities2"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="capabilities2
                 placeholder="ingresar..."/>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Certificado médico número</label>
-                <x-input type="text"  wire:model="medicalCertificate2"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="medicalCertificate2
                 placeholder="ingresar..."/>
             </div>
         </div>
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Limitaciones del certificado</label>
-                <x-input type="text"  wire:model="limitationsCertificate2"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="limitationsCertificate2
                 placeholder="ingresar..."/>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Excepción al certificado</label>
-                <x-input type="text"  wire:model="exceptionCertificate2"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="exceptionCertificate2
                 placeholder="ingresar..."/>
             </div>
         </div>
@@ -2085,8 +2010,7 @@
             <div>
                 @if ($observationsCertificate2=='OTRO')
                 <label for="" class="block text-lg mb-2 dark:text-white">Otro</label>
-                <input type="text"  wire:model="otherCertificate2"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <input type="text"  wire:model="otherCertificate2
                 placeholder="ingresar...">                    
                 @endif
             </div>
@@ -2177,8 +2101,7 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                <x-input type="text"  wire:model="nameOthers"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="nameOthers
                 placeholder="ingresar..."/>
             </div>
             <div>
@@ -2198,8 +2121,7 @@
             </div>
             <div class="col-span-2">
                 <label for="" class="block text-lg mb-2 dark:text-white">Domicilio</label>
-                <x-input type="text"  wire:model="domicileOthers"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="domicileOthers
                 placeholder="ingresar..."/>
             </div>
         </div>
@@ -2209,14 +2131,12 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Clase</label>
-                <x-input type="text"  wire:model="classLicense3"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="classLicense3
                 placeholder="ingresar..."/>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Número</label>
-                <x-input type="text"  wire:model="numberLicense3"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="numberLicense3
                 placeholder="ingresar..." />
             </div>
             <div>
@@ -2343,28 +2263,24 @@
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Capacidades</label>
-                <x-input type="text"  wire:model="capabilities3"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="capabilities3
                 placeholder="ingresar..."/>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Certificado médico número</label>
-                <x-input type="text"  wire:model="medicalCertificate3"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="medicalCertificate3
                 placeholder="ingresar..."/>
             </div>
         </div>
         <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Limitaciones del certificado</label>
-                <x-input type="text"  wire:model="limitationsCertificate3"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="limitationsCertificate3
                 placeholder="ingresar..."/>
             </div>
             <div>
                 <label for="" class="block text-lg mb-2 dark:text-white">Excepción al certificado</label>
-                <x-input type="text"  wire:model="exceptionCertificate3"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <x-input type="text"  wire:model="exceptionCertificate3
                 placeholder="ingresar..."/>
             </div>
         </div>
@@ -2382,8 +2298,7 @@
             <div>
                 @if ($observationsCertificate3=='OTRO')
                 <label for="" class="block text-lg mb-2 dark:text-white">Otro</label>
-                <input type="text"  wire:model="otherCertificate3"
-                class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                <input type="text"  wire:model="otherCertificate3
                 placeholder="ingresar...">                    
                 @endif
             </div>

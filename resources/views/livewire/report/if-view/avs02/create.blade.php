@@ -1,4 +1,5 @@
 <div>
+    <x-dialog z-index="z-50" blur="md" align="center" />
     <section class="bg-gray-50 dark:bg-gray-900 py-10">
         <div class="container px-6 py-6 mx-auto content-center">
             <h1 class="text-xl font-semibold text-center text-gray-800 capitalize lg:text-2xl dark:text-white">AP.7
@@ -29,39 +30,29 @@
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre del aeródromo</label>
-                    <x-input type="text" wire:model="aerodromeName"
-                        class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..."/>
+                    <x-input type="text" wire:model="aerodromeName" placeholder="ingresar..."/>
                 </div>
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre del observador</label>
-                    <x-input type="text" wire:model="observerName"
-                        class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..."/>
+                    <x-input type="text" wire:model="observerName" placeholder="ingresar..."/>
                 </div>
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-2">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Dependencia</label>
-                    <x-input type="text" wire:model="dependence"
-                        class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..."/>
+                    <x-input type="text" wire:model="dependence" placeholder="ingresar..."/>
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Empresa</label>
-                    <x-input type="text" wire:model="company"
-                        class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..."/>
+                    <x-input type="text" wire:model="company" placeholder="ingresar..."/>
                 </div>
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Ubicación de las aves</label>
-                    <x-input type="text" wire:model="birdLocation"
-                        class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..."/>
+                    <x-input type="text" wire:model="birdLocation" placeholder="ingresar..."/>
                 </div>
             </div>
             <div class="flex flex-col py-0">
@@ -79,7 +70,7 @@
                         <x-select.option label="DESPEJADO" value="DESPEJADO" />
                         <x-select.option label="PARCIALMENTE NUBLADO" value="PARCIALMENTE NUBLADO" />
                         <x-select.option label="NUBLADO " value="NUBLADO" />
-                        <x-select.option label="LLUVIA TEMPERATURA" value="LLUVIA TEMPERATURA" />
+                        <x-select.option label="LLUVIA" value="LLUVIA" />
                         <x-select.option label="FRÍO" value="FRÍO" />
                         <x-select.option label="CALUROSO" value="CALUROSO" />
                         <x-select.option label="FRESCO " value="FRESCO" />
@@ -101,9 +92,7 @@
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Tipo de ave (si se conoce)</label>
-                    <x-input type="text" wire:model="birdType"
-                        class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..."/>
+                    <x-input type="text" wire:model="birdType" placeholder="ingresar..."/>
                 </div>
             </div>
 
@@ -121,25 +110,21 @@
                         observadas:</label>
                     <x-select class="w-full" placeholder="Selecciona" wire:model="birdNumber">
                         <x-select.option label="01" value="01" />
-                        <x-select.option label="DE 02 a 10" value="de 02 a 10" />
-                        <x-select.option label="DE 11 a 50" value="de 11 a 50" />
-                        <x-select.option label="MÁS de 50" value="más de 50" />
+                        <x-select.option label="DE 02 a 10" value="DE 02 A 10" />
+                        <x-select.option label="DE 11 a 50" value="DE 11 A 50" />
+                        <x-select.option label="MÁS de 50" value="MÁS DE 50" />
                     </x-select>
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Color de las aves: </label>
-                    <x-input type="text" wire:model="birdColor"
-                        class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..."/>
+                    <x-input type="text" wire:model="birdColor" placeholder="ingresar..."/>
                 </div>
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Algún rasgo llamativo de las
                         aves</label>
-                    <x-input type="text" wire:model="strikingFeature"
-                        class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..."/>
+                    <x-input type="text" wire:model="strikingFeature" placeholder="ingresar..."/>
                 </div>
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
@@ -198,8 +183,7 @@
                 <x-button wire:click.prevent="save" icon="document-download" spinner="" blue
                     label="GENERAR REPORTE" />
                 <div wire:loading.delay wire:target="save">
-                    <div
-                        class="flex justify-center bg-emerald-900 z-40 h-full w-full fixed top-0 left-0 items-center opacity-75">
+                    <div class="flex justify-center bg-emerald-900 z-40 h-full w-full fixed top-0 left-0 items-center opacity-75">
                         <div style="color: #008897" class="la-ball-circus la-2x">
                             <div></div>
                             <div></div>
@@ -221,20 +205,3 @@
         </div>
     </footer>
 </div>
-<script>
-    function showTooltip(flag) {
-        switch (flag) {
-            case 1:
-                document.getElementById("tooltip1").classList.remove("hidden");
-                break;
-        }
-    }
-
-    function hideTooltip(flag) {
-        switch (flag) {
-            case 1:
-                document.getElementById("tooltip1").classList.add("hidden");
-                break;
-        }
-    }
-</script>

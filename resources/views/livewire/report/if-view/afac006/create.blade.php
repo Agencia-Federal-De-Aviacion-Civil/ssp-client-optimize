@@ -62,8 +62,7 @@
             </div>
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
                 <div>
-                    <x-input type="text" wire:model="folioNumber" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..." />
+                    <x-input type="text" wire:model="folioNumber" placeholder="ingresar..." />
                 </div>
             </div>
             <div class="flex flex-col py-0">
@@ -77,8 +76,7 @@
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Ciudad o poblado más cercano y Estado</label>
-                    <x-input type="text" wire:model="cityTown" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresar..."/>
+                    <x-input type="text" wire:model="cityTown" placeholder="ingresar..."/>
                 </div>
             </div>
             <div class="px-1 py-2 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-4">
@@ -107,22 +105,19 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Región (Centro, Noreste, Noroeste,
                         Occidente y Sureste)</label>
-                    <x-input type="text" wire:model="region" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..." />
+                    <x-input type="text" wire:model="region" placeholder="ingresar..." />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Identificación de los Servicios de Tránsito
                         Aéreo (ACC Mazatlán, ACC Mérida, ACC
                         México y ACC Monterrey)</label>
-                    <x-input type="text" wire:model="identificationServices" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..." />
+                    <x-input type="text" wire:model="identificationServices" placeholder="ingresar..." />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Control de tránsito aéreo (de Área,
                         Aproximación, de Aeródromo,
                         asesoramiento, de Vuelo, de Alerta)</label>
-                    <x-input type="text" wire:model="airtrafficControl" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..." />
+                    <x-input type="text" wire:model="airtrafficControl" placeholder="ingresar..." />
                 </div>
             </div>
             <br>
@@ -132,12 +127,12 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Incidente reclasificado como</label>
                     <x-select class="w-full" wire:model="incidentReclassified">                        
-                        <x-select.option label="A. Error operacional " value="A" />
-                        <x-select.option label="B. Desviación operacional " value="B" />
-                        <x-select.option label="C. Corrección del número de reporte " value="C" />
-                        <x-select.option label="D. Evidencias insuficientes para investigar " value="D" />
-                        <x-select.option label="E. No incidente " value="E" />
-                        <x-select.option label="F. Otro" value="F" />
+                        <x-select.option label="A. ERROR OPERACIONAL" value="A" />
+                        <x-select.option label="B. DESVIACIÓN OPERACIONAL" value="B" />
+                        <x-select.option label="C. CORRECCIÓN DEL NÚMERO DE REPORTE" value="C" />
+                        <x-select.option label="D. EVIDENCIAS INSUFICIENTES PARA INVESTIGAR" value="D" />
+                        <x-select.option label="E. NO INCIDENTE" value="E" />
+                        <x-select.option label="OTRO" value="F" />
                     </x-select>
                 </div>
                 {{-- SE APARECE AL DAR CLIC otro --}}
@@ -153,18 +148,17 @@
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nuevo número de incidente otorgado por la
                         DAAIA</label>
-                    <x-input type="text" wire:model="incidentNumber" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    placeholder="ingresar..." />
+                    <x-input type="text" wire:model="incidentNumber" placeholder="ingresar..." />
                 </div>
                 {{-- SE APARECE AL DAR CLIC otro --}}
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">ó nueva reclasificación.</label>
                     <x-select class="w-full" wire:model="newReclassification">
-                        <x-select.option label="A. Error operacional" value="A-RECLASIFICACION" /> 
-                        <x-select.option label="B. Desviación operacional o pérdida de la separación " value="B-RECLASIFICACION" /> 
-                        <x-select.option label="C. Reclasificar como 'Evidencias insuficientes para investigar'" value="C-RECLASIFICACION" />
-                        <x-select.option label="D. Reclasificar como 'No incidente' " value="D-RECLASIFICACION'" /> 
-                        <x-select.option label="E. No aplica " value="E-RECLASIFICACION" /> 
+                        <x-select.option label="A. ERROR OPERACIONAL" value="A-RECLASIFICACION" /> 
+                        <x-select.option label="B. DESVIACIÓN OPERACIONAL O PÉRDIDA DE LA SEPARACIÓN" value="B-RECLASIFICACION" /> 
+                        <x-select.option label="C. RECLASIFICAR COMO 'EVIDENCIAS INSUFICIENTES PARA INVESTIGAR'" value="C-RECLASIFICACION" />
+                        <x-select.option label="D. RECLASIFICAR COMO 'NO INCIDENTE'" value="D-RECLASIFICACION'" /> 
+                        <x-select.option label="E. NO APLICA" value="E-RECLASIFICACION" /> 
                     </x-select>
                 </div>
             </div>
@@ -188,13 +182,11 @@
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-4">
                 <div class="col-span-2">
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre</label>
-                    <x-input type="text" wire:model="name" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..." />
+                    <x-input type="text" wire:model="name" placeholder="ingresar..." />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">FIRMA</label>
-                    <x-input type="text" wire:model="firm" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..." />
+                    <x-input type="text" wire:model="firm" placeholder="ingresar..." />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Fecha</label>
@@ -218,10 +210,10 @@
                         <form>
                             <label for="small-file-input" class="sr-only">Choose file</label>
                             <input wire:model="fileMinutes" type="file" name="small-file-input" id="small-file-input" class="bg-gray-50 block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
-                      file:bg-transparent file:border-0
-                      file:bg-gray-200 file:mr-4
-                      file:py-2 file:px-4
-                      dark:file:bg-gray-700 dark:file:text-gray-400">
+                                file:bg-transparent file:border-0
+                                file:bg-gray-200 file:mr-4
+                                file:py-2 file:px-4
+                                dark:file:bg-gray-700 dark:file:text-gray-400">
                         </form>
                     </div>
                 </div>

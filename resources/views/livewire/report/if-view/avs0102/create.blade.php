@@ -17,8 +17,7 @@
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Explotador</label>
-                    <x-input type="text" wire:model="exploitative" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..."/>
+                    <x-input type="text" wire:model="exploitative" placeholder="ingresar..."/>
                 </div>
             </div>
             <div class="flex flex-col py-0">
@@ -44,8 +43,7 @@
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Matrícula</label>
-                    <x-input type="text" wire:model="aircraftRegistration" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..." />
+                    <x-input type="text" wire:model="aircraftRegistration" placeholder="ingresar..." />
                 </div>
             </div>
             <div class="flex flex-col py-0">
@@ -98,34 +96,29 @@
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Nombre del aeródromo</label>
-                    <x-input type="text" wire:model="aerodromeName" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresa al Propetario" />
+                    <x-input type="text" wire:model="aerodromeName" placeholder="ingresa al Propetario" />
                 </div>
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Pista utilizada</label>
-                    <x-input type="text" wire:model="trackUsed" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresa al Propetario" />
+                    <x-input type="text" wire:model="trackUsed" placeholder="ingresa al Propetario" />
                 </div>
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Posición,si fue en ruta</label>
-                    <x-input type="text" wire:model="positionRoute" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresa al Propetario" />
+                    <x-input type="text" wire:model="positionRoute" placeholder="ingresa al Propetario" />
                 </div>
             </div>
             <div class="px-1 py-1 grid grid-cols-1 gap-2 mt-0 sm:grid-cols-3">
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Altura</label>
-                    <x-input type="text" wire:model="height" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresa al Propetario" />
+                    <x-input type="text" wire:model="height" placeholder="ingresa al Propetario" />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Velocidad indicada</label>
-                    <x-input type="text" wire:model="indicatedSpeed" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresa al Propetario" />
+                    <x-input type="text" wire:model="indicatedSpeed" placeholder="ingresa al Propetario" />
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Fases de vuelo</label>
@@ -602,8 +595,7 @@
                 </div>
                 <div>
                     <label for="" class="block text-lg mb-2 dark:text-white">Especie de ave</label>
-                    <x-input type="text" wire:model="birdSpecies" class="py-0.5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        placeholder="ingresar..."/>
+                    <x-input type="text" wire:model="birdSpecies" placeholder="ingresar..."/>
                 </div>
 
             </div>
@@ -796,7 +788,6 @@
                             </div>
                         </div>
                     </div>
-                    
             </div>            
         </section>
     </section>
