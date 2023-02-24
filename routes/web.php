@@ -40,4 +40,5 @@ Route::get('PdfAfac001a', [Afac001aCreate::class, 'PdfAfac001a'])->name('afac001
 Route::get('PdfAfac005', [Afac005Create::class, 'PdfAfac005'])->name('afac005-pdf');
 Route::get('PdfAfac006',[Afac006Create::class, 'PdfAfac006'])->name('afac006-pdf');
 Route::get('PdfAfac0102',[Avs0102Create::class, 'PdfAfac0102'])->name('afac0102-pdf');
+Route::get('PdfAfac02',[Avs02Create::class, 'PdfAfac02'])->name('afac02-pdf');
 // return redirect()->route('afac006-pdf',compact('id'));

@@ -8,6 +8,7 @@ use App\Models\Catalogue\Brand;
 use App\Models\Catalogue\Nacionality;
 use App\Models\Catalogue\Place;
 use App\Models\Report\Afac02;
+use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use WireUi\Traits\Actions;
@@ -88,7 +89,41 @@ class Create extends Component
                                 
                 ]
         );
-    } 
+        $this->takeClass();  
+    }
+    public function takeClass()
+    {
+        $this->dialog()->confirm([
+            'title'       => 'REPORTE GENERADO',
+            'description' => '¿DESEAS IMPRIMIR REPORTE?',
+            'icon'        => 'success',
+            'accept'      => [
+                'label'  => 'IMPRIMIR',
+                'method' => 'print',
+            ],
+            'reject' => [
+                'label'  => 'SALIR',
+                // 'method' => 'cleanInput',
+            ],
+        ]);
+    }
+    public function print()
+    {
+        $id = $this->Afac02->id;
+        //$id = $this->afac001aid->id;
+        return redirect()->route('afac02-pdf',compact('id'));
+    }
+
+    public function PdfAfac02()
+    {
+        $afac02Report = Afac02::where('id', $_GET['id'])->get(); 
+        //  dd($_GET['id']);
+        $date = Carbon::parse($afac02Report[0]->date);
+        $hour = Carbon::parse($afac02Report[0]->hour);
+        $pdf = PDF::loadView('report.ifView.afac02.pdf.afac02-pdf',compact('afac02Report','date','hour'));
+        return $pdf->download('reporte_No_'.'.pdf');
+    }
+
     public function messages()
     {
         return [
