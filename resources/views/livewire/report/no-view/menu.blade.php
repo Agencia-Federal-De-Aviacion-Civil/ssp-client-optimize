@@ -164,10 +164,10 @@
                         </label>
                     </div>
                     <div x-show="type === 'Accidente'">
-                        @livewire('report.no-view.accident', ['id_user' => $id_user])
+                        @livewire('report.no-view.accident', ['id_user' => $id_user], key('report.no-view.accident-' . $id_user))
                     </div>
                     <div x-show="type === 'Incidente'">
-                        {{-- @livewire('reportes.save-incident', ['users_reporter_id' => $users_reporter_id]) --}}
+                        @livewire('report.no-view.incident', ['id_user' => $id_user], key('report.no-view.incident-' . $id_user))
                     </div>
                     <div x-show="type === 'Peligro'">
                         {{-- @livewire('reportes.save-danger', ['users_reporter_id' => $users_reporter_id]) --}}
