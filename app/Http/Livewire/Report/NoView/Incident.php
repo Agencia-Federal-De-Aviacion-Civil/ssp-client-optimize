@@ -18,6 +18,7 @@ use App\Models\Catalogue\Type;
 use App\Models\Report\NoReport\ReportIncident;
 use App\Models\Report\NoReport\ReportIncidentInvolved;
 use App\Models\Report\NoReport\ReportIncidentInvolvedProc;
+use App\Models\Report\NoReport\ReportIncidentInvolvedRvsm;
 use App\Models\Report\NoReport\ReportIncidentNotInvolved;
 use Livewire\Component;
 
@@ -130,28 +131,28 @@ class Incident extends Component
             'workshop' => '',
             'code_ata_id' => '',
             // FORM TO RSVSM
-            'typeReport' => 'required_if:sub_event_id,45',
-            'dateStartRVSM' => 'required_if:sub_event_id,45',
-            'hourStartRVSM' => 'required_if:sub_event_id,45',
-            'typeDeviation' => 'required_if:sub_event_id,45',
-            'routeSegment' => 'required_if:sub_event_id,45',
-            'acc' => 'required_if:sub_event_id,45',
-            'causes' => 'required_if:sub_event_id,45',
-            'airplaneIdenti' => 'required_if:sub_event_id,45',
-            'ownerRVSM' => 'required_if:sub_event_id,45',
-            'type_id_rvsm' => 'required_if:sub_event_id,45',
-            'brand_id_rvsm' => 'required_if:sub_event_id,45',
-            'amodel_id_rvsm' => 'required_if:sub_event_id,45',
-            'assignedFlight' => 'required_if:sub_event_id,45',
-            'currentFlight' => 'required_if:sub_event_id,45',
-            'mistake' => 'required_if:sub_event_id,45',
-            'timeLine' => 'required_if:sub_event_id,45',
-            'deviationPosition' => 'required_if:sub_event_id,45',
-            'trafficConflict' => 'required_if:sub_event_id,45',
-            'actionATC' => 'required_if:sub_event_id,45',
-            'state_id_rvsm' => 'required_if:sub_event_id,45',
-            'municipal_id_rvsm' => 'required_if:sub_event_id,45',
-            'dateNotification' => 'required_if:sub_event_id,45',
+            'typeReport' => '',
+            'dateStartRVSM' => '',
+            'hourStartRVSM' => '',
+            'typeDeviation' => '',
+            'routeSegment' => '',
+            'acc' => '',
+            'causes' => '',
+            'airplaneIdenti' => '',
+            'ownerRVSM' => '',
+            'type_id_rvsm' => '',
+            'brand_id_rvsm' => '',
+            'amodel_id_rvsm' => '',
+            'assignedFlight' => '',
+            'currentFlight' => '',
+            'mistake' => '',
+            'timeLine' => '',
+            'deviationPosition' => '',
+            'trafficConflict' => '',
+            'actionATC' => '',
+            'state_id_rvsm' => '',
+            'municipal_id_rvsm' => '',
+            'dateNotification' => '',
             // FORM TO BIRD
             'typeLicensePlateBird' => 'required_if:sub_event_id,54',
             'licensePlateBird' => 'required_if:sub_event_id,54',
@@ -571,38 +572,63 @@ class Incident extends Component
                 ],
             );
         }
-        //else if ($this->sub_event_id == 45) {
-        //     TypeIncidentrvsm::updateOrCreate(
-        //         ['id' => $this->id_InvolvedRvsm],
-        //         [
-        //             'report_incident_id' => $idIncidente->id,
-        //             'typeReport' => $this->typeReport,
-        //             'dateStartRVSM' => $this->dateStartRVSM,
-        //             'hourStartRVSM' => $this->hourStartRVSM,
-        //             'typeDeviation' => $this->typeDeviation,
-        //             'routeSegment' => $this->routeSegment,
-        //             'acc' => $this->acc,
-        //             'causes' => $this->causes,
-        //             'airplaneIdenti' => $this->airplaneIdenti,
-        //             'ownerRVSM' => $this->ownerRVSM,
-        //             'type_id_rvsm' => $this->type_id_rvsm,
-        //             'brand_id_rvsm' => $this->brand_id_rvsm,
-        //             'amodel_id_rvsm' => $this->amodel_id_rvsm,
-        //             'assignedFlight' => $this->assignedFlight,
-        //             'currentFlight' => $this->currentFlight,
-        //             'mistake' => $this->mistake,
-        //             'timeLine' => $this->timeLine,
-        //             'deviationPosition' => $this->deviationPosition,
-        //             'trafficConflict' => $this->trafficConflict,
-        //             'actionATC' => $this->actionATC,
-        //             'otherComments' => $this->otherComments,
-        //             'state_id_rvsm' => $this->state_id_rvsm,
-        //             'municipal_id_rvsm' => $this->municipal_id_rvsm,
-        //             'dateNotification' => $this->dateNotification,
+        if ($this->sub_event_id == 45) {
+            $this->validate([
+                'typeReport' => 'required',
+                'dateStartRVSM' => 'required',
+                'hourStartRVSM' => 'required',
+                'typeDeviation' => 'required',
+                'routeSegment' => 'required',
+                'acc' => 'required',
+                'causes' => 'required',
+                'airplaneIdenti' => 'required',
+                'ownerRVSM' => 'required',
+                'type_id_rvsm' => 'required',
+                'brand_id_rvsm' => 'required',
+                'amodel_id_rvsm' => 'required',
+                'assignedFlight' => 'required',
+                'currentFlight' => 'required',
+                'mistake' => 'required',
+                'timeLine' => 'required',
+                'deviationPosition' => 'required',
+                'trafficConflict' => 'required',
+                'actionATC' => 'required',
+                'state_id_rvsm' => 'required',
+                'municipal_id_rvsm' => 'required',
+                'dateNotification' => 'required',
+            ]);
+            ReportIncidentInvolvedRvsm::updateOrCreate(
+                ['id' => $this->id_InvolvedRvsm],
+                [
+                    'report_incident_id' => $idIncidente->id,
+                    'typeReport' => $this->typeReport,
+                    'dateStartRVSM' => $this->dateStartRVSM,
+                    'hourStartRVSM' => $this->hourStartRVSM,
+                    'typeDeviation' => $this->typeDeviation,
+                    'routeSegment' => $this->routeSegment,
+                    'acc' => $this->acc,
+                    'causes' => $this->causes,
+                    'airplaneIdenti' => $this->airplaneIdenti,
+                    'ownerRVSM' => $this->ownerRVSM,
+                    'type_id_rvsm' => $this->type_id_rvsm,
+                    'brand_id_rvsm' => $this->brand_id_rvsm,
+                    'amodel_id_rvsm' => $this->amodel_id_rvsm,
+                    'assignedFlight' => $this->assignedFlight,
+                    'currentFlight' => $this->currentFlight,
+                    'mistake' => $this->mistake,
+                    'timeLine' => $this->timeLine,
+                    'deviationPosition' => $this->deviationPosition,
+                    'trafficConflict' => $this->trafficConflict,
+                    'actionATC' => $this->actionATC,
+                    'otherComments' => $this->otherComments,
+                    'state_id_rvsm' => $this->state_id_rvsm,
+                    'municipal_id_rvsm' => $this->municipal_id_rvsm,
+                    'dateNotification' => $this->dateNotification,
 
-        //         ],
-        //     );
-        // } else if ($this->sub_event_id == 54) {
+                ],
+            );
+        } 
+        //else if ($this->sub_event_id == 54) {
         //     TypeIncidentBird::updateOrCreate(
         //         ['id' => $this->id_InvolvedBird],
         //         [
