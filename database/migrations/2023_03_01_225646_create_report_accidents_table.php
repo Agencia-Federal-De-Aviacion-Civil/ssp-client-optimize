@@ -15,16 +15,16 @@ return new class extends Migration
     {
         Schema::create('report_accidents', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('users_reporter_id')->nullable();
-            // $table->foreign('users_reporter_id')->references('id')->on('users_reporters')->onDelete('set null');
-            $table->string('event',25);
+            $table->unsignedBigInteger('general_user_id')->nullable();
+            $table->foreign('general_user_id')->references('id')->on('general_users')->onDelete('set null');
+            $table->string('event');
             $table->unsignedBigInteger('event_id')->nullable();
             $table->foreign('event_id')->references('id')->on('events')->onDelete('set null');
             $table->unsignedBigInteger('sub_event_id')->nullable();
             $table->foreign('sub_event_id')->references('id')->on('sub_events')->onDelete('set null');
-            $table->string('other',120);
-            $table->string('involved',10);
-            $table->string('place',255);
+            $table->string('other');
+            $table->string('involved');
+            $table->string('place');
             $table->unsignedBigInteger('state_id')->nullable();
             $table->foreign('state_id')->references('id')->on('states')->onDelete('set null');
             $table->unsignedBigInteger('municipal_id')->nullable();
@@ -37,12 +37,12 @@ return new class extends Migration
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('set null');
             $table->unsignedBigInteger('amodel_id')->nullable();
             $table->foreign('amodel_id')->references('id')->on('a_models')->onDelete('set null');
-            $table->string('licensePlate',120);
-            $table->string('serialNumber',120);
-            $table->string('owner',255);
+            $table->string('licensePlate');
+            $table->string('serialNumber');
+            $table->string('owner');
             $table->unsignedBigInteger('base_operation_id')->nullable();
             $table->foreign('base_operation_id')->references('id')->on('base_operations')->onDelete('set null');
-            $table->string('nameCaptan',255);
+            $table->string('nameCaptan');
             $table->string('national_capitan')->nullable();
             $table->unsignedBigInteger('license_id')->nullable();
             $table->foreign('license_id')->references('id')->on('licenses')->onDelete('set null');
@@ -67,8 +67,8 @@ return new class extends Migration
             $table->string('observations');
             $table->string('consequence');
             $table->string('proposals');
-            $table->string('frequent',20);
-            $table->string('gravity',20);
+            $table->string('frequent');
+            $table->string('gravity');
             $table->timestamps();
         });
     }

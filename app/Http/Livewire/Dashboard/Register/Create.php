@@ -84,9 +84,11 @@ class Create extends Component
     {
         $slug = $this->id_user;
         $id = $this->id_user->id;
-        return redirect()->route('ifReportView', compact('slug','id'));
+        return redirect()->route('ifReportView', compact('slug', 'id'));
     }
-    public function returnUserNo(){
-        return redirect()->route('NoAccidentReport');
+    public function returnUserNo()
+    {
+        $id_user = $this->id_user->id;
+        return redirect()->route('NoAccidentReport', compact('id_user'));
     }
 }

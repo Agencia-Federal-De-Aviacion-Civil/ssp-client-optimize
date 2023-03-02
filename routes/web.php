@@ -27,7 +27,7 @@ Route::get('/', function () {
     return view('dashboard');
 });
 // NO REPORT USER
-Route::get('accident', Accident::class)->name('NoAccidentReport');
+Route::get('accident/{id_user}', Accident::class)->name('NoAccidentReport');
 Route::get('create/{slug}/{id}', [HomeController::class, 'index'])->name('ifReportView');
 Route::get('create/{slug}/afac001/{idReporter}', Create::class)->name('afac001');
 Route::get('create/{slug}/afac001a/{idReporter}', Afac001aCreate::class)->name('afac001a');

@@ -19,7 +19,7 @@ use Livewire\Component;
 
 class Accident extends Component
 {
-    public $tipo, $marca, $modelo, $estado, $municipio, $boperacion, $origen_vuelo, $destino_vuelo,
+    public $id_user, $tipo, $marca, $modelo, $estado, $municipio, $boperacion, $origen_vuelo, $destino_vuelo,
         $tipoevento, $classlicenspilot, $licensecopilot, $class_pilot, $sub_menu_event;
     public $users_reporter_id, $event, $id_accidente;
     public $tipos, $brands = [], $amodels = [], $states, $municipals = [],
@@ -31,9 +31,9 @@ class Accident extends Component
         $national_pilot, $license_id_copilot, $license_type_id_copilot, $injuriesPilot, $injuriesPassengers, $commodity, $description,
         $observations, $consequence, $proposals, $frequent, $gravity;
     public $nationalcapitan, $national_capitan, $national_copilot, $nationalcopilot;
-    public function mount()
+    public function mount($id_user)
     {
-        $this->reset();
+        $this->id_user = $id_user;
         $this->licenses = License::all();
         $this->events = Event::all();
         $this->forigins = Place::all();
@@ -77,8 +77,8 @@ class Accident extends Component
         'license_type_id_copilot' => 'required',
         'injuriesPilot' => 'required',
         'injuriesPassengers' => 'required',
-        // 'forigin_id' => 'required',
-        // 'fdestination_id' => 'required',
+        'forigin_id' => 'required',
+        'fdestination_id' => 'required',
         'commodity' => 'required',
         'description' => 'required',
         'observations' => 'required',
@@ -121,13 +121,6 @@ class Accident extends Component
     {
         $this->municipals = Municipal::where('state_id', $estado_id)->get();
     }
-    public function limpiarCampos()
-    {
-        $this->users_reporter_id = '';
-        $this->event = '';
-        $this->event_id = ''; //DEJANDOLOS VACIOS LOS LIMPIARA AUTOMATICAMENTE
-
-    }
     public function save()
     {
         $validation = $this->validate();
@@ -139,7 +132,7 @@ class Accident extends Component
         ReportAccident::updateOrCreate(
             ['id' => $this->id_accidente],
             [
-                'users_reporter_id' => $this->users_reporter_id,
+                'general_user_id' => $this->id_user,
                 'type_id' => $this->type_id,
                 'event' => $this->event,
                 'brand_id' => $this->brand_id,
@@ -179,17 +172,10 @@ class Accident extends Component
                 'proposals' => $this->proposals,
                 'frequent' => $this->frequent,
                 'gravity' => $this->gravity
-
             ],
             $validation
         );
-        session()->flash(
-            'success',
-            $this->id_accidente ? '¡Actualización éxitosa!' : 'Regla añadida con éxito.'
-        );
-        $this->limpiarCampos();
-        // return redirect()->route('endAccident');
-        // return redirect()->to('/end-reports');
+        // $this->reset();
     }
     public function messages()
     {
@@ -217,18 +203,18 @@ class Accident extends Component
             'expire.required' => 'Campo obligatorio',
             'injuries.required' => 'Campo obligatorio',
             'namePilot.required' => 'Campo obligatorio',
-            'national_pilot.required'=>'Campo obligatorio',
-            'license_id_copilot.required'=>'Campo obligatorio',
-            'license_type_id_copilot.required'=>'Campo obligatorio',
-            'injuriesPilot.required'=>'Campo obligatorio',
-            'injuriesPassengers.required'=>'Campo obligatorio',
-            'forigin_id.required'=>'Campo obligatorio',
-            'fdestination_id.required'=>'Campo obligatorio',
-            'commodity.required'=>'Campo obligatorio',
-            'description.required'=>'Campo obligatorio',
-            'observations.required'=>'Campo obligatorio',
-            'consequence.required'=>'Campo obligatorio',
-            'frequent.required'=>'Campo obligatorio',
+            'national_pilot.required' => 'Campo obligatorio',
+            'license_id_copilot.required' => 'Campo obligatorio',
+            'license_type_id_copilot.required' => 'Campo obligatorio',
+            'injuriesPilot.required' => 'Campo obligatorio',
+            'injuriesPassengers.required' => 'Campo obligatorio',
+            'forigin_id.required' => 'Campo obligatorio',
+            'fdestination_id.required' => 'Campo obligatorio',
+            'commodity.required' => 'Campo obligatorio',
+            'description.required' => 'Campo obligatorio',
+            'observations.required' => 'Campo obligatorio',
+            'consequence.required' => 'Campo obligatorio',
+            'frequent.required' => 'Campo obligatorio',
             'involved.required' => 'Campo obligatorio',
         ];
     }
