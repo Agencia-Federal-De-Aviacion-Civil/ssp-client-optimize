@@ -10,6 +10,7 @@ use App\Http\Livewire\Report\IfView\Afac006\Create as Afac006Create;
 use App\Http\Livewire\Report\IfView\Avs0102\Create as Avs0102Create;
 use App\Http\Livewire\Report\IfView\Avs02\Create as Avs02Create;
 use App\Http\Livewire\Report\NoView\Accident;
+use App\Http\Livewire\Report\NoView\Menu;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,7 @@ Route::get('/', function () {
     return view('dashboard');
 });
 // NO REPORT USER
+Route::get('main/{id_user}', Menu::class)->name('mainReport');
 Route::get('accident/{id_user}', Accident::class)->name('NoAccidentReport');
 Route::get('create/{slug}/{id}', [HomeController::class, 'index'])->name('ifReportView');
 Route::get('create/{slug}/afac001/{idReporter}', Create::class)->name('afac001');
