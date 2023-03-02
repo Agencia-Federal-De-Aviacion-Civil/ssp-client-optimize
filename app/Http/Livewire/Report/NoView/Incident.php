@@ -17,11 +17,12 @@ use App\Models\Catalogue\SubEvent;
 use App\Models\Catalogue\Type;
 use App\Models\Report\NoReport\ReportIncident;
 use App\Models\Report\NoReport\ReportIncidentInvolved;
+use App\Models\Report\NoReport\ReportIncidentNotInvolved;
 use Livewire\Component;
 
 class Incident extends Component
 {
-    public $id_user, $id_incidente, $id_notInvolved, $event, $event_id, $sub_event_id, $other, $report_incident_id;
+    public $id_user, $id_incidente, $id_notInvolved, $event, $event_id, $sub_event_id, $other, $report_involved;
     // CATALOGUES INVOLVED YES
     public $id_Involved, $placeInvolved, $state_id, $municipal_id, $dateStartInvolved, $hourStartInvolved, $type_id, $amodel_id, $classlicenspilot, $license_id_copilot,
         $forigin_id, $fdestination_id, $commodity, $observations, $descriptionInvolved;
@@ -53,80 +54,80 @@ class Incident extends Component
             'id_user' => 'required',
             'event_id' => 'required',
             'sub_event_id' => 'required',
-            'report_incident_id' => 'required',
+            'report_involved' => 'required',
             // RULES NOT INVOLVED INCIDENT
-            'dateStartNot' => 'required_if:report_incident_id,2',
-            'hourStartNot' => 'required_if:report_incident_id,2',
-            'placeNotInv' => 'required_if:report_incident_id,2',
-            'descriptionNot' => 'required_if:report_incident_id,2',
-            'consequenceNot' => 'required_if:report_incident_id,2',
-            'proposalsNot' => 'required_if:report_incident_id,2',
-            'frequentNot' => 'required_if:report_incident_id,2',
-            'gravityNot' => 'required_if:report_incident_id,2',
+            'dateStartNot' => 'required_if:report_involved,2',
+            'hourStartNot' => 'required_if:report_involved,2',
+            'placeNotInv' => 'required_if:report_involved,2',
+            'descriptionNot' => 'required_if:report_involved,2',
+            'consequenceNot' => 'required_if:report_involved,2',
+            'proposalsNot' => 'required_if:report_involved,2',
+            'frequentNot' => 'required_if:report_involved,2',
+            'gravityNot' => 'required_if:report_involved,2',
             // 
             // RULES FIRST FORM YES INVOLVED
-            'placeInvolved' => 'required_if:sub_event_id,1',
-            'state_id' => 'required_if:sub_event_id,1',
-            'municipal_id' => 'required_if:sub_event_id,1',
-            'dateStartInvolved' => 'required_if:sub_event_id,1',
-            'hourStartInvolved' => 'required_if:sub_event_id,1',
-            'type_id' => 'required_if:sub_event_id,1',
-            'brand_id' => 'required_if:sub_event_id,1',
-            'amodel_id' => 'required_if:sub_event_id,1',
-            'typeLicensePlate' => 'required_if:sub_event_id,1',
-            'licensePlate' => 'required_if:sub_event_id,1',
-            'serialNumber' => 'required_if:sub_event_id,1',
-            'owner' => 'required_if:sub_event_id,1',
-            'boperation_id' => 'required_if:sub_event_id,1',
-            'aircraftDamage' => 'required_if:sub_event_id,1',
-            'nameCaptan' => 'required_if:sub_event_id,1',
-            'national_capitan' => 'required_if:sub_event_id,1',
-            'license_id' => 'required_if:sub_event_id,1',
-            'license_type_id' => 'required_if:sub_event_id,1',
-            'expire' => 'required_if:sub_event_id,1',
-            'injuries' => 'required_if:sub_event_id,1',
-            'namePilot' => 'required_if:sub_event_id,1',
-            'national_pilot' => 'required_if:sub_event_id,1',
-            'license_id_copilot'  => 'required_if:sub_event_id,1',
-            'license_type_id_copilot'  => 'required_if:sub_event_id,1',
-            'expirePilot' => 'required_if:sub_event_id,1',
-            'injuriesPilot' => 'required_if:sub_event_id,1',
-            'injuriesPassengers' => 'required_if:sub_event_id,1',
-            'forigin_id' => 'required_if:sub_event_id,1',
-            'fdestination_id' => 'required_if:sub_event_id,1',
-            'commodity' => 'required_if:sub_event_id,1',
-            'descriptionInvolved' => 'required_if:sub_event_id,1',
+            'placeInvolved' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'state_id' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'municipal_id' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'dateStartInvolved' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'hourStartInvolved' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'type_id' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'brand_id' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'amodel_id' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'typeLicensePlate' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'licensePlate' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'serialNumber' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'owner' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'boperation_id' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'aircraftDamage' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'nameCaptan' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'national_capitan' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'license_id' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'license_type_id' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'expire' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'injuries' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'namePilot' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'national_pilot' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'license_id_copilot'  => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'license_type_id_copilot'  => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'expirePilot' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'injuriesPilot' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'injuriesPassengers' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'forigin_id' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'fdestination_id' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'commodity' => 'required_if:sub_event_id,1|required_if:report_involved,1',
+            'descriptionInvolved' => 'required_if:sub_event_id,1|required_if:report_involved,1',
             // FORMS (PROC) INVOLVED
-            'type_id_proc' => 'required_if:sub_event_id,2',
-            'brand_id_proc' => 'required_if:sub_event_id,2',
-            'amodel_id_proc' => 'required_if:sub_event_id,2',
-            'serialNumberProc' => 'required_if:sub_event_id,2',
-            'typeLicensePlateProc' => 'required_if:sub_event_id,2',
-            'licensePlateProc' => 'required_if:sub_event_id,2',
-            'ownerProc' => 'required_if:sub_event_id,2',
-            'dateStartInvolvedProc' => 'required_if:sub_event_id,2',
-            'boperation_id_proc' => 'required_if:sub_event_id,2',
-            'brandProc' => 'required_if:sub_event_id,2',
-            'modelProc' => 'required_if:sub_event_id,2',
-            'brandProcEngine' => 'required_if:sub_event_id,2',
-            'modelProcEngine' => 'required_if:sub_event_id,2',
-            'earthProc' => 'required_if:sub_event_id,2',
-            'descriptionProc' => 'required_if:sub_event_id,2',
-            'origenProc' => 'required_if:sub_event_id,2',
-            'actionProc' => 'required_if:sub_event_id,2',
-            'componentProc' => 'required_if:sub_event_id,2',
-            'nPProc' => 'required_if:sub_event_id,2',
-            'nsPProc' => 'required_if:sub_event_id,2',
-            'factoryProc' => 'required_if:sub_event_id,2',
-            'hourControl' => 'required_if:sub_event_id,2',
-            'cycleControl' => 'required_if:sub_event_id,2',
-            'daysControl' => 'required_if:sub_event_id,2',
-            'ttComponent' => 'required_if:sub_event_id,2',
-            'ctComponent' => 'required_if:sub_event_id,2',
-            'turmComponent' => 'required_if:sub_event_id,2',
-            'curmComponent' => 'required_if:sub_event_id,2',
-            'workshop' => 'required_if:sub_event_id,2',
-            'code_ata_id' => 'required_if:sub_event_id,2',
+            'type_id_proc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'brand_id_proc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'amodel_id_proc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'serialNumberProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'typeLicensePlateProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'licensePlateProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'ownerProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'dateStartInvolvedProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'boperation_id_proc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'brandProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'modelProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'brandProcEngine' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'modelProcEngine' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'earthProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'descriptionProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'origenProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'actionProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'componentProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'nPProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'nsPProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'factoryProc' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'hourControl' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'cycleControl' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'daysControl' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'ttComponent' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'ctComponent' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'turmComponent' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'curmComponent' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'workshop' => 'required_if:sub_event_id,2|required_if:report_involved,1',
+            'code_ata_id' => 'required_if:sub_event_id,2|required_if:report_involved,1',
             // FORM TO RSVSM
             'typeReport' => 'required_if:sub_event_id,45',
             'dateStartRVSM' => 'required_if:sub_event_id,45',
@@ -239,7 +240,7 @@ class Incident extends Component
         $this->event_id = '';
         $this->sub_event_id = '';
         $this->other = '';
-        $this->report_incident_id = '';
+        $this->report_involved = '';
     }
     public function save()
     {
@@ -400,24 +401,24 @@ class Incident extends Component
 
                 ],
             );
-        }
-        // else if ($this->report_incident_id == 2) {
-        //     TypeIncidentNotInvolved::updateOrCreate(
-        //         ['id' => $this->id_notInvolved],
-        //         [
-        //             'report_incident_id' => $idIncidente->id,
-        //             'dateStartNot' => $this->dateStartNot,
-        //             'hourStartNot' => $this->hourStartNot,
-        //             'placeNotInv' => $this->placeNotInv,
-        //             'descriptionNot' => $this->descriptionNot,
-        //             'consequenceNot' => $this->consequenceNot,
-        //             'proposalsNot' => $this->proposalsNot,
-        //             'frequentNot' => $this->frequentNot,
-        //             'gravityNot' => $this->gravityNot,
+        } else if ($this->report_involved == 2) {
+            ReportIncidentNotInvolved::updateOrCreate(
+                ['id' => $this->id_notInvolved],
+                [
+                    'report_incident_id' => $idIncidente->id,
+                    'dateStartNot' => $this->dateStartNot,
+                    'hourStartNot' => $this->hourStartNot,
+                    'placeNotInv' => $this->placeNotInv,
+                    'descriptionNot' => $this->descriptionNot,
+                    'consequenceNot' => $this->consequenceNot,
+                    'proposalsNot' => $this->proposalsNot,
+                    'frequentNot' => $this->frequentNot,
+                    'gravityNot' => $this->gravityNot,
 
-        //         ],
-        //     );
-        // } else if ($this->sub_event_id == 2) {
+                ],
+            );
+        }
+        // else if ($this->sub_event_id == 2) {
         //     TypeIncidentInvolvedProc::updateOrCreate(
         //         ['id' => $this->id_InvolvedProc],
         //         [

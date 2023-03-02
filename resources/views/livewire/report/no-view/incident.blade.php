@@ -194,8 +194,8 @@
                 <label for="si_incident"
                     class="flex p-3 block w-full bg-white border border-gray-300 rounded-md lg:text-base xs:text-xl focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                     <div class="text-teal-900 mr-3">
-                        <input x-model="involved_event" wire:model="report_incident_id" type="radio"
-                            id="si_incident" value="1" name="involved"
+                        <input x-model="involved_event" wire:model="report_involved" type="radio" id="si_incident"
+                            value="1" name="involved"
                             class="form-radio focus:outline-none focus:shadow-outline" />
                     </div>
                     <div class="select-none text-gray-700">SI</div>
@@ -203,14 +203,14 @@
                 <label for="no_incident"
                     class="flex p-3 block w-full bg-white border border-gray-300 rounded-md lg:text-base xs:text-xl focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                     <div class="text-teal-900 mr-3">
-                        <input x-model="involved_event" wire:model="report_incident_id" type="radio"
-                            id="no_incident" value="2" name="involved"
+                        <input x-model="involved_event" wire:model="report_involved" type="radio" id="no_incident"
+                            value="2" name="involved"
                             class="form-radio focus:outline-none focus:shadow-outline" />
                     </div>
                     <div class="select-none text-gray-700">NO</div>
                 </label>
             </div>
-            @error('report_incident_id')
+            @error('report_involved')
                 <span
                     class="mt-3 text-center bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
             @enderror
