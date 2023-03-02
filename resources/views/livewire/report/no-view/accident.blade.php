@@ -960,12 +960,24 @@
     </div>
     <div class="mt-6 text-right">
         <!-- <button type="submit">FINALIZAR REPORTE</button> -->
-        <button wire:click.prevent="save()"
+        <button wire:click.prevent="save"
             class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             FINALIZAR REPORTE
         </button>
-        <div wire:loading wire:target="save">
-            Generando solicitud...
+        <div wire:loading.delay wire:target="save">
+            <div
+                class="flex justify-center bg-emerald-900 z-40 h-full w-full fixed top-0 left-0 items-center opacity-75">
+                <div
+                    class="flex justify-center bg-gray-500 z-40 h-full w-full fixed top-0 left-0 items-center opacity-75">
+                    <div style="color: #150495" class="la-ball-circus la-2x">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
