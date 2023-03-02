@@ -91,7 +91,7 @@
         <label for="tfly"
             class="flex p-3 block w-full bg-white border border-gray-200 rounded-md lg:text-base xs:text-xl focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
             <div class="text-teal-600 mr-3">
-                <input type="radio" id="tfly" value="Peligro" name="event" wire:model="event"
+                <input type="radio" id="tfly" value="Tripulación de vuelo" name="event" wire:model="event"
                     class="form-radio focus:outline-none focus:shadow-outline" />
             </div>
             <div class="select-none text-gray-700">Tripulación de vuelo</div>
